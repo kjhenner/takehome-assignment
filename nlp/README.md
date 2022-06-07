@@ -4,7 +4,7 @@ Hello! 👋 Thank you for checking out this repository. To make sure you're in t
 > [Senior NLP Engineer](https://jobs.wrk.xyz/contenda/25040)
 
 
-The goal of this assignment is to evaluate a candidate's ability to pick up knowledge quickly, iterate on the existing resources, commuicate through writing, and be creative around business problems. 
+The goal of this assignment is to evaluate a candidate's ability to pick up knowledge quickly, iterate on the existing resources, commuicate through writing, and be creative around business problems. Please don't spend more than 3 hours on this.
 
 If you have any questions, please email lilly@contenda.co.
 
@@ -23,5 +23,9 @@ The transcriptions are done by a human for a technical video. Here are some exam
 2. Run this Jupyter notebook locally and install the necessary dependencies
 
 ## Submission
-Send a link to your forked repo to lilly@contenda.co
+Send a link to your forked repo to lilly@contenda.co. Please answer the following questions:
+1. How did you allocate your time?
+2. What are the tradeoffs between training a model on transcripts as a corpus versus written articles?
+3. What is something you'd like to try if you had another 8 hours? 3 days? 1 week?
+4. What are the tradeoffs between using LDA for topic modeling vs other methods? 
 
