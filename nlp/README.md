@@ -16,7 +16,7 @@ We want you to train a topic model that can identify meaningful topics given a n
 Return your results however you want! It can be just a writeup, a graph, a table, or examples. Whatever you think is best! 
 
 ## Data Context
-The transcriptions are done by a human for a technical video. Here are some examples of the [original videos](https://www.learnwithjason.dev/episodes). There *shouldn't* be any mistakes where a word like `Nuxt.js` is mistranscribed as `Nuts just`. 
+The transcriptions are done by a human for a technical video. Here are some examples of the [original videos](https://www.learnwithjason.dev/episodes). There *shouldn't* be any mistakes where a word like `Debug Nuxt.js` is mistranscribed as `Deez nutz`. 
 
 ## Setup
 1. Fork this repo
