@@ -1,0 +1,328 @@
+Hello, everyone, and welcome to another episode of Learn With Jason. Today on the show we have Faraz Patankar, who is coming from Railway. So, Faraz, for folks that aren't familiar with you, do you want to give us a background on who you are, what you're about? 
+Yeah, sure. So, hi. I'm Faraz. I have been doing web dev for maybe six years now. Dropped out of college, went to a coding boot camp. That's how I started learning how to code. That was a Ruby on Rails boot camp, what I learned initially. Went back to India after that, worked at a startup. 
+     Soon after, I moved to a service based company, which is like a tiny startup, because I thought I wanted to get into that sort of work. Realized while I was there that it isn't for me, because you're kind of building the same thing over and over again. And then people want to see if their product works, then they hire their own team. So, I felt I wasn't learning much. I was building authentication payment gateway, and then next project authentication payment gateway. Didn't enjoy that too much. 
+     Soon after that, I went remote. So, this was like, I think, late 2018. With that, I started nomading, traveling around the world. Bali, Thailand, Turkey, Serbia, and so on. 
+Were you doing that as like the straight up live out a suitcase, kind of drop your lease and go do wherever you wanted to be? 
+Yes, yep. I was at home living with my mom, and I was like I think I'm going to go to Bali. She thought I was kidding. She was like, sure. I bought my flight the next day. I was very nervous at the beginning, but I had a friend who was there are there, which made things easier. 
+     Luckily, the teams I've worked with have always been small, only worked at startups, they've all been flexible. As long as I show up for two meetings a week, I can do my work whenever. 
+Oh, that's fun. 
+Yeah, same at Railway, as well. We meet on Monday and meet on Friday. So, yeah. 
+That's super fun. 
+Yeah. 
+Coincidentally, I did the same thing, I lived out of a suitcase for two years. My partner and I did Thailand, Vietnam, parts of Europe. If you're single, no kids, no pets, do it. If you've ever thought about traveling, it is so much fun. 
+Yep. 
+Sorry. Now I've interrupted you, please. 
+Leave your apartment, figure the rest out. 
+Especially if you're in that low responsibility stage, where you don't have a lot of permanent commitments. I was really scared when I did it. I did this in 2014, I was in my late 20s. And I was like this is going to blow up my whole life. And I left, and my whole life improved, because I was having all the things    I would regret that if I didn't try it. And I had these opportunities that, you know, I've since made some more permanent commitments. I bought a house, couldn't just give up a lease and leave. I think if I hadn't done it, I'd be sitting around, man, what if I did. I don't know, I very much believe in a don't die with regrets kind of lifestyle. I'm really, really glad that I did. If you feel like that's something you want to try and you've got the opportunity, go do it. It's so much fun. 
+Yep, for sure. Don't want to wake up when you are 60 and be like, what if, right? 
+Yeah, right. Yeah. Okay, so    I interrupted you. 
+Perspectives and stuff. Yeah, that's okay. 
+     So, yeah, was doing that until about when COVID happened. So, I was supposed to fly to Colombia and do South America for six months. Ended up staying in Miami until my U.S. Visa expired and I had to leave. So, I flew to Bali, where my parents lived. Ended up living there, until they wouldn't let me extend the Visa anymore. Flew to Dubai. Turns out you can keep extending your Visa in Dubai for however long you'd like. So, I've been here since then. 
+     Made a couple of trips here and there, but, yeah, been here for about a year and a half. But I guess I missed out on the career paths in that explanation. I did another ed tech startup, similar to Bing, actually. We built an in house classroom solution. Teachers could teach students how to code live. I think the same stack Bing uses, React, joined Railway around a year ago. I think it will be a year next week. Been there since    I do, like, full stack, but very front end focused. 
+Got ya, okay. 
+Mostly TypeScripts, some written in Go, but mostly on the React side of things. 
+Nice. 
+I guess outside of work, I really enjoy coding, so I do a lot of side projects. In like the travel and Visa space. So, I have one a bunch of people use called Long term Visas, which can tell you how to relocate to another country. I'm on one of the Visas listed on the site, which allows you to stay in Dubai for a year, you don't need a sponsor, you can sponsor yourself. I'm working on another one, Lil Flights, so you can find cheap flights, but high quality flights at the same time. 
+Sure, yeah. 
+When I'm not at my computer, I'm making a mess in the kitchen, trying to cook stuff up, or experimenting with coffee. Yeah, these days doing cold brew tonics and stuff, because it's really hot here. 
+I got to say, Faraz, we have very similar lifestyles it sounds like. 
+One of the very few people who watched your only sort of cooking Learn With Jason. Or did I imagine it? 
+Yeah, the cooking shows. We are talking about how we can bring those back, actually. So, for folks who aren't familiar, my partner Marissa and I did, at the beginning of the pandemic, some weekend brunch streams, where we would just cook breakfast together and stream it. Kind of, you know, try recipes from our friends. That's actually how we learned Chance Strickland, who was on the show last week, last week, the week before. He has a recipe for biscuits. And we made the biscuits on the stream, and Chance was there yelling at me, because I wasn't folding fast enough. It was a lot of fun, and it's something we want to bring back. 
+     We were having trouble with quality, so we wanted to get a little bit more gear, which if you have followed along with my journey, I have too much gear now. Which Chris Biscardi, who's dangerously close to three years of subscribing, thank you very much, Chris, is one of my chief enablers for buying more gear. So, thank you, Chris, for being the best bad influence someone could ask for. 
+     So, Faraz, you are currently working at Railway, you said, and, you know, Anthony is in the chat, super stoked about Railway. I've seen a lot of people hyped up about Railway. Can you maybe give us the high level pitch, what is Railway? 
+Yep. So, Railway    I tell you why I joined Railway, because I found it one morning and applied the same day, I think, was because it was one of those platforms where I could, like, what we want is for users to come to Railway, and only focus on building their app. We don't have to want you to have to worry about infrastructure, setting up alerts, setting up a database, diagnosing your app, and so on. 
+     We aren't fully there yet, but we're moving towards that direction. 
+Okay. 
+We want to help you build the app you want to build without worrying about the other things, which we take care of for you. 
+     On first thought it sounds very similar to a Heroku, but we want to help you across the entire cycle. It's not like you give us our app and we deploy it. We want to be there through the development phase. You can do something like Railway run node index.js. And all your environment variables on Railway, if you have a plug in in your project, those variables will be pushed into that node app, so you don't have to maintain a separate N file. If you create a development environment, those plug ins, all the services you had in production, they are automatically added to that environment. 
+     If you open up PR, you get everything fresh with that PR. Everything is already there. Things already working, you get a fresh database. If you have a test environment, you don't have to clean up your database, because you get a fresh one for each PR and so on. 
+Totally, I got you. That's cool. So, is this like    for folks that don't know, I work at Netlify, and a lot of the things that you're listing here are features that I would consider to be, like, some of my favorite features about Netlify. So, it sounds like Railway is kind of taking a lot of the things that are great about building front ends on Netlify and bringing that to, like, the node apps, the more full stack kind of back end things. 
+Yes. We have been likened by a few users to what Netlify are for the front end, we are for the back end or full stack. So, that is a comparison we get to hear a few times, yeah. 
+Cool, yeah. I mean, I'm always excited about any way to make this a little bit easier. I've been    I run a few back ends for various things, like the chat engine for Learn With Jason is a Node app that runs a GraphQL subscription. There are a few other little back ends that I run for different things that just need to be on all the time. 
+     I remember I had a server that was completely self managed, and I didn't know enough about how to do it, so it would always crash on me, then I'd have to figure out how to SSH into the remote box and restart it and try to find my logs, which I always set up log rotation wrong, and I'd lose things. There are just a lot of these challenges that I'd hit. And then later I moved to Digital Ocean, which did some of the stuff, but not all the stuff. So, I'm still kind of self managing. And then I started to find services like right now I use render.com, which sounds like Render and Railway are solving the same space. 
+     So, something like Railway is trying to take all the stuff I don't need to be an expert in and give me the ability to do what I'm interested in, which is deploy this API. 
+Yes. 
+I love that. I love to see the dev space is moving towards this. Hire an expert via software as a service, platform as a service, when it's not something critical to your application. How you configure and deploy a container, in 99% of cases it doesn't matter for your business, right, so why bother learning all that stuff? 
+Yep, yep. You have to hire one less person, focus on ten less things. Makes it easier for you to get working on your product and get it out there and keep building more features, right. 
+Exactly, right. 
+Something in chat about your mic, I think. There's like a slight crackle. 
+Oh, my God. Why, why? Let me just    you know, I've been having this issue, where I don't know why my mic is    I'm going to disconnect the mic for a hot second. Please hold. 
+     Just trying to clean up the connection a little bit. I don't know if one of my cables got crushed in the move or something. 
+It's better now. The crackle    
+Better now? Maybe it was a dirty, like I hadn't connected it cleanly. Let's see how it goes. I will try not to shout. Try to keep us in the good spot. Hopefully, that's the only problem that I have. If it was the cable, maybe I just need a new cable. 
+     But, okay. So, let's talk a little bit about what are some of the best use cases for Railway. Especially, you know, a lot of the folks who watch this show, I think, would describe themselves as web developers or front end developers. So, we're not going to be deep in the back end, right. We're not    I would never call myself a back end engineer. I would say that I cheat using services like Railway and Render to become a full stack engineer. But, really, I'm more like web front end, you know, the middle tier. That's where I really live. 
+     So, what's a great    where do you see Railway shine when people start deploying projects? 
+Yeah. So, that's a good term, I'll still that from you, the middle tier. I feel I live there, as well. I struggle to explain. That puts things together pretty well. I guess what I'd say is that's like a good crowd that can use Railway. Because, again, if you want to set up a database, and you're very front end focused, you're either going to have to install post test locally, and if you want to maintain more than one database, you're in trouble already. Or you're going to set up something like Docker, which you're not going to enjoy. So, you can just use Railway. So, anyone who needs    we offer full plug ins right now, so if you need any of those, immediately, easy choice for you. 
+     If you want to deploy a small back end server and grow it as you grow your product, we're a good choice. Right now I'd say even if you're a team user, small team, maybe a five to ten person team, Railway is a great fit for you. Especially because of how we've built environments, like the concept of environments. 
+     So, let's say you're hiring someone new, and they want to get started. It's so much effort to get them set up locally, and get them going with the product, whereas    we use Railway to build Railway. We have a project called Railway Meta, which is what we use locally. Any time someone joins, we create a new environment. When I joined, new environment, Dev Faraz, input all the environment variables, and Railway run start, start command. And immediately I can start developing locally. I don't have to worry about anything at all. 
+     As for what the use cases are, we have a lot of people deploying open source solutions, which is one of the things we're going to look at today. Most, 99%, 90%, I guess, of them are one click starters. So, we've set them in a way where you give us a couple environment variables, if needed, and you click a button, and you have, like, Umami, Cal.com, or something like meta base, we have a starter for post for the blogging engine. So, we get a lot of people deploying those things. 
+     We have a bunch of people using Discord bots, telegram bots, Slack bots even, I think. And we have, I don't know, 40, 50 odd teams on the platform. So, these are, like I said, all sub ten person teams. But they really like it, because they can, again, they are all startups who can focus on their core product and not worry about having one person. Just last month, I think, someone moved from one of those we push your stuff on AWS, but we manage it for you services. We don't want to hire one person, whose job is to understand infra, and then every time someone has a question, they are dependent on that person. If you're a team that feels that, Railway is a good place for you to come and build your product. 
+Nice. You know, this is something that I found really exciting about this particular era of developer tooling is that I don't know when it shifted, but we seem to have shifted away from I as a developer need to turn all the knobs, to I as a developer need to know where things roughly should live, but then most of the things are repeatable and deployable. And I think we owe a lot to, you know, Docker containers, and Kubernetes, and some of these systems that allow for automated deployment and scaling and stuff. Because the systems can be built on top of that, that make things so much easier. And also just to the, you know, the focus on productivity, as opposed to completeness of understanding. Because, like, I don't care when I push a button on my computer how the signal from that key gets into the computer and makes a letter or number appear on the screen. Right, it doesn't matter to me. I just need to be able to do that. 
+     And I think that I feel the same way about, you know, CDNs. I love that I am using a CDN, and I very much want to do that. I don't particularly care how my domain name is configured to route traffic through the CDN, back to my origin, handle failover and latency and all those other things that I know they are important, and I want them to exist, but I don't want to do it myself. And I love, love, love that we're seeing more tools that sort of take that as the default stance. And they say, look, you're here to build something valuable for people who are going to use this site or this service. Don't spend time or money on things that don't matter. Work on the value. Here, we'll handle this layer of stuff that is incidental, right. And that's one of the    that's why I ended up working at Netlify. It sounds like that's why you're working at Railway. Is that it really does take this whole category of what I would call toil, or just busy work, and it just clears it away, lets an expert be the expert, and now I don't have to copy/paste/configure off stack overflow, because I have no understanding how containers or deployed or scaled. 
+     It makes me feel so much more powerful as a developer these days to be able to go and do that sort of work. 
+Yep. Yeah, for sure. Just like pointing out one thing you mentioned there. Go build amazing things, right. Make people's lives easier, and we will make your lives as a developer easier. So, let us take care of that. 
+Yeah. And if you all can hear the background, we are getting our    so, we're in a new house, as you can see, I finally got around to putting my lights up. Still haven't decorated behind me. But you may be able to hear we have painters in the house today. So, we've got a little bit of background noise. Thank you for putting up with it. I swear, we are very close to this actually being back to 100% operational. Just a few more days. So, thank you for putting up with all the chaos in the background, Faraz. I appreciate you just powering through, as there's crackling paper and stuff in the background. 
+     So, let's talk a little bit about specific use cases. So, one of the things that we can do with Railway is self hosted analytics. So, you brought this up as a great use case. Self hosted analytics are really interesting, because I do like to know, you know, who's reading what content    not even who, but are people reading content on my site. Do certain articles get traffic, are they useful, are people, you know, do we see people like actually playing time on here and reading things. But what I don't particularly care about, I don't want to necessarily send that data to a third paper. I don't necessarily want somebody to be off, like, using that data for advertising. 
+     And I know you can supposedly set the do not track, and other things like that, but I kind of like this idea of the analytics being in house, so that it's just for me to improve my content, not for other people to go and send more targeted advertisements. 
+     So, you mention the tool already, I think it's called Umami. Can you talk a little bit about how does something like that work, just at a high level. 
+Yep. So, Umami is like pretty cool, because what it does is it gives you all the data that you mentioned. You want to see if people are even visiting your website, how many people are reading a particular post, even if you don't want to know who they are and stuff like that. You can find out what posts are popular. So, Umami does that, where it collects all this data, but then it doesn't store any cookies. All the data you see is anonymized, so you can't track the user back. That's another privacy feature we have. And they don't collect any personally identifiable information at all. 
+     And, realistically speaking, if you want to use this data to build a better site and build things that people want to use, this information is enough to figure out what kind of content you should be putting out. And that's what Umami lets you do. 
+     And apart from the privacy focused aspect of it, they have a couple of really cool features. When you add a website to Umami that you want to track, you can generate a shared URL, which can be a public URL. So, your site analytics can be public. If you're looking for sponsors, or if you want to share stuff, you can give them that link, and they can see live the analytics you would see in your dashboard. 
+Oh, that's really cool. 
+Even some of the paid services don't have. 
+     Another feature which I really like from Umami is you can, apart from tracking multiple sites, your self hosted instance can have multiple accounts. So, if you have friends that are not very tech savvy, you can create an account for them on your instance, and they can track their sites there. So, setting up one account and multiple people can use it. 
+Got ya, okay, that makes sense. 
+     And, so, to deploy one of these, you need    it's built in Node, I assume? 
+It is, it is. Next.js thing, yeah. I think it just uses Next.js API. I don't think they have the back end, I could be wrong, yeah. 
+Interesting. So, we're going to deploy this as a long running Node server, so that it is up all the time. But it sounds like you could potentially deploy it on serverless functions or something like that, as well. 
+I think so. It uses a database. If you're doing serverless, you probably need PG bouncer. Supports SQL, as well. The one we'll be tackling today will use Postgres, the Umami with Postgres, yeah. 
+Cool, okay. So, I think at this point, probably the easiest thing to do is just start showing people how it works. So, let's switch over into our paired programming view, which I will do with this button here. Camera two. All right. 
+     So, now, I just saw Chris' joke about hearing the paint dry. Yes, yes, that is exactly it. But, yeah, so, we are live, and we have Ashly here today from White Coat Captioning taking down everything we say. So, thank you very much, Ashly, for being here. 
+     That is made possible through the support of our sponsors, Netlify, Nx, and Backlight, all kicking in to make this show more accessible to more people, which means a lot to me. It also allows me to do some of the more inventive stuff that we do on the show, some of the interactivity and things, all funded by your generous sponsorships. And by your subscriptions, chat. Every dollar that comes in, I reinvest into the show. I very much appreciate all the subs, and the sponsorships, all those good things, because it lets us just get weird. 
+     We are talking to Faraz today. You can find Faraz on the Internet, on Twitter, and I forgot to mention, if you want to look at the captions, the captions are on the homepage, like they are with every episode. And we're talking today about Railway app. And I think the last thing that I wanted to bring up was Umami.is, this is the analytics that we're going to set up. 
+     So, that is the extent of what I know about what's going on. So, Faraz, what is my next step if I want to start building this app out? 
+Yep. You can open a new tab and type in dev.new. 
+Dev.new. Clever. 
+You can use your keyboard at this point. You don't really need a mouse. Just do deploy a starter. Search for Umami. Hit enter. Now you're not logged in. We require users to log in to apply code. Ask you to connect your GitHub account. Verify your account, so we know you're not deploying shady stuff. 
+Got you. I won't ploy any of that, you got it. Let's go to the dashboard. 
+I guess you also need to agree to the terms and conditions. We want to fix the flow so you only have to agree to one of the things. 
+I am 13 years or older, despite my youthful appearance. All right, so, I have agreed. So, that means I go back to my dashboard, and here we go. 
+Yeah, you can just click new project, which will take you back to where I intended you to go to initially. 
+Is this not the Umami that I set up? 
+No, no, no. 
+I got you. 
+You can search from Umami from the root, as well. Now hit enter. This should work, because you are logged in. We don't have access to your repos yet. 
+Okay, we'll put this on "Learn with Jason," which is where? Here. We'll do select at least one. Do one of these, do one of those. 
+     So, we're going to call this    
+That's an automatically generated secret for you. There are two environment variables that we reconfigured. Umami by default runs on port 3000. So, this has preconfigured, so you don't need to do it. The host name is the URL you'll get after deploying your project. So, we have a template variable that we're using for it. So, you can now click deploy, and it will start creating your project. 
+Ready to be deployed. It is deploying. Okay, is there something I should do in the    
+No. I guess what you could do is you could go    if you scroll up slightly. Can you do command enter? 
+     What you can do is you can click the settings thing on the top right. Close this box that's opened up. Your deployment will begin automatically. You can see we did a Postgres database, as well, which this will use. Your deploy will now start, as well. My bad, close the settings. Hit the Umami service and go to the settings. 
+     And if you scroll down, I want to show you something really cool. One is, okay, we created Learn With Jason Railway Umami for you. 
+Right. 
+It is linked to the upstream repo, Mike Umami. So, whenever Mike updates his version of Umami, you have to click this one button and don't have to worry about going to GitHub, anything. 
+That is very clever. 
+We don't replace your production deployment, because you could have made changes to Learn With Jason Umami, which might break things. So, we create a PR deploy for you, and once you're happy with it working properly, you merge and your production deployment is replaced. 
+Love it. 
+One other reason I brought you here, if you click on your Railway Umami thing    although I don't think this will have the instructions. Let me actually real quick share a link with you. We should have a better way to access this link, but if you could go here real quick    has instructions on how you would proceed. So, Umami is one of the few starters that requires some additional configuration. So you can see you click the Railway button, and now we're on step three. 
+     So, we have the Learn With Jason Umami thing. What we're going to do next is I'm assuming you've not installed the Railway CLI. 
+I don't believe I have. Let's find out. 
+I think you can use the shell script, I think that works the best, if I remember correctly. 
+Not Homebrew? 
+I personally just use the shell one. 
+I'm going to use brew, because I'll absolutely lose track of this if I don't. 
+That's okay. 
+I've realized after a few    almost at 300 episodes of this show, that I've installed so many things that I accidentally made my computer unusable and had to spend like half a day going in and cleaning up all the miscellaneous things I installed. Now I'm like, maybe let's do it this way. 
+     So, now I should have Railway. There it is. And I've got my Railway version, good. 
+Now we can clone the repo Railway created for you, for like Umami. 
+Railway Umami is what we called it. Okay, let's move in. 
+Now you can go back to your Railway project. 
+To this Railway project? 
+Yes. Close the service. And on the bottom left you'll see an option to set up your project locally. 
+Cool, okay. 
+Connect to this project. So, what we are doing here is we are linking our local repository to the Railway project. 
+This is the project ID, which matches what's in the URL there. 
+Yes. 
+I'm not logged in. 
+You need to log in, yes. 
+Press enter to open the browser. Success! Okay. Nice, that's good. 
+Now you can run Railway status. Yeah, we have to link first. That's fine, we have to link first, yeah. 
+     Cool, now that's the name of your project, has one plug in and one service. 
+Got ya. 
+Now go back to the GitHub repo and see the remainder of the instructions. 
+     Now this is a command I will ask you to run off screen, because we'll be revealing some environment variables. So, what you need to do, you can see it's  H host name. So, replace the host name, user name, database values. You don't need to go back to the website. You can just run Railway variables and that will show you the values. Do that part off screen. 
+Got you. The command is Railway variables. When I execute this, this is going to show me all the values. 
+Which will reveal the Postgres configuration values, and you can post in the run command and replace the values. 
+Then I got to copy this host name. That is the PG host value, right? 
+Yes, PG host, user, I think. 
+User name. Then I need my database name, and that is PG database. And then I need to set the file, and that's going to be the sequel, schema Postgres. All that correct, yes, hit enter to run it. Invalid option. What did I screw up? Oh, capital "U." 
+That always gets me. 
+Run it again. All right. Now that we've done that, looks like it worked. 
+Now we can go back to railway project. 
+This one? 
+Yeah. Click on the Postgres thing. And you can see the tables have been populated for you, right. 
+Oh, cool, okay. 
+That's what the script we just ran did. 
+Got ya. 
+Now you can click on the Umami service and visit like the URL. Which should populate, yeah. Click that URL. I think credentials are listed on GitHub, like Umami and password or something. No, where the instructions were. Admin and Umami. 
+Okay, so, admin, Umami, and I need to go and change that password. 
+Yeah, you want to change that ASAP, I think. 
+Yeah. Okay, now we have a new password so you, chat, aren't going to come after me and mess with us. We learned that lesson. 
+     So, we're in. We got the thing. 
+That's it. We can go home now, do our stuff. No, I'm kidding. Umami is set up. Now we can deploy Next.js app and add that as a website here and add tracking to that application. 
+Got it, okay. We also need to set up a next app then. 
+Yes. We can set up like a basic Next.js app and add a couple of pages. There's a question in chat, as well, about where the Postgres is hosted. Postgres is also posted on Railway, and all our servers at the moment are U.S. west. We do plan to have multi region support, but that's a little far away at the moment. 
+Start learning. Create Next app, there we go. 
+     Wait a minute, you're going to do that here, aren't you. I want you to do it in this directory, please. Yes. 
+     So, we have a basic app set up here. Change out our pages, do something simple like    see if we can keep that container. 
+     This app has public analytics, right, and we can kind of do the same thing. Get that in there, drop out the rest of this stuff, because we won't need it. 
+     We don't need a footer, so we can drop that. So, that's a basic site. Let's add maybe one more page here, and that page will be called about, and we can update this to say about this site. And here we'll say this site is an example of using Umami to manage self hosted analytics. That's going to give us plenty of good stuff to work with. I believe if we look at JSON, we can run, make sure the site works the way we expect. Let's copy this. Head out to our browser. 
+     This app has public analytics. Great. Let's go to about. We've got an about site. 
+Perfect. Next we need an URL to the site that we can tell Umami about. 
+All right. Let me just    
+Yeah, you can create a Git repo and we can deploy that repo. 
+We'll do one of those, we can do a repo create. I'm going to add this. Oh, I have to make it public. There we go. And I think we go    so, we'll get remote. GitHub, remote add origin, and we'll say GitHub.com, copy/paste it, good. And then we're going to get push origin main. 
+     All right, so, there is our app. Good deal. 
+Let's try a relatively new feature. Just copy the git URL, the GitHub URL off your project. 
+Got it. 
+Go to your Railway project. 
+Go to this Railway project. 
+Close the Umami service. Do command K. No, no, you don't need to go out. Back into the project. 
+This one? 
+Yeah. Command K and paste your GitHub URL. Yeah, now deploy it. 
+Did you all build this in house, or is it command bar? 
+Built this in house. 
+Nice, this is good. 
+     All right, so, it's initializing. 
+Yeah, this should start deploying basically the Next.js app. You can see you didn't have to do anything. Just gave us the URL and figured the rest out, like the repo URL. We intelligently figure everything else out. You can see we already have the URL that your app will be deployed on. So, we can copy that and proceed with the rest of the stuff. 
+     I think if you go out of the deployment. If you scroll up a little bit, and go to all deployments, where it says all deployments. Okay. The URL isn't quite visible, I guess, until the deployment is completed. It's on the left. So, I don't know if you can copy it from there. Or we can wait for ten, 15 seconds until it deploys. 
+     Yeah, you can copy it from there, yeah. 
+Okay. 
+We can go to where we deployed Umami. 
+Where we deployed it, so here. 
+Yeah, this one. So, add website. And name and domain. I think you have to remove the HTTPS, or it will keep shouting at you, yeah. And this is the share URL thing. So, if you enable share URL, we can have a live link for people to look at later. 
+Yeah, let's do that. 
+Then hit save. Now you can    I guess you can go    there's like a link icon you can see. 
+Here? 
+No, not    what about the next one? Yeah, get tracking code. So, we need to copy this to clipboard. 
+Yep, there's a button for that, great. 
+Go back to our next app, and we need to do the    yeah, do we need document.js, or can we just put it in here? I always forget. 
+That is a really good question, and I don't know the answer. 
+The docs probably have it. 
+Yeah, let's go here. 
+I think adding would be the best. Just do document. Custom document. 
+Copy/paste this stuff. 
+Got you. Default is going to be    where do I put this? 
+Underscore. Root of the pages directly. I guess doing it in the head tag might make more sense. I'm not sure. We can leave it here, that's fine. We'll find out. Yeah, we'll find out. 
+Let's run this. If I come back out to my site, and I try to load it, did it    
+Let's just commit this, right, add and commit it. 
+Whoops. Commit. Feature. Add Umami 4 analytics. Push that up. 
+It should hopefully trigger a new deployment for you. There we go. When you get a GitHub URL and we create the deployment, just to get you accustomed to the terminology, the bigger picture is the Railway project. Each individual thing is a service. Postgres is a plug in, but Next.js are services within your project. I've been using it, but didn't tell you what I mean by those things. When you go through the settings on Next.js, you can scroll down and see where this pulls from. 
+Since this is not a fork, the sinking that we got with Umami, where it showed the upstream repo, use the next starter, but it's not a Railway starter, because of that we don't get the upstream link, which makes sense. 
+Not exactly. 
+Okay. 
+The upstream repo stuff is not exclusive to Railway starters. Your repo is public, right. So, if you were to copy this GitHub URL and deploy it in my Railway or GitHub account, I'd get the upstream repo. And whenever you update your project, it would give me that update option. 
+So, is that set my repo as a fork of another repo, you set up that upstream tracking, or if I have Railway fork the repo for me, you set up the upstream tracking? 
+If you have Railway fork the repo for you. 
+Got you, got you, cool. 
+And the reason for that is we thought about this for a bit. Use a GitHub fork, you can only fork the repo once. You can't make it private. There are a couple other reasons. What we do for you, automatically check for updates once every 24 hours. If you are aware there's an update and we haven't checked, you can click the check for updates button that was there in the Umami thing. 
+     It works exactly like you think a fork would, where we pull from upstream, create a branch, push to that branch, and there's a pull request. But we don't just use the GitHub feature for folks. 
+Got you, got you, okay, great. 
+     So, let's see. Now I have this app, and if I go into my elements, I look in the head, we should see our Umami script in here somewhere. Where did Google tag manager come from? 
+I'm wondering that, as well. Where's my Umami script? Here. Here is my Umami script. 
+So, if we go back to where we've deployed Umami, we should already see some data. So, if you click the real time button at the top, I think. Yeah, there you are. 
+Hey, hey! All right, y'all. So, go hit this. Also, welcome Ben. Thanks, Ben and friends, for showing up. It's good to see you. 
+     What we have done thus far, just to recap everyone, is we're using Railway today, and we have set up an instance of Umami, and Umami is self hosted analytics with a kind of privacy angle. Where we get anonymized data, it's not shared with third parties, and all those good things. We also deployed a basic next starter, did the create next app, and updated it to have two pages. So, we've got this home page here, and then we have our about page. And these are our two pages. And we've instrumented that with Umami by dropping into the next head this script that hits our Umami instance hosted on Railway. 
+     So, this is the Umami instance on Railway. And, so, we can see the data here. And we can see also unique visitors, page views. So, this is also kind of cool. Three unique visitors, ten page views. We've got somebody refreshing the page a bunch, which I appreciate. That gives us real data. 
+Scroll and there's a bunch more info, as well. 
+Here we go. Real time logs, somebody from Argentina, very cool. Switzerland. This is fun. United States. This is really fun, right, this is me, because I'm the only person in the world who uses Edge. But, yeah, we get a good map of where people are coming from, and all these good things. If we come over here, we can find Switzerland, here's our one visitor, Argentina, three from the U.S., one from Canada. This is fun, really, really fun. 
+     Faraz, I assume that's you that just popped in. 
+That's me, typing on the URL real quick, smashing on my keyboard. 
+Here's a fun question, can I find UAE on the map, and the answer is very obviously no. Where the heck is it? Right here, isn't it? 
+Little to the right. If you zoom in. I don't think you'll be able to find it like this, because it's tiny. But yeah. 
+Oh, it's tiny. Am I right on top of it? 
+Go lower. 
+There it is. I was wrong. 
+You never would have found it unless you zoomed in. 
+Okay. Now that I know where it is, it's right here. Perfect. This is fun, right. It's updating in realtime, somebody from Mexico tuned in. This is really, really fun to see. Oh, if I scrolled up or down, I could have zoomed in. A lot of fun to be had here. Not a lot of information who these people are, but it's private. All of my users are from Germany, then having content that's not in German feels silly. And knowing what browsers people use is really, really helpful. Knowing what operating system people use is helpful. Helps me determine where to test. All good stuff, really good stuff. Then we've got which pages are    somebody had a fake page, love it. This is great, right. We're getting really good information without any privacy. And this is all self hosted. And you mentioned earlier that we can make this public, which I would love to do. 
+Yes. I think if you go to the dashboard again, to the Umami dashboard, yeah. And let's see. Maybe the settings icon on the right. Yeah. Below. Okay, share URL. You were in the right place, yeah. 
+Share URL. Okay. If we copy this    
+Share it in chat, everyone should be able to see this information. 
+Cool, all right. Everybody should be able to see this, if they want. And we can go back into our site and say if you want to see these, you can view them at this link. 
+     All right. We've got that. We should probably put in    going to do this very quick and dirty way, but we will link to the homepage. And duplicate that, and link to the about page. 
+I think you should be using the next link component. 
+Link from next. 
+And you want an A tag inside the thing. 
+Okay, here's my link. Okay. So, then if I run so it's not unusably weird. Okay, let's add some space. Okay, we'll do color, blue, and text decoration, underline, because I want our links to look like links. That's better. Maybe we can use a tiny bit of    (audio cutting out). Sorry, everyone. 
+     So, perfect. Now we've got usable things. So, let's copy/paste this over to our about page, as well, so we can navigate back and forth. 
+Need to import the link in the about page. 
+Let me grab that, I can get rid of that. Come up here. Good. 
+     Now we can navigate back and forth, and when we go to here    oh, man. Let's fix the inaccessible links, and that is going to be on homepage. I can just copy/paste the style. We'll do this. We've got a link. Ta da! 
+     Okay, let's commit and push that. Analytics link, so we can get push. If we head back over to Railway, we'll see that this is now deploying. Nice. 
+Yep. 
+Cool, all right, so, we've got good things going on here. We're building, I would say, a pretty full featured app, in terms of the basic structure. We've got analytics, things like that. So, we can watch that. 
+     What else    let's see, is there anything else you wanted to dive into here or showcase? 
+Yeah, I want to show one more thing. 
+     So, you've created    generally, I've noticed what you do with your streams is you shared links to the repos, so people can test them out, they can deploy them on their own, have the same experience and learn those things. 
+     So, we can take this one step further with Railway. So, how you deployed Umami was use the template we created and it was super easy for you to get going. Now what we can do is this project that we're looking at, we can convert that into a template, so people can use it. 
+Oh, cool. 
+Whoever deploys that template will get Umami, plus the Next.js service with analytics already built in. 
+Oh, cool, okay. 
+Yeah. So, just close the Railway and Next.js service. Go to settings. These are your project settings now. And if you scroll down, you can see generate template from project. And this created a template for you. So, you can edit the template name, which by default is the project name. You can call it whatever you'd like. 
+Next.js app with Umami analytics. 
+We'll have to do a little more work here. Yeah. 
+Does it need to be kabob case like this? 
+No, you can do a normal string, as well, yeah. Perfect. We need to do a couple more things. If you edit the Umami service. What we do here, when we create the template for you, we take the environment variables but don't take the values, because values could be secrets. So, we have to configure the code. If you click the edit button and set default to 3,000, then click update variable. Do the same with host name. Static URL. Yep, update variable. 
+This one we want to leave empty, right? 
+Yes, leave that empty. Just update service on the left. Next.js service did not have any environment variable, so we don't need to configure them. And you can just click update template. 
+     So, now it's taken you to your account settings, where you can see all your templates. You have a referral code, which you can attach to any template link. If you turn the radio button off, you'll get a link without the referral code, which you can share with people. 
+     You can close this tab, and we can reopen it. You can see all your templates will be listed here. You'll get analytics on how many people have deployed it, when you share the link with people. So, if you want, you can attach basically this link and people can just deploy the whole thing at once. 
+Got ya. That's cool. 
+You can even visit the template to see what it looks like. If you click on the template name, you can see that, as well. 
+     You can see this includes two GitHub services. One is Umami code base and one is our Next.js app, and one database, which is Postgres. And people have to configure    so, you have the same name, but you can see that whoever deploys this has to enter the hash and they are good to go. 
+That's cool. This is very cool. 
+Someone has already deployed it once. 
+Yeah? Nice. Very cool. This is very cool to see, because what I like about this, it scratches an itch that's even a little higher level than just push to deploy. It's very cool that you're able to do a suite of services and say, you know, I want to deploy a website, but my website needs an API, and I don't necessarily want to pull all of that in the same repo, but also it's nice to click the button and deploy all of that together. This is really nice. I like this a lot. 
+This is sort of where we see Railway going in the future. Say you want to build a calling app, but you want a marketing site, a blog, an up time monitor, analytics. You can just do command K, type analytics, we'll show you all the analytics options we have. In the future. Not right now. I think analytics should still work. You're not inside a project, which is why it's not showing up. When you're in a project and looking for services, we want you to be able to smash anything on the keyboard and give you our best guess of what we think you should be seeing. Blog, marketing site, GraphQL service, or whatever. 
+So, I do have a question about how we have this URL here, which is my deployed instance. That's currently hard coded in here. 
+Yes, we want to make that an environment variable. 
+Just walk through the whole process before we build it. This needs to be an environment variable that we need to pull out and configure for this site. 
+     So, when I look at my dashboard, here, this needs an environment variable that relies on the production environment of this one. 
+     Is that something you can actually do part of their railway deployment, or a bit of manual config here? 
+There will be manual config at the moment. Right now, services can only pull variables from plug ins, but something we're going to tackle in the next couple of months, you'd probably at some point also want project level variables. You define variables on the project, and all services in the project pull them. You might want some services that only communicate with each other, but not the public Internet. And then they should be talking to each other. 
+     Those are the things we want to tackle, let's say, in the next quarter or so. But right now what you'd have to do is your first deploy would kind of be broken, because you don't have the URL yet. And once your first deploy is completed, you can update that environment variable and your analytics will start working. 
+Right. And Tony is asking in the chat if we deployed the Next app with Netlify and Umami to Railway, it would still work, right? 
+Yes. 
+Very cool. And the great thing about that, we're basically saying, you know, this URL. And my guess is that somewhere in the Umami settings we can do something like only allow    and what we're saying is we're only allowing events from this site, right. 
+Yes, yes. 
+Got it. So, somebody couldn't go in and spam our analytics or something like that. 
+That's another cool thing about Umami, where your tracking code is your self hosted URL. Because if you were using something like GA, a lot of add blockers will block it, because they know what the link is going to be. Here your link is sort of like    your host name, where you've deployed it. So, ad blockers can't block that either. 
+Got ya. Yeah, this is one of those things always kind of interesting. Ad blockers are there to keep people from getting their data sold and traded for targeted ads. So, analytics    I don't know, it's always such an ethical, weird    the ethics of this, right. Because seeing what people use, and I have literally no idea who it is except for, obviously, Tony, who's billboarding right now. But that information allows me to improve the content of the site, which is why I think you see that request. Hey, can you share anonymous telemetry so we can improve our service. That's useful. People can still opt out of it. With analytics, it's a little less, I don't want Google to have a lot of my data, even though they have a lot and they'll find that way even if they don't. That feeling of I'm not really comfortable sharing the behavior of myself on the web. So, an ad blocker lets you do that. 
+     But being able to get the information in a way that's not exposing anything private is super useful for me as a developer. I don't know, you could have a whole panel on this, the ethics of anonymous data. 
+It's a little tricky. We've had this conversation internally, as well, as we've tried to get more data and build features that users want at Railway. I guess what we ended up deciding in the end, even though we use privacy focused tools for analytics, if a user wants to opt out, we should respect that. We didn't try to work around it, sort of. If you want feature based stuff, you can also do your tracking on the back end with tools like Segment, where you're not keeping user data, but only project created. Service created, plug in created, stuff like that. 
+Right. That sort of stuff, you need that information, you need to know what people are using on your site. The specifics of where people are, things like that. That matters a little bit less. 
+Yes. 
+So, what I think is really interesting here is that, you know, we're, what, maybe 45 ish minutes into actually coding, and we've managed to set up our own analytics service using Umami. That's deployed, it's running, and we were able to build and deploy this next site that is also deployed and running and sending that data to Railway, or to Umami. And we can see that happening now, where, you know, here's the data that's coming from me. And if I click this link, this is public. So, people can see how many people are looking, and you can see two people have this window open right now. Or it might be me opening it twice. Either way. 
+Two people on the actual website. So, this website. 
+Yeah. Oh, that's what it is, not how many people are looking at the analytics. I got you. But, yeah, it's really cool to be able to see that there's a public URL, I can share what's going on with my site, somebody can go in and take a peek at what's going on with the different setup, yeah, today, last 24 hours. And, you know, there's no realtime here. But it's still very useful. I love this. It's so nice to be able to do this sort of thing. I always want to share this information, because I think it's cool to let people see what's going on in various apps. I think the build in public thing is really cool. 
+     So, you know, I'm not going to build this. No way I'm going to build some kind of stats aggregator that I can turn into a dashboard. I'm never going to do it. So, it's really nice we were able to build this so quickly using open source software. 
+Yep. 
+Okay. So, we have analytics up and running, using Umami. Umami is very cool, here's our public URL, here's our private dashboard, where we've got a little bit more, we've got the realtime, we've got some settings where we can mess with some stuff. Looks like I can create accounts for people so other people can go in and see it. I've got my own profile, set to my time zone, all those good things. Oh, there's a dark mode. Look at that beauty. 
+     And, so, then we've got our public Next site, which is out here somewhere. Here it is. 
+     And that's giving us the ability to navigate back and forth. We would, as we build this out, all the pages will automatically have that snippet injected, because we put it in the document. So, we don't have to remember to add analytics. It just works. And I saw that Umami also supports events. So, there's some things that    actually, do we have time to set up an Umami event? 
+I have never done it, but we can figure it out. 
+I want to try it. Okay, let's try an event. I want to see how this works. 
+     So using CSS cloud, that's all you have to do is add a CSS class? 
+Or JavaScript, we can do either. 
+Button unclick, Umami. Window.Umami is just there. Okay. All right. Yeah, let's just try this. This is going to be great. 
+Do you want to do the CSS way instead? Next might give you problems with the window element if doing SSR. 
+Good point. We can do this one. What we'll do down in here is see if somebody wants to look at the public URL. So, we can add a class name. Our class name will be click public analytics, right. And then if we go out here, we'll get    
+You want an ID, there was something about an ID, although I'm not sure if that was necessary or if it was a suggestion. 
+ID. 
+That's just an example, add the class. 
+Click, record an event. Sign up button. 
+I think that should do it. 
+Great. Then we're going to say feature, send events for public analytics. So, we'll push, wait for this to build, which should happen nice and fast. And while we're doing that, where else should people go, are there resources or communities or anything that you want people to be aware of if they are checking out Railway stuff? 
+Yep, go to Discord/GG/Railway. I think it's linked in the bottom at the footer. 
+Here we go, Discord. 
+We have documentation at docs.Railway.app. 
+We have the docs.Railway.app. So, here's docs.Railway.app just straight up. 
+We also have a blog at blog.Railway.app, where we have tutorials on deploying. We have a really nice post about how we work at Railway, how the whole team functions working async remote. That's pretty cool if you want to check that out. 
+     Yeah, Discord is probably the best place to find us. The entire team is on there. We do all our    so, users were on the Railway team plan. Teams that use Railway are on the same Discord, so they ping us if they need help. We have a bunch of cool stuff going on there. 
+Where did my class name go? Here it is. There's our class. So, if we click this, ta da, then if we go in here, we should see realtime. Let's look at events. Click, public. 
+Nice. 
+I'm going to say, Umami team, such great work. That is so easy. I didn't have to add extra JavaScript. It just worked. And it    this is nice, very nice to be able to do this sort of thing. Just these little bits of instrumentation are so helpful in seeing what's going on. If I filter down, I'm in my realtime. You can see my page views here. Got refers, got pages, good. And then we've got all this data. 
+     So, really cool to be able to see where people are coming from, what pages they are looking at, what events they are looking at. And you can also see which pages are most popular. And we get that with a range of data. So, when we go out here, we can see back to all time or different date ranges. So, this is really slick. Let's get into the dashboard. 
+     I want to see events, somewhere down here. Here's our events. We can also see if we've got things instrumented, like what are the most popular events. So, if you all want to go and actually click this link    oh, yeah, dev.new was also very slick. If you want to set up a new railway project to dev.new, that's nice. 
+Small reminder, you don't even need an account, if you're deploying a plug in. You can deploy without an account and we keep it for seven days and you can come back and claim it. 
+Yeah. So, really, really cool stuff going on here. We've got    we covered a lot of distance in a very short span of time. And, so, we've got real time analytics. I'm not touching keys, and we can see events coming in. We have a running Next app deployed and on the web, we have a self hosted analytics up and on the web, public URL for viewing that. We've got an ability to update either of those services with a push to Git. Yeah, just really, really solid all around. 
+     So Faraz, where should people go if they want to keep up with you? I'm going to drop your Twitter again. 
+My Twitter, yeah. Or the Railway Discord, where I hang out the whole day. That's posted, too. 
+Cool. Okay. Well, I think then we're going to call this one a smashing success, because this is probably one of the more advanced builds we've done inside of the short amount of time that we have on the show. So, very, very impressed with the amount of things we're able to get up and running and connected. 
+     Huge props to the Umami team for putting together great analytics that were so easy to deploy, props to the Railway team for making those starters cool. Good, good stuff. 
+     So, let me do another shout out to our live captioning. We have had Ashly here from White Coat Captioning all day, taking everything we say down. Very much appreciated. That's made possible through the support of our sponsors, Netlify, Nx, and Backlight. All kicking in to make this show more accessible to more people. 
+     While you are checking out things on the site, make sure you go and look at the schedule. We've got some really good stuff coming up. Next week we're going to build and deploy a React app from a Monorepo, and I've scheduled a few more things that I'll try to get up by the end of this week, so you have them on your schedule. You can get those instantly added if you add this Google Calendar link. That doesn't give you notifications. It just lets you know when stuff is happening, puts them on the calendar. You can also follow on Twitch or head over to YouTube and subscribe there, so you don't miss an episode. 
+     Faraz, any parting words for the chat? 
+Go to dev.new and build cool stuff, I guess. 
+Love it, love it, love it. All right, y'all, we are going to go and raid Alex, so, buckle up. Faraz, thank you so much for spending some time with us today. We will see you all next time. 
+Bye.

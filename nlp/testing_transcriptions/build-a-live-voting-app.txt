@@ -1,0 +1,311 @@
+Hello, everyone, and welcome to another episode of Learn With Jason. Today on the show we're bringing back Brandon Roberts. Brandon, how you doing? 
+I'm good, Jason. Glad to be back. How are you? 
+I'm doing great. I'm happy to have you here. I am dealing with a little bit of audio lag today, so I apologize to everyone in the chat and for you for having to put up. Looks like I'm doing about two seconds. I'm going to do my best to not stomp all over the conversation today. 
+So for folks who aren't familiar with your work, didn't see your previous episode, do you want to give us a little background on who you are, what you're about? 
+Yeah, I'm Brandon Roberts. I work as a dev rel engineer at Appwrite. I came on the show a previous time and talked about state management with NGRX and Angular. So that was a pretty fun episode. Yeah, glad to be back here to share again. 
+Yeah, I can't wait. I think this is going to be a really fun one because we're going to be talking about building apps, building back ends. So can you maybe just elevator pitch for us, what is Appwrite? 
+Yeah. So, Appwrite is a back end as a service. That's the elevator pitch there. Back end as a service. It's all open source. It's self-hosted. If you're familiar with Firebase and that sort of project, it's similar to that. So a fully, 100% open source -- we call it a 100% open source alternative to Firebase. But yeah, it's self-hosted, gives you a lot of things out of the box, and I'm sure we'll get into some of those. Database being one of them, and authentication and other things. 
+It runs as a set of Docker services. So you can run it anywhere on your machine. Basically, anywhere you run Docker. You can run it on your own stack is one of the things. It's all driven through that kind of take. So, yep. 
+Nice, nice, nice. And so, you know, when we're talking about an open source alternative to Firebase, it conjures a pretty powerful image. You might think people reach to Firebase for all sorts of problems. So it's exciting to have an open-source version of that because I think we're all -- you know, we want it. Everybody loves open source. 
+So I think one of the things that always helps me is just to start kind of thinking through, like, where does a particular piece of technology shine. So if I'm coming to Appwrite, what's, in your opinion, an ideal use case of Appwrite? What am I going to build that's really going to show off the best of it? 
+Yeah, I think that for Appwrite, it's a few things. If you're wanting to manage users or store data in a database, store files, there's a collection of things that you could use for Appwrite. But like I said, anything with user management. 
+You could think of, I guess, a simplified example would be building a part of Netflix. Netflix, itself, is of course a really complex application. But it has some of those core things you could use to build something like that as far as authentication, user management, storing data, storing images, and having that kind of real-time access to it. 
+So with that kind of foundation there, it kind of bridges that gap to get you up and running quickly in something that you want to -- a lot of things that you want to build that kind of have those user interactions or user flows. 
+Nice, nice. Yeah. So I know, the chat is calling out I'm having some audio sync issues. I do apologize about that. I'm trying to figure out what's going on with those. But I think we might just have to live with them today. 
+So yeah, I think -- I mean, that is always kind of a really interesting problem, figuring out what's the right tool for the job. So when you're talking about something like a Netflix and the things that you can build inside of that, I just -- so one of the things that you're bringing up here is this idea of like admin dashboards kind of. I'm a user. I need to be logged in. I need access to my things, as well as public things. So that is honestly one of the things I think is most intimidating. 
+I was just talking about this yesterday. People who are learning new -- who are new to development, when they first start up, it's very easy to see the first couple of, like, steps on the road. You write some HTML. You see the page update. You're like, oh, man, I'm a wizard. I can make the computer do whatever I want. 
+Then you do some CSS. Oh, man, I can make this look however I want. That's amazing. Then you start doing JavaScript. It's a little more abstract. You want to do your ambitious app idea, and almost everybody lands on I want to build an app where people can log in. 
+The gap between I'm going to edit this HTML and see something change on the screen I'm going to have an app that somebody can log into and have a user account, like, it's just an enormous and very demoralizing gap to have to cross, right. What I think is interesting about tools like Appwrite is that it feels like that gap is narrowing. Like, you still have to learn how to use the JavaScript and how to do those things, but you're not thinking so much about, like, storing user sessions or validating tokens or the really complicated stuff that comes in with trying to do this sort of work. 
+So have you -- like, are you seeing people using Appwrite as a way to learn? 
+Yeah, I definitely think it is being used as a way to learn. Like you said, there's a bit of a cliff there when you go from -- like, I don't even like, myself, implementing authentication for projects like that just because there's a massive amount of information you need just to do that correctly. 
+Even as a new user, you kind of look for those opportunities to get going quickly because those are the quick wins, as we call them, where you want to use a certain service or certain tool that gives you a certain set of functionality so you can do that and kind of move on to the next thing. That's kind of where Appwrite shines, is giving you some of those APIs and things that you can use quickly but also being built on technology that's proven and out there so that you're not necessarily having to relearn a new thing. 
+If you take apart the pieces, you'll find familiar territory there. So, yeah. 
+Nice, yeah. I do like that. I think one of the things that is maybe a criticism I've seen levied against Firebase is that it feels a little magic. You install this SDK. You can't really look under the hood of the SDK too much because it's all kind of proprietary stuff. It works, but you're like I don't know why. Or you decide you want to make a small tweak to it, and you can't because it's all part of this sort of mystery box of software. 
+So I do like the idea of if the tool is open source -- and open source doesn't always mean easy to work on. But I do like the idea that you can at least go all the way into the package and figure out what's going on and how that all functions. 
+So I guess what do you see as, like, the biggest hurt toll overcome? You know, we're talking about this big cliff between first project and building something more ambitious like an app dashboard. For a learner, what do you see as the biggest hurdle, and how do you think they should -- you know, what's a good way to start figuring out how to overcome that? 
+Yeah, I think the biggest hurdle is, most of the time, making the choice of which pieces are you going to put together in the puzzle. Because like I said, there are so many choices out there, frameworks. Any number of frameworks to choose from. Any number of technology to choose from. So there's definitely that hurdle there to get over, that mental hurdle to get over there. 
+Then, like I said, trying to find the tool that kind of fits what you want to achieve and even what you want to build today and even what you want to build later on. I think for new people, that is a skill that you kind of have to learn also. And you kind of have to learn that by trying, to work with new things, work with different things. Of course, open source has been out there forever. So it's always been there and available, but even just getting open source itself is a challenge that you have to -- it's a skill you build over time, I guess is what I'm trying to say. 
+So picking the right tool, planning that out is something I would tell a new person to kind of hone in on. That'll help you when trying to just build the right -- pick the tools to build the right project. 
+Yeah, I think that's a great point. And it actually dovetails into a question from the chat. How do you plan a project? And that's such a big question, right. So I think for you specifically, you were talking about choosing tools and everything. 
+How do you make -- what are the heuristics you're using, you know, as a developer to choose between one tool or another and to limit the scope and make sure that you don't get into a situation where you're going to start this project and then realize, oh, god, I don't have the nine months I actually need to build this. 
+Yeah, I think -- yeah, that's a good point. The things that I tend to lean towards are those things that I don't want to deal with. That usually relates to, like I said, if you're new, then you're going to want to dive into everything. Then you kind of find out the things you like to do versus the things you don't like to do. 
+So when I'm picking a tool, it's usually I'm picking a tool that solves a problem that I don't want to deal with right now or I'm not necessarily looking to drill in, like you said, nine months to build my own solution. Or even whether I choose to run it on my own, you know, computer or run it somewhere else. 
+I think those are choices that I look at. So it's time to ship, I think, is the biggest thing there is how I go about trying to plan a project. Like what am I trying to build? How long do I reasonably think it's going to take, you know, given the constraints that I have? And actually, I kind of gave a talk on this recently. It was talking about, like, open source in general, like what decisions do you make given time constraints and resources and ramp-up time. All things that I kind of take into account when trying to plan a project and think about the things that are going to impact those timelines. 
+If it's a side project, there's always infinite time. But when you're trying to get something out the door, that definitely constrains you in a way. 
+Yeah, yeah. No, I think that's -- I kind of have the same general approach of thinking about, like, how much time do I have and what I do need to eliminate from this project for me to finish in this -- you know, I want to do this in a weekend. Probably not going to implement the full, like, rating and comment system that I had in my head in a weekend, right. 
+So scale it back. Scale it back. What can I actually do? And I think, you know, that's also part of are you trying to make this a business, are you trying to learn, are you trying to, you know, teach yourself a new concept? Are you trying to, like -- you know, what's the goal of the thing you're trying to build? And just scoping down appropriately so that, you know, if it's a business, yeah, put a little more into it. If it's a learning project, I don't know, maybe don't worry about the stuff you're not trying to learn. You don't have to get that part right. 
+But yeah. So, okay. I think -- I have so many questions about Appwrite and how we get started, but I think it's actually going to be easier to just show how this works rather than tell. So why don't we jump on over into that view. 
+All right. So here we go. We're over in the pair programming view now. I'm going to start by doing a quick shout out. We have Rachel doing the live captioning today from White Coat Captioning. Thank you for being here. That is made possible through the support of our sponsors. We've got Netlify, Nx, and Backlight all kicking in to make this show more accessible to more people, which means a lot to me. 
+We are talking to Brandon Roberts. If you don't already follow Brandon, you should go make that happen. 
+Yeah, appreciate that. 
+And we're talking today about Appwrite. So let me drop a link to Appwrite in there. And that is everything I know about what we're doing today. (Laughter) 
+That's why I'm here. So we can drill in. 
+Absolutely. So what should I do first? What's my first step? 
+Yeah, so the first step to getting up and running with Appwrite -- well, the prerequisite is you need to have Docker installed on your local machine. So that's a step that you can find through the information on the Docker website. 
+So Docker lets you run containers on your machine there in different services. We'll just kind of -- you can share a link to that. I'm sure we'll have a link to that in the chat here. 
+Once you have that up and running, there's a command you can run through the Appwrite documentation. Now, I've gone through and done some of this legwork already, but we can show how you -- after you have Docker set up, you can go to the Appwrite homepage and find the command to get Appwrite up and running on your machine if you have that there. 
+Okay. And I'm realizing I don't have Docker installed on this machine. So I'm furiously downloading it in the background. 
+That's okay. I set up one that we can use for this show. But if we click on the get started there on the Appwrite homepage, we can show the command you would need to run to get it running locally. But yeah, I have an instance set up that we can use for today. 
+So if you go up to the top there, and getting started, that button there. You click that, and it'll give you -- the get started there at the top. It'll give you the dialogue. And this is the Docker command that will get Appwrite up and running locally if you have it on your local machine. It has the different commands for your particular operating system. 
+So if you wanted to use that, you could. But like I said, we have one that we're going to use for today that I already have up and running. And just a quick item. We also have one-click setups that we have on our doc site also. So if you're wanting to try it out and not install Docker on your local machine, then you can try those out also. And those will be under the installation docs. 
+Nice, nice, nice. 
+Yeah, because we're always looking for integration with other -- in other areas also. 
+Very cool. Yeah, so the Docker install. And here's Digital Ocean GitPod. Very nice. 
+So the ability to self-host is always there. But for those who don't want to run it on their own server or have that maintenance side of things, you can run it somewhere else. 
+Nice. Okay. 
+We can go to the -- I shared a link with you on the instance we have running here for our Appwrite that we can take a look at. This is just the initial console. 
+And so this is the one that you -- you're hosting this on your own project. So you've spun this up and deployed it so we don't have to run Docker on my machine today, which is probably a good thing. If I try to run Docker on top of OBS on top of everything else we're doing, I think this thing is going to fall over on me. 
+Yeah, we definitely don't want that. We want your machine to stay running smoothly for this. So, yeah. 
+Okay, great. So we're looking at an instance of Appwrite. Once you've gone through the steps of deploying -- or setting up Docker or deploying Digital Ocean or whatever the process is, I'm going to be looking at something like this. This is the Appwrite console. 
+Yeah, I've done a little bit of setup here, but you would set up a username and password as your root account for the Appwrite instance. After you get past that part, then you come here to the dashboard where you can create projects for Appwrite itself. 
+Gotcha. So I'm assuming the first thing I want to do is create a project. 
+Yeah, we can create a project. Click the create project button, and there's a couple of options here. Each entry project has its own unique ID. You can generate a unique ID by just leaving the default there. Or you can click the pencil there by the side of that input box and choose your own ID, if you want to do it that way. 
+So we can choose -- we just enter vote for the unique ID for this project. Then for the name, you can just give it a description there as far as -- a plain-text description of what the project is. So we can just call this Learn With Jason or voting. Whichever way also there. 
+Yeah, Brandon is a dev advocate for Appwrite. That's what we're learning about today. Now we're creating the project down here. 
+Yes, it should have created the project there. Yeah, click create. Okay. I guess it just took a second there. So there's the list of projects. This will be the live voting app project we're going to look at today. 
+So you can have as many of these Appwrite projects in your instance. It gives you these features and functionality out of the box there. A few of those being database and storage buckets and also web hooks there and API keys, if you wanted to connect to Appwrite from another server. That's another good use case for it there. 
+Then we support multiple platforms. These things we're looking at in the project area. Then when we get into the app part of things, we'll also see that. 
+So you can add different platforms. Like I said, as you mentioned before, if you're doing like a web SDK or even support for Android or iOS or other frameworks we don't have specific SDKs for -- I think we have 12 SDKs so far. But even if you didn't want to use those, you can also roll it. But these are just some of the platforms we support out of the box. 
+Nice. 
+So next, we can look at the -- we can create a web app here. I think it already has one for local host. 
+It does, yeah. 
+And for this, what this platform does is if you're building a web app, we want to avoid our nice friend that always tends to come up and bite us when we're trying to connect from web app to like an external service. So you can add local host here so it'll know to bridge that gap and not give you those errors. 
+What we normally do is set that to local host. Or even if this were your own deployed application, you could use that, too, for that. And it'll just be the host name itself and the name for it. That'll help that connection there. 
+Okay. So this was already a web app. 
+Yes, yes. That was one that was already there, yeah. So you can have multiple ones. Like I said, if you wanted to connect from different sites or different domains that you have hosted there, then that works also. 
+Gotcha, I understand. Okay. So I didn't need to create this one? 
+Right. We could have just left the local host one there as it was. 
+Gotcha. 
+So next, we can go into the database area here and look at the collections and create one of those that we'll need for the voting app here. Let's go back out to the -- or if we click the plus at the top, let's create a new project. I think we have some leftover in here. 
+Oh, like it picked up the -- 
+Yeah, it seemed like maybe there was some data that was previously in there. Clean those out. But, yeah. So you just created a new project. 
+Heading back to the console here. 
+Yeah, then that way we can see down at the bottom -- yep, so now we have an empty project there with a platform that we can add from scratch for a local host. 
+Now we're in database so we don't have any collections there. If we click on add collection, this is a similar thing. You can give a collection a name or have it be auto generated. So if you want to just type in something that's more human readable, you're free to do that. And we'll use this later in the application itself for that side of things. 
+So I saw, kind of cheating ahead here, you had listed item and vote. So the items are going to be the things that we're voting on, and votes will be when somebody says I like this. They'll be voting for an item. 
+Yes, that's correct. 
+Okay. So here is our thing, our items. 
+So after you create a collection, then you can kind of choose the permissions that the collection has. Whether it be -- you can have it to where you can have permissions for the entire collection itself or just the -- or each individual row. You can have a row or a document level permission in there. And these are pretty flexible in that way. You can set them to be for a specific user or even a specific team or different groups of people. However you want to group that functionality there. 
+Question from the chat. What database is this using under the hood? 
+Yeah, good question. It's using MariaDB under the hood right now. But part of that flexibility is that it doesn't just support MariaDB. But if you want to use a different database solution, you could use that also. 
+Very cool. So do I need to set any permissions here? 
+Actually, you do have to set some permissions. Because each -- out of the box, you do have to authenticate to access any of this data. For this particular one, we're going to set the permission in the box to roll and colon member for both of those. If you wanted to make this more granular, you could. Roll is a keyword for that. And member just means any authenticated user. Those are the conventions there. There's also a link there that people can visit to learn more about how to do that side. More about the permissions and how you can set them for different groups or teams. 
+Gotcha. 
+After that, we can scroll down some and click update to update the permissions there. Also, those permissions will be set for those items. Next we'll go into the attributes because that's where we'll -- this is where you'll kind of model out the things you want to store there. 
+And there are some of the attributes we have out of the box that you can define. It's a pretty good selection of choices there that we'll choose for that. So we'll go to the string attribute there for the items. Sorry, trying to see which one we got going here. So, this is for the items, correct? 
+Yep. 
+Okay, cool. So for this one, we'll use a string attribute and name this string image or image URL for that side of things. And this will be just one word. 
+Oh, sorry. We can cancel this one and use a URL attribute instead to kind of match what we want to put in there. 
+Is this like what I'm going to -- and this is what I'm going to, like, call from the API. So I want to name it like a variable. 
+Yes. Well, this is the collection. The items will be the collection. And this will just be one of the fields in that collection that we'll list out in the app itself. 
+Gotcha. Okay. So create that one. 
+So we have that one there. 
+Do I need any others? 
+No, that'll be good for this one, for the items. And we can go ahead and add some entries to that database there. So if we go to add document there -- let's see. I may have to send you the link here. I just chose some stub images that we can use for that. So I sent one of those over. 
+We'll just create two or three of these and use a different seed value for this one. This particular service just, like I said, generates randomly. 
+Oh, so this just grabs -- 
+Yeah, it just generates a random. That way we can use that to display the list of things that we'll vote on. And like I said, we could have put any image in there. 
+Wait, am I doing -- I'm putting in some values, and it's giving me the same. 
+Yeah, you have to choose. If you put in a different value for the seed, it'll give you a different image. The Appwrite one is the seed value. So if you change that value. 
+Oh, I got you, I got you. 
+It'll generate you another image. 
+I understand. All right. Let me add a few of these here. So we'll get one. 
+Yeah, we can go ahead and create about two or three of those. That will just bring you to the edit document there. 
+Okay. So add another one. We'll call this two. And let's add one more. 
+Yeah, one more will work. That way we'll have a good set of images to vote on there for that. So I think we're good. So next we can create another -- we'll go back to the database and create one more collection for the votes. 
+Like I said, same kind of deal here. We can add votes and give it a name. Then we'll go through and add the -- or set up the permissions for that collection, which can be the same as what we added before. Yeah, so then we can go to attributes and add a couple fields there. 
+We just use a couple string attributes here for tracking the particular votes. So we can call that one the item ID because we're trying to use it as a reference, kind of a reference field for the other -- for the items table. Yeah, we can do that as required. 
+Then after that one, we'll add another string attribute for the user ID. This will just be the user that's logged in for the vote there. That can be required also. 
+Okay. 
+Then we'll create those two. And that'll be it for as far as our collection goes. We got items, and we got votes to kind of track the votes there. Now I believe we can switch over to the app side of things and look at how we can vote on -- use this data to submit a vote for one of those particular images. 
+Yeah, let's do it. 
+Yeah, so I believe I have a -- we can use this to -- I created a sample project here so we can clone that project to get that up and running, which is a pretty straightforward React application we can clone for this. 
+Okay. Do you have the link to that handy so I can drop it in? 
+Yeah, sure. I'll drop that link there so we can drop it in the chat there. And that'll be, like I said, the app we'll use to get up and running here. 
+Okay. So I'm going to just fork this over to Learn With Jason. And then we'll start -- 
+Yeah, once we get to here, like I said, it's pretty straightforward. It's an app we can clone and get up and running. Eventually, like I said, you could end up deploying this to Netlify, if you wanted to. That way other people could access it. But yeah, we can roll with that either way. 
+Yeah, let's see how fast we can get there. Let me see. Let's open this up. 
+Not sure what your preference is for yarn or npm, but you can use yarn to install the dependencies there. 
+Okay. Yeah, we've got a yarn lock. So I'll use yarn. 
+Okay. 
+Then let's poke into the package JSON here a little bit. All right. So this is a Vite project. You've got the Appwrite SDK installed here. 
+Yeah, and like I mentioned before, we have SDKs for different platforms. And the web SDK gives you a library you can use with Appwrite in your web app. So yeah, just had that installed there so we can use that. 
+Nice. Okay, so I should then be able to run yarn dev. This'll start our project up. Let's head over here, open it up. Now we've got the basic setup here. Am I safe to assume this doesn't work yet? We got to go in and add the pieces? 
+Yes, that is correct. 
+Cool, okay. So let's poke in the source code a little bit here and get our feet under us. We have the standard main.jsx. Nothing out of the ordinary is in here. 
+Yep. 
+So then, let's see. 
+Yeah, we have two components in this app. One for the log-in page and one for the vote there. Like I said, pretty straightforward setup there with React Router and some CSS for styles and things. 
+So, this is the one we're looking at right now, which is that log-in form that has nothing hooked up to it yet. Then we've got this vote form, which it looks like we're expecting eventually to get all of our items and whether or not we voted on them. 
+Yes, that's correct. So yeah, just some HTML we can use in there. The first thing we want to do is connect Appwrite to the project that we created in the Appwrite instance. So if we go under the source folder, we can create a file called api.ts. And this'll use the Appwrite web SDK to set up that connection. 
+So if we want to import Appwrite from the Appwrite package -- and it'll be as an object import with the brackets, and it'll be in upper case from there. 
+Got it. 
+So next we want to set up the end point that we'll connect to. And we can do this through creating an instance of Appwrite itself. So we'll export a const. We can name it API. And set that equal to new Appwrite. A new instance of Appwrite. And we don't have to pass anything to that itself. Yep. 
+Okay. So next we'll set the end point. So we can use the api.setendpoint method to tell it where to connect to, basically. Here we're going to use the one that we already have up and running here. And I will send you a link to that in the chat here. 
+Do we find that in here, like if we're looking for one of these? 
+Yes, that's correct. If you go to the project and go to the settings, if you click on the settings icon there under the project name -- or sorry, there at the top. If you go to the home, yeah, you'll see the API end point. You can click on that and copy that into the project. Yes. So we can just use that one. 
+The next thing we'll do is set the project ID, which is the same one that we entered before to create -- when we created the project. And I know we did this a couple of times. But the project ID is there also, right above the API end point. 
+Got it, got it. Okay. 
+So if we go to the next line and do api.setproject. 
+Okay. 
+Then use that. So essentially that's what we need to connect Appwrite to be able to start using the web SDK in your application itself. Just to set up an end point and set up a project. You could also use it if you wanted to use it on a server. Like I said, you could set an API key. But we'll stick with that for now. 
+Okay. 
+So next we can go to the log-in form. The log-in form is what we'll use to authenticate -- we'll just use an anonymous authentication here, which is supported by Appwrite. We already have the log-in method here. Just standard syntax. So the next thing we want to do is to create a session for the user. 
+And just to note here, these are promise-based APIs. If we want to use async await, we could use that. What we're going to use here is -- we'll create a session variable and store the results of this in that variable. 
+Then we can use await and then api.account. Then create anonymous session. We see some of the other -- create anonymous session should be there at the top. You can just call that one. 
+That's nice that you've got that flexibility in there. 
+Right. And the next thing we want to do is to set the user -- and you have a callback there to set user. We want to pass that session to the set user function there. 
+Some of that part was set up already so we can have that set at the top level. In case you want to wrap your entire application in some logic there to do that. 
+Right. So just to walk through this really quickly, we're using standard React state. We have an empty user to start. And if there's a user, we show this vote component. Otherwise, we show the log-in -- I guess we show the log-in form no matter what. 
+Yeah, if you go to the homepage, it'll show the log-in form. Then we can use that to log in there. And we can add the -- like I said, if you wanted to have a use effect there in the app component to check whether that user is already logged in, then we could use the API. We can use that API there also. So when we get to the vote page. 
+Okay, gotcha. 
+So after we -- 
+Cool. Okay. 
+After where set up the log-in with the anonymous session, then we can navigate to the vote page. 
+Okay, great. 
+So essentially, that's what we would need to connect the authentication, anonymous authentication method from Appwrite to our application itself. 
+So theoretically speaking, we can -- let's console log this session, and let's just give this a try, right. Like, we're here. We should be set up. I'm going to go to my console. And I'm just going to put in a name and log in. 
+Yep, and we can go back -- 
+Oh, yeah. All sorts of cool stuff. It can show what browser I'm using. That's nice. Cool. Okay. I got you. 
+Yeah, a lot of that information out of the box there. One thing we could do is also capture the name. Like I said, we're using an anonymous authentication there, but if we wanted to update the name, we can go and do that also. But we can use that how it is for that part now. 
+So yeah, after we log in, we navigate to the vote page. We have credentials there. And like I said, if we need more use effect in the app component to check whether we're already logged in, we can set that user when the app starts up. 
+Yeah, so if we have time, we can go in and do that. I think for now, I just want to -- okay. So we've shown authentication, which this is pretty excellent that it's that quick. And I know we're using anonymous auth. Chat, don't get too up in arms about that. 
+The speed with which we were able to just quickly set up the basics of authentication to just sort of prove the point, right, is really fantastic. Now we're looking at a vote page that you need to be logged in to see. So if I go in here, there's probably something I can clear in my session that'll get rid of all the things. 
+Yeah, if you go under -- we can actually do this in the console itself, in the Appwrite console, if we go back there. And you go to users. You can see that you'll have a user logged in there. You can click on that particular name that you used to log in for that account. And it'll actually log that person out, out of that particular session. 
+So if you go under activity, I believe it is. Sorry, maybe under sessions. Yeah, you can actually click the logout button to clear that session. That person will be no longer logged in if they try to access or try to use that method there. And it'll be cleared for that. So now we don't have -- 
+See, now that we're not logged in, it won't let me see the thing. I go here, log in again. And now I can see the thing again. I mean, it's just nice. It's nice to be able to prototype something like this out. We're not dealing with any super-secret information. We just want to show how it works. So you can see the power, chat, I hope, of how fast you could prototype something using Appwrite, given that we're less than 30 minutes into this and have already built a full log-in flow for this app. 
+Yeah, definitely. And I've used auth before, and I'm glad there are things like Appwrite to handle this for me so I can move on to the next thing. 
+Yes. Okay. So I think the next thing, speaking of which, is going to be to load these items in. 
+Yes. So if we go back into the vote component here from Appwrite, in here is where we will load in the items from the collection there. And we can do this with a use effect that takes a callback there. Yeah, just empty array. Pretty straightforward there. 
+We can use the API again. You can use async await here or whatever your preference is there. Sorry. If we use the -- if we put the async on the use effect itself, whichever way you want to do it. 
+Does that work? Doesn't it yell at you when you put an async on this one? 
+Yeah, I think it depends. It may not yell at you here, but if it does, then we can work with that. So if you use the items equals API and then we have the database property here we can use to query items from the database. 
+Like I said, we have multiple ones here. Basically crud operations that you can use to get documents. These match up with kind of what we modeled in the collection there. 
+So the collection ID will be the one that we entered in there. So we go to database and items. And you can find that under settings. 
+So I need to change this. Oh, it's under settings too. Okay, yeah. Collection ID is item. There's my copy/paste. 
+Yep, so we have the item there is. And then we can set the -- then that'll give us the -- it'll give us two things. It'll give us document, and it'll give us an account of those items in there. So you can use items.documents to set that to the array there. 
+And we may have to modify -- I guess depending on what we name the -- if we scroll down to the HTML there, there will be an image. It should be an image anchor tag there. There it is. So image source. 
+Image URL. 
+Yeah, we just have to update that to match. 
+Make that into what I called it. 
+Yeah, what we had there. And I think the other parts are there already. 
+Let's psi this and see what we got. 
+Hey, look at that. 
+Nice. Nice and easy. 
+Yeah, so we were able to, like I said, list the documents from our items and bring those in, just querying those from the API. You can also have more specific queries. You don't have to get all the documents every time. So that's there also. But that's just part of the additional API that we can use for that. 
+Cool. Yeah, okay. So we've got -- go ahead. 
+No, that was it. So we got the list of -- 
+So it looks like from here then we've got the -- uh-huh. The list of images is going to give us -- we have to choose one of these. Then once we've chosen one, we're going to vote on it. 
+Yep, click on one of those, and then have the vote. So we already have the items loaded there. So to select the one that we want to click on, we just need to add a click handler to the image itself to set that. So if we just go down to the image and have the callback there. We can use the set selected to the item, and it'll be the item dollar ID. Yeah, that'll work. 
+And like I said, this is just to kind of connect the things there for when we actually click on the item to select it. 
+Mm-hmm. And it looks like it's got a class name for selected. Item ID. If the item ID equals selected, which now we're setting that. So theoretically speaking, we should see the UI kick in here. So I'm going to reload. 
+We may need to -- well, it's probably because we don't have the effect in the app to set the user when you reload the page there. So it's probably still keyed off of that. So let's go back. We can probably tweak this quickly. 
+If we go back to the app component in the application itself, we'll just add a use effect here. Then add the -- use the API import. That can be simple there. Use api.account.get. That will give you the current user, if they're logged in or not. 
+Nice. 
+We can do the same thing here. That'll be a promise that's returned by the .get. So whatever the result of that is, we can set that to the user -- set the user to the result of the data that comes back from that. 
+So after that, yeah, we can just set user from the account.get. And do we need -- I was going to say, we may need to put in a wait in front of the API for that. 
+All right. So now we've got the account loading. So theoretically speaking then, when I go to vote, it shows up. All right. It does what I want. Now when I click, I get my selected item. 
+Yep, and like I said, the way we had it set up to where the user had to be set when we refresh the page, if you wanted to have that wrap your entire application there. 
+So yeah, we got our items loaded here. Now we can actually go on to actually vote on one of the items after we have it selected there. We have the submit here and the vote function that doesn't have anything in there. And we can use that to submit the vote to the collection for that particular item. So for here, we can grab the -- we can actually use the API again to create a document for this. 
+So if we use the API -- like I said, it has methods on it to create and work with documents. So we can use api.database here. And create document. This will give us a collection to work with. But this will be the votes that we want to use. Like I said, if you generated a random -- or unique -- ID for the collection, you can always go into the console and figure out what that is. 
+Then the document ID is going to be the unique ID for that particular record. So in this case, we'll have the -- we can use -- and we also have a pre-defined string that you can use here called unique. So if we add a string here and use the word unique with -- like you're calling the unique function, you can use that inside that string there. 
+So that just signals Appwrite that it should generate an auto unique ID for you, for the data we're going to enter there. So the item ID is going to be -- 
+And if I remember correctly -- 
+Yep. 
+Selected, right? 
+Yes, we got the selected one you set when you click on the particular item there. Then the user ID is information we don't have yet in this particular -- well, actually, we do have the user. 
+Because we passed it in. 
+Yep. 
+Okay. So we've got our user. So this should do the thing, right? This'll -- 
+Yeah, as far as -- 
+Do we need anything else? 
+No, as far as creating a document, we should be good there. As long as we named the fields correctly, or to match the data that we have in the votes table. Let's try it out. 
+All right. Let's do this. So I'm going back here. I'm going to vote for this one. And let's go see if it happened. 
+So we go to votes. We may just have to reload the page there. Yeah, so now we have the -- (laughter). Is that the "I got this thing quickly" dance going on here? 
+Yeah, the first-try dance. Ah, first try. (Laughter) 
+Cool. So yeah, like I said, we kind of covered going through the voting, how you can connect to the database and submit items to the selection there. Of course, there's many different ways you can play around with handling the vote itself and that sort of thing. 
+But as far as a baseline, we have the items that we want to list, and we can vote on a particular item. So the next part is we can look into adding some real-time data to this. But I guess we can maybe inspect if you want to poke into that some more or how we got here, I guess. 
+Well, I think I feel like we're at a -- the most exciting part to me of these SDKs, like Appwrite, is how quickly it makes it possible for us to not only prototype but get that real-time stuff in there. If we get that, I can actually deploy this and let the chat go and vote. 
+Sure. Let's do it. All right. So the next part we'll do is kind of hook up the real-time part of the voting. We have an API for that. So we can put that in a use effect here outside of the rest of the voting area. Or the vote component, excuse me. We can open that up, empty array. 
+What we want to do here is subscribe to the API that Appwrite provides to listen to collections. So just kind of at a high level, Appwrite -- all these kind of system events are going on, and we can actually listen to those events using the .subscribe method here. 
+I'm noticing I just -- I always appreciate it whenever a tool is well typed. Because I've been able to autocomplete my way to success here. You know, I know you're here guiding, which is why this is working so well, but it's nice because I'm not having -- you're not having to spell things for me or say like, oh, yeah, no, you got to use this method instead of that method. You point me in the right direction, I can autocomplete through most of the code, which is such a nice feature of well-typed SDKs. 
+Yeah, definitely. The web-based SDK definitely has all the types for all the rest APIs, all the things you would normally interact with. So it definitely aids you there. I definitely like using that as opposed to the APIs yourself, which you could do. But when you want that autocomplete, definitely a bonus for that. 
+So for the subscribe, the things we want to listen to next. 
+Just the collection name? 
+Yes. And this could be one or -- actually, there's a structure to the thing you want to listen to. It's kind of modeled after the things that we kind of talked about earlier. So it'll be collections, then a collection name, and .documents. I believe in this case, you named it votes. Yep, then .documents. 
+So that'll be the first argument there. And like I said, it could be one or many things there. Then the next one will be the callback that has the data for that particular event. This callback function will be called with that particular event that happened there. 
+Nice. 
+Like I said, we have documentation on all the kind of events that happen and the way you can structure those. So what we want to do is actually listen for when a new vote comes in. That'll be a particular event that will get modeled here. So if we add an if case here for data.event and then set that equal to database. The event will be a string. So set it to database.documents.create. 
+Okay. Sorry. Database.documents.create? 
+Yes. That'll be the signal whenever a new item is entered into the collections, or votes, we'll get a notification. 
+Sorry, I had an audio blip and think I lost you. You said database.documents.create, and I'm not sure if this is actually correct. 
+Yes, that's correct. We just need to get whatever the -- whenever a new vote is added to the database, then that's what we'll get for the item there. 
+Okay. And the item -- 
+We'll want to set up the votes here. I think there should be -- I think Co-Pilot is already setting up what we want to do here. It knows the things. 
+It gets very helpful. 
+But yes, what we want to do is update the votes object that was defined there up top with the latest ones that come in. So we'll have to use the call back for the votes there. The callback will give us the current votes. Then we'll want to update that with the one that came in. 
+So we'll do old votes. Then data. -- 
+Well, the one that we want to update is the item ID. So it'll be like data.payload. I believe it'll be item ID. Then we'll want to update that item in the key there. Or that'll be a key that we'll need to update there. So this'll be individual updates. 
+If that record exists, then we want to increment it by one. But if it doesn't, then we want to set it to one. 
+Ooh. Okay, okay, okay. So I'm jumping the gun here. So what we want to do is we've got our old votes. 
+If that's there, then we'll increment that value by one. 
+Then we're just going to set it to be plus, plus. Otherwise -- 
+Then otherwise, we'll just set it to -- 
+We'll say old -- 
+Yeah, old items this then we can use data.payload equals item ID. Assuming that's the first one that comes in. But like I said, we want to show how the particular -- how we can get this data in real-time. 
+Yeah. Okay. So, that feels right. Am I right? 
+I think you have the equal and the plus, plus here. I think that should work. 
+Okay. Is that right? Should I just plus equals one this? 
+Yeah, I think that will work. I think that works also. 
+Might be less complicated than what I was doing. So, okay. 
+Yeah, then the subscribe method does return an unsubscribe. So if we wanted to clean up this subscription after you exit this component, because that's usually a good thing to do, we can just store that in a variable there and just return the callback. It just calls that function. If you call that function, it'll just unsubscribe from that live connection there. 
+Okay. 
+Yeah, so the -- I believe the -- yeah, so that'll give us the data that comes in, in real-time, as far as votes. Then we'll need to display that in the UI somewhere. So we can add the -- you know, have a vote count there. So we can use votes and use the item ID for that particular one or have it be zero if there haven't been any votes in yet. 
+Okay. So theoretically, assuming I didn't typo anything, that should work. But it's not loading yet because we don't do the initial load of votes. Is that right? 
+Right. Right. We would need to -- yeah, we could go and fetch the initial set of votes also. And load those in before we set the items in the -- yeah, pull the votes and then set those also if we wanted to be whatever the current counts are before you start voting there. 
+You know what, I'm not going to stress about that right now because we have like ten minutes. So I want to -- I actually just wanted to deploy this. So that we can let the chat go vote on it. So we'll git commit and say live voting should be working. Let's push. 
+Yeah, we'll see how many. Like I said, if everything works, we'll get some people to interact with the voting. In real-time, of course. 
+For sure. All right. Let's do this. 
+So this is what you see every time you come into the dashboard. 
+All right. We're going into Learn With Jason. Then this was called -- what was this one called? Appwrite. Got like 300 repos in there now. Now it's nice and slow for me. 
+Let's see, yarn build. That looks right. So let's deploy the site. And because it's Vite, this should go real fast for us. 
+Yep. Everything is fine with the build there. 
+And we didn't have any environment variables or anything because we just needed the project, which is public data. We didn't need to keep that secret. 
+And like I said, if you wanted to, you could set those -- put those in environment variables. When you deploy, of course, you have those in Netlify for the project ID and the prod URL versus development URL. So all that's there. 
+Shout out to Vite for putting together a build system that's so fast. All right. So here's our public voting app. Let me throw this to the chat. Chat, go vote. I'm going to head in. 
+Oh, I think one thing we'll need to add -- yeah, we're probably going to get bit by our buddy here again. So we need to add the host name to the platform there. You can just add another web app. You don't have to put the whole fully qualified, just the host. That way we'll be able to connect to it. 
+All right. Let's try that again. Still yelling at me. I should already be logged in, which should mean I can just go to vote, and I can. 
+Yep. 
+And look. It's already happening. People are voting. Where you at, chat? Get in there. 
+Thanks, chat. Appreciate you. 
+And let's see. I'm also -- I want to kind of watch the real-time connection here. 
+Yeah, and it's just a standard web socket connection underneath there. And like I said, all these are available without the web SDK API. So if you wanted to connect them directly, you could do that. Or build your own thing on top of that. 
+If you're getting that cannot create an anonymous user when logged in, head over to /vote. We didn't put in the redirect or anything. We just wanted to give that a shot. So if you're getting that error, just go to /vote. If you hit /vote and it's blank, you need to log in. 
+But so this should be showing us some messages. You can see them coming in here. So, lots of events coming in. Type, event, document, create. So, I think I might have made a mistake in what we're watching to update things. 
+Oh, okay. 
+But this is pretty slick. We're seeing the events come in. I clearly screwed something up because we're not seeing the counts update live. But you can kind of see just the immediate power of how this works without having to -- like, I don't know about y'all, chat, but I've tried to set up web socket before and build my own server-side web socket event emitter and all those things. You can actually see it if you run the commands on the show. You give it one of these, right. 
+This here is me writing my own little stand-up thing to make this all function. It's really challenging to get that to work, and I still feel like the thing I built only works about half the time. So how nice is it that this just works right out of the box, and the part that broke is my code where I'm trying to parse this data and get that all plugged in together. 
+So, something we can fix pretty quickly. I think Brandon has this built up in a way that actually functions so we can also link to the working code. 
+Yeah, there's definitely -- I'll give credit to you. I'm pretty sure it's just a small tweak or something. But yes, there's a branch on the GitHub repo where you can see the full working solution there. 
+Yeah, really, really nice stuff going on here. So if we go back to this one, this is Brandon's version. Then we've got a complete version that you can go and look at. So let me drop this in here for y'all. 
+Okay. So I mean, my buggy code aside, this is pretty dang impressive how quickly we were able to make that work. Oh, look at that. Okay. So I think what I did is I somehow got it to only update when you click on a thing to vote. Because it stayed zero until I selected. Then it showed. So I've got a bug in there. It's something it sounds like we could go figure out. 
+But regardless, we were able to build something that is actually working. It's doing what we want. Just got to fix our UI because, you know, you let me write a UI. What did you expect? Brandon, for folks who want to go further with this and try more, what resources do you recommend? 
+Yeah, so definitely check out the documentation at our website. I'll drop that in here so we can share it in the chat. Oh, you already got the page up there. So check that out. That'll be the main place that you can see for documentation, all our APIs. We also have a Discord, which is linked there from the site. Definitely check us out on GitHub. We have a growing community there. Discord, Twitter, and GitHub, like I said, are the places that we frequent. We're always around, so definitely check us out there for that. 
+Great. All right, y'all. Well, this has been an absolute blast. If you're not already following Brandon, you should go and do that for sure. And let me just give one more shout out to our sponsors. We've had Netlify, Nx, and Backlight all kicking in to make this show possible, and that includes the captioning, which is done by Rachel today from White Coat Captioning.
+thank you, Rachel, for being here. 
+While you're checking out things on the site, give a look at the schedule. We've got a lot of really good stuff coming up. We're going to build an esbuild plug-in next Friday. So it's a different day. I'm traveling next week. We're working on something cool at Netlify. More details on that later. But I'm going to move the episode to Friday, and that's going to be with chance from the Remix team. We're going to build an esbuild plug-in. That's going to be an absolute blast. 
+Make sure you go over and either add on Google Calendar or use this follow on Twitch button to make sure you get updated whenever a new episode is going live. You can also subscribe on YouTube if you prefer to watch these after the fact. But I do appreciate all who show up live. It's much more fun when we've got somebody to talk to. 
+With that, we're going to call this one a success. Brandon, any parting words for the chat? 
+Yeah, I do want to give one quick plug here. We just raised our series A. So definitely want to celebrate that. But yeah, thanks to all the chat for coming through. Like I said, you can find a link to that on our site also, about that. So we're hoping to do some exciting things there with open source and continue that. So, thanks for having me, though. Yep. 
+Yeah, congrats on the round. Thank you so much for showing up today. This was an absolute blast. Chat, stay tuned. We're going to find somebody to raid. By the time you come back next time, I'm going to figure out what the heck was wrong with my audio and hopefully be moved into my new office. Thank you so much for hanging out. We'll see you next time. 
+See ya.
+
+In [ ]:
+
+
+
+
+
+​
+
+

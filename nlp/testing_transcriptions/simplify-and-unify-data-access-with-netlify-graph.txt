@@ -1,0 +1,371 @@
+Hello, everyone. And welcome to another episode of Learn with Jason. Today on the show, we've got Sean Grove. Sean, how are you doing?
+Doing all right. It's great to be back, it's been a while.
+Yeah. I'm happy to have you back. For folks who haven't seen your previous episodes, do you want to give a background on yourself?
+Sure. Worked a lot on developer tools for the last decade or so. And most recently worked on a lot of GraphQL pieces. Worked on a product called OneGraph, in front of APIs, GitHub, Spotify, that sort of thing. And worked on the open source tooling for that and for the consumption side. How do you make it easier to access all these services including things like auth and TypeScript and all types of things. End of last year, ended up joining Netlify. And joined into a nice way because they're integrated, the experience is much nicer than we could do from the outside. That's what I have been doing for quite a while now.
+Yeah, I want to talk a whole lot about that. But I want to spend a little bit on the kind of abstract for this. You have been in the GraphQL world basically as long as GraphQL has been a thing. As far as I can tell, you were there on day one. And it's been really interesting to see the way that you have kind of taken the GraphQL space and moved it in a way that I have seen other people doing it. So, maybe a good starter question is, what got you to start thinking about GraphQL as something like what you see it potentially being?
+Yeah, sure. It's actually gone through several phases to be honest. I was initially excited by one piece and didn't understand another. Over the years, the more I've understood the different applications. I was working on an application with a unified view of the customer, might have data in Mailchimp and Stripe and elsewhere. As a founder, I was checking these places, where is that data, where is that note? Where is that ticket? And I wanted to just have a view. Like your user. The data that was charted everywhere. But in my mind, it's one coherent thing about the customer, right?
+Right.
+And so, I ended up integrating something line the lines of 20, 25 APIs in order to get that application to work. And each one was kind of snowflake, right? It was unique the way that they did their URL. some were REST, some RPC. Some did a query parameter, some with the header parameter, some in the JSON part. And that uniqueness really didn't help me at all. It was an additional cost to me.
+And not only that, but I had to remember, you know, how is this Zendesk ticket linked to this customer over here linked to this lead over here? Rather and kind of -- there is a graph, there is an implicit graph where all these are connected. But it's implicit. I as a developer have to traverse that, pull the ticket down, pluck off the ticket ID and make a call into the API. You kind verify two levels that are together. what data do I want? That's easy. But how do I get that data? That's difficult. Requires learning APIs. I did a proof of concept where I could just have customer and tickets. And I could just query and it would go and figure if out. It was slow and janky and whatnot. But that kind of experience was, like, oh, that was like a lightbulb going off, oh, my goodness, I can tell you what data I want and you can get it right.
+I feel like I had a different but sort of similar growing awareness of GraphQL's capabilities when I was working at IBM. Because we were doing this thing where we had lots and lots of teams, each of which had their own API. And to actually use this data, everybody in the company had to authenticate with and use the 25 different REST APIs. And we were combining and writing our own logic it combine it together. And refresh tokens, well, these tokens will list wherever. Post it into a Slack DM and that's what everybody uses as the token. And then you have all this logic, filtering all this data. And if you didn't know any better, you wouldn't filter the data and put it into Webpack or something. And you have giant JSON blobs of 25K worth of data passed to the client because we needed six fields. When I did a proof of concept with GraphQL and said, wait, we can make six fields that make six APIs and get one JSON object with just the data that I need. And I was like, oh, no, this is gonna change everything, right? And so, this was really -- and it sounds like you kind of hit that same point. But you weren't dealing with internal teams. You were dealing with a whole ecosystem of tools.
+Exactly. And I think the next step is -- and, you know, an area that we spent a lot of time trying to focus on is while that part is very cool and often gets ther initial intention, what cuff on the other side, the developer experience, things are expressed in the graph the way tools are read very easily. You can get -- you can take a GraphQL query and translate into something a developer can use, whether that's in Go or JavaScript or TypeScript. And you get a nice experience regardless of the language we're working in. You have this double-sided benefit. You're to the building one SDK for one language. But defining your data model with this approach, anyone can appreciate a really -- a much nicer interface.
+Yes! That feels huge to me, right? And the other benefit here, what you're saying about GraphQL, you have this underlying schema that's not dependent on JavaScript or Python or Go or Ruby or whatever. It's just a -- it's an independent definition of this is what the language returns. And you get back strongly-typed data. And that -- that to me is really exciting. Especially when we start talking about some of what you've done with Graph at Netlify. So, let's maybe dig into that specifically because you said at OneGraph were working on this proof of concept. Instead of having to go to Salesforce and Jira and everywhere to say give me all this customer data, you could query the customer and find the tickets attached to them. Find their Zendesk and their Salesforce profile and whatever else and get all that data back in one place.
+I know is that the same in Netlify, is Netlify graph the same general idea?
+It's slightly different. That original proof of concept was me saying that's my model and here is how to map it on to the underlying APIs. A few years later I actually started OneGraph. This was end of 2014, end of 2015. And, you know, I thought while this is very exciting, I think this is -- it's gonna take some time to mature as a technology for people to catch up. I waited until actually 2018 to start OneGraph. And the approach was to take the non-GraphQL APIs and the GraphQL APIs and link them together. That's what Netlify Graph is today.
+We'll dig into that with the coding portion. One thing I find interesting, with Netlify Graph, you mention being vertically integrated and us doing more. Can you say more about what that needs in the context of Netlify Graph?
+Yeah, sure. You know, going back to the beginning. We worked on two fairly important open source packages for the GraphQL community. The first was graphical explorer. This is clicking through an API and a folder system. You don't have to know GraphQL. I want the Zendesk ticket.
+Let me to stop you to fan boy for a second. That package sing such a game-changer. And if you've watched this show, you've heard me talk about how I love the graphical explorer. It's a cool tool. Chat, have you tried this? Let's get a couple boops in the chat if you have used that tool. Oh, no, the yeets are out. But, yeah okay. The first package was the graphical explorer which I loved.
+Exactly. The goal was there were people who could tell you what data they wanted but didn't know GraphQL. This helped with the I don't know GraphQL, just tell me what data I want and you give me the GraphQL. So, kind of just wanted to make a smoother onboarding, right? Because it's kind of a step function. You could get nothing out of GraphQL until you learned GraphQL and suddenly it's great. We wanted to make this the smoother process. You could just click on the data and you could see the GraphQL getting built. You could kind of understand how does one translate this intention into the implementation? And once you run that query, you get the data back and you're excited.
+We often found that was kind of a -- that's great. But now what? Like, how do I take this GraphQL query and get it into my application? It's not useful inside of, you know, the web page. You know, the little explorer. I need to have it actually inside of my application. and, you know, people would end up tripping over a lot of different challenges, right? Do I use just raw -- just fetch? Do I use Apollo? Something else? If I use Apollo with React, how do I structure everything?
+And we had a sense of, well, we know how to take this query and turn it into, for example, a bash script or an Apollo query or a relay query or Vue or Svelte. We built the tools, question, I see what I want in the explorer, how to get that into the application to make it smoother. There's a whole bunch of questions we didn't know. Are you using Next.js? Hosted on Netlify? Hosted on some personal platform? And so, because of that, we couldn't give you everything. Right? We can't just -- there are some things we can't make assumptions about. But when we're on Netlify, we know exactly where the functions should be, where the components should be. If you're using remix, this side, we know if you're using TypeScript, generate with types. We know if you're using subscriptions, we know how to automatically generate subscriptions for you. Because Netlify has the end-to-end, all the way from the GitHub repository to the CDN at the edge, we know all that have. That allows us to make a lot of assumptions whenever we're generating the infrastructure for you. That makes the experience -- there's almost never a hopefully what do I do now? This looks good. Get that into my application. We know how to put the data and how to spin everything up.
+Yeah. I find that so exciting because, you know, to rephrase that, because, chat, this is important. Listen up here. What this means is that using Netlify Graph, because Netlify is also building your site, we know enough about it that if you go into your Netlify Graph and you click in the graphical explorer to say what data you want and then click the, what is it? The generate handler button? It's gonna build a server less function in your site that automatically allowed you to bring that a data in. You don't have to write API authentication code, how to get whatever company's token and put that into your environment variable. You don't have to deal with whether that toke season going to expire, we'll handle the refresh tokens for you. You can go back to building your app and call that endpoint with all data ready at your fingertips in a totally secure and expandable way. And that can come from multiple API endpoints.
+Yep.
+Huge! This is huge.
+The philosophy is, look, I can tell you what data I want or what action I want to perform or what events I want to listen to. You tell me how to put that into the application and this way. Don't make me figure it out and stumble over everything. You know all that have. I'll tell you what I want and I'll put it in my application.
+I love it. I'm so on board with this. It's so cool. So, before we switch over to code, I want to talk just a little bit about the -- the kind of use cases that you've seen this unlock. Because as an individual, I can see a few things. For example, I want to be able to look at my GitHub data and pull a number of issues. If I have a certain enough of issues, I want to send a message to, I don't know, maybe I want to open a ticket in product board or something like that. Or if we know we just, you know, like closed the deal in Salesforce. Maybe I want to play a song on my Spotify, right?
+But have you -- what are some interesting use cases that you've seen where people are combining this data and what you kind of see going forward from here?
+Yeah. Sure. I mean, there are quite a few. It varies depending on the needs of the, you know, the company or the individual building it. One of the motivating use cases for me -- this may not be relatable to everyone. But anyone who has ever used the Salesforce API will almost certainly relate to this. I wanted to have a graph at a company I was at. All it did was reach into Salesforce, pull out a list of our opportunities and just graph it. You know, the size of the opportunity, the likelihood of closing. Just like a nice snapshot of where we as a company, how are we doing?
+And that, you know, is days of work. To figure out how to even authenticate with the Salesforce API? Which of the five APIs is that data in? How do you pull that out? How do you then -- how do you pull that out on the client without involving some sort of server? How do you authenticate with OAuth on the client? Et cetera, et cetera, et cetera. Now like building that is literally something like a 20, 25-minute exercise. Because you just go in and you click what you want. And you generate a page and it has a form.
+And about, you know, 10 to 15 minutes of that is figuring out how to get D3 to graph the thing for you. Getting the data in is the easy part. You get to focus on the different part, which is making a really nice user experience and making that app feel crisp and clean.
+I love it. All right. I feel like we could continue to talk about this in the abstract. But really where this is gonna click I think for me and for everybody else is when we get to see this thing happen. So, let's dive in here. And I'm gonna switch us over into pair programming mode. There we go. All right. Camera 2. So, we are currently talking to Sean Grove. And my -- oh, my goodness, my captions are broken? Oh, no! What happened, everyone? Oh, they're like broken, broken. What the heck? Uh-oh. Hey, Amanda, can you send me the Streamtext link directly to share in the chat. We have -- oh, no. Okay. Um... huh? I broke all the buttons, everybody. Okay. I'm back! I'm back! I'm back!
+And I'm gonna copy this link. And I'm going to come back here. And I'm gonna paste this link. If you want to see the live captions, they are available here in the chat. I will also put this up on the screen for a second. We've got Amanda with White Coat Captioning running the live captioning for us today. Thank you very much, Amanda, for being here. And that captioning is made possible through the support of our sponsors. We've got Netlify, Nx and Backlight all kicking in to make this show more accessible to more people. Which I very much appreciate. And I will go and fix whatever I did wrong there shortly after this episode.
+then we are talking to Sean Grove. You can head over on Twitter and give Sean a follow. And that's about -- that's about all I know right now, right? We've got on the Netlify.com blog, we've got an announcement about Netlify Graph. So, let me pull this up and share this real quick.
+So, if I'm ready to get started, I could read this blog which has all the instructions on how to get started. But since you're here, I'm just gonna ask you. What's the first thing that I should do?
+I thought maybe, you know, this works with lots of different frameworks. But maybe we could start with a standard Next.js map. If you have one linked to a Netlify deploy somewhere.
+Tell you what we can do, we can set one up really, really fast. What is it? Npm create next app? Is that how it works now? Yes? And we'll call this Netlify Graph next. And we're gonna get everything installed. Good deal. Okay. So that's now running. So, I can go into Netlify Graph and let's just see. Did it give me a get -- no, so, we'll get init. What? Get branch, main. Okay. Now I'm gonna get add all. And we will Git commit this and say, initial commit.
+And, you know, we're starting from an absolutely empty folder here. So, this is how fast you can get a site up on Netlify if you have never done it before. So, then what I'm gonna do is I'm gonna GitHub repo create. And I'm just gonna copy-paste my repo name here. What? Oh, got to do the public.
+There it goes. Okay. Then I can get push. And we'll set the upstream to -- oh, we got to add the remote. Get, remote, add, origin. Get at GitHub. And then we'll paste in this again. And then we can do Git push upstream origin main. Off it goes.
+And then we can just initialize this thing on Netlify. So, I'm gonna run NTL init. And we're gonna create and configure a new site. We're gonna put it on my team. We'll call this Netlify-graph-next. And we'll authorize with app.Netlify.com which opened in the wrong window. So, I'm gonna open it in this window. Right? And then I just log in with my GitHub account.
+Whoops. Great.
+You hackers! You dirty hackers! Give me just a second here. We're gonna try this one more time. Authorize -- are you gonna make me get a GitHub access token? This is exactly the problem I was worried about. Let's see.
+[Hold music]
+Okay. So, that's fun... oh! I'm logged into the wrong account, everyone. That's what just went wrong. So, let me log in again. Okay. There we go. Now I'm gonna Netlify init again. Authorize. Do it this time. Please? Oh, my god. Okay. I don't know what I'm doing wrong.
+You could also deploy through the web UI.
+I'm gonna have to deploy through the web UI. I don't know what I did. Okay, so, we're going back here. Going to sites, go to Netlify Graph.next.js. And go to settings. Build and deploy. This is a new computer. I just got this computer and haven't tested any of these flows yet. Which is going great for me. There they are. And then I can go to Learn with Jason, Netlify Graph. And... there it is! Gonna deploy the main. It's got all the Next stuff. Here you can see it's automatically detected. So, we're gonna deploy it.
+And there it goes. Okay. So, now that we have this, we can also -- we should have all of our node models and everything. This should build in about a minute. And while we're doing that, I'm just gonna start it up locally. So, just run the Netlify Dev and it boots up the site, right? So, this is all good. This is doing what we wanted. And the site is... approaching built.
+I think you should be able to link us site now.
+I think it might already be linked, actually. Let's look. Netlify. State. We've already got the site ID. So, it should work from here. Okay. Next build. And... here we go. Come on! You can do it! There we go. There we go. It's all happening.
+To keep it simple, we can just develop on localhost for today.
+Yeah.
+We'll leave deployment for later.
+Yeah. I feel like this is gonna work now that the site is actually running. But we'll see. So, okay. I have -- I have a site running. I'm able to -- it's deployed. It's operational if we go out here and look. Here is our Next site running on Netlify. We got that all built and running. There we go. And now I'm ready to add Netlify Graph. So, what are my first steps here?
+Yeah. So, all you're gonna do is just like normal, run Netlify Dev on your application. But you'll add a dash, dash graph flag. So, during beta -- this is all in beta, as a disclaimer. But during beta, it's behind a flag. And that's going to take care of allocating all the resources that you need. And one of the links that it just gave you in the terminal there to edit your library, visit this link right there. If you click on command, click that. Should take you right in. And this is the, hey, we see this is your first time using Graph experience. It's going give a little bit of an overview. We know what we want to do. Go ahead and connect to an API.
+Okay.
+I thought we would play around with the Spotify API or GitHub. One or the other.
+Let's start here. Start with, what authentication?
+Yeah, and let's not do authentication.
+Okay. We'll talk about that later, I guess.
+Authentication says I want to use this API token on the backend for myself. What's more challenging than that is how do you get the user to provide their token? So, maybe we can play with that. Let's enable the graph and start from there.
+Okay. So, I've enabled the graph explorer and I'm gonna start querying.
+Yep. And just pick the session. So, you just have the one session right now. Take you in. And yeah. We should be good. So, let's --
+And so, this is the explorer that I was gushing so much about.
+Exactly. So, how about Spotify and then we maybe search for some tracks and we'll see what we get back. We'll just play with this for a little bit.
+Okay, so...
+Just hard code something right now for the query?
+What do you want to listen to, chat? We're gonna listen to -- we're gonna listen to... Born to be Wild. Because for some reason that's the first song that came into my head. Oh, got to actually do -- actually like get something, right? With what comes back. Tracks...
+Yeah, and then for each track, get the name and the ID. And we can start with that.
+Cool.
+You can see it says you're not logged into a Spotify. Click on authentication. This will allow you to explore it locally. Log into Spotify.
+Let's see. How do I log into Spotify. I'm gonna pull this off-screen for a second. The timing on this is good because I actually migrated off Spotify to Title. And just haven't --
+You hackers -- haven't turned this off yet. Okay. So, that's logged in. And I've got my Spotify account. And now if I run this again.
+Yep.
+There it is. Look at all these songs.
+We can explore and play around, we can get the album if we wanted to. But let's go ahead and save these changes.
+Okay. Gonna save changes.
+And if you go back to your terminal, you should see that that's gonna sync. And notices that hey, you added Spotify. I noticed that you added this new operation. And let's go ahead and open up the code now. And we can see what this looks like.
+Here's our code. Look, in the state it added some things. But I'm...
+Yep. And let's look at the Netlify Graph operations library inside of in so, you can see that that's your, you know, Born to be Wild query. And you have a doc string up there that just says an example query to start with. Let's go back to the UI and edit it and save and see how the changes flow back. So, if you scroll to where you typed Born to be Wild in the explorer. And you hover over the query. There should be a little dollar symbol. That means turn this into a variable. Now if you just hit save. Scroll up and hit save changes again, that will flow through. Now it's a query. So, this updates it on your local --
+Okay. Chat. Did you notice -- this is my local machine. Right? So, we're on the Netlify website. And because we're using the Netlify CLI, when we make changes here, it's auto-generating the code that we need to update our queries. [Boom!]
+It's so --
+So, that Netlify operations library, it's -- that is the one file that everything is based on. That's like every operation that your application needs. But you don't typically use it very much. Because the CLI  is gonna take care of generating a whole lot of handlers or helpers for you. So, if we go into the code and try to import this Netlify Graph file. So, maybe under pages, index?
+Pages, index.
+Actually, API would be even better.
+Yeah. Let's go into API. I'm gonna create one to get -- let's do a song JS. And then I want to import -- is it -- is it CJS syntax? I forget how Next does this.
+I think it's ESM.
+Okay. Great. I want to import something.
+Call this Netlify Graph.
+There's my lib. Netlify Graph.
+And that's it, just Netlify Graph.
+That's it.
+And call this, instead of destructuring, the whole thing is called Netlify Graph.
+Okay.
+And so, now if you try Netlify Graph in dot and see the autocomplete. Let's see what's on that object there.
+Grab this.
+That's a good idea.
+Default here. So, let's, Netlify Graph dot --
+And you can see you have fetch example query there. That's the name of it. Which is not super-useful. Maybe what we can do is go back to the editor and let's change the name of this. So, you can simply -- or not so simply -- but in either -- in the explorer, if you scroll all the way to the top, on the left-hand panel there. You can just edit that there. So, maybe search. Or search Spotify. Up to you. And then if you notice in the bottom right, there's a little -- a tiny little panel. A little bit down. Keep going down. Yeah. Right there. The description.
+Oh, okay.
+Let's give this a description. And we'll go ahead and hit save whenever you're ready.
+Saved.
+And we should see, inside of your code, some red squigglies pop up shortly. Because you no longer have --
+I'm no longer in TypeScript. So, I might be...
+It's happy. If you like.
+Go back in here. Oh, look, it changed. Spotify search.
+If you hover over that, you can see the description, the search for Spotify came through.
+Oh, yes, right here.
+You can actually. You gave your descriptions inside of those queries. Whenever you're working on the data, say this is what this does, that flows through for the team. It's a nice human-level documentation of hey, what's this thing for? Now whenever we invoke this thing, you can see that we have to use some variables and that's gonna take some input. And so, that's an object. And if you just autocomplete here...
+Oh, beauty.
+See that, hey. It knows. It also knows that query is optional, right? Because you provided a default value.
+Oh, that's right. I did.
+Yeah. So, it's up to you.
+Appear that it's a string. So, I know it's not an object. And I can just search for something else. Let's do what? There's a --
+And if you hover over query, I'm gonna keep nailing this home for a while. Yeah. So, notice the string. We'll see that on another one. Never mind. Okay. So, let's go ahead and await the results of this. And now if we try to do result dot, we should see, okay. We have data.
+Data.
+And --
+Spotify search. Or, wait. Did I do the wrong thing? I got lost in here. Data dot --
+No, I think we probably have a little bit of a bug here. Let's go to the CLI. And let's try --
+Wait, wait. I think it is.
+Fetching.
+We had a TypeScript bug because we didn't make this async.
+Oh, I see.
+Let's try and see if it listens now.
+If you hover over results, what do you see? That's there. And if you hover over data. You can see it's saying this is a record, string unknown. I don't actually know what's here. You can still access the data there even if there's some weird typing structure underneath it. But so, it won't block you. But it's giving you a warning saying, hey, I'm not sure what this is. So, I think if we go to the CLI and we go ahead and close it. And let's run a command Netlify Graph, cool. This says go fetch the schema and any events that might be out there. Yes. And also, if you -- it tells you, if you install for your -- you'll have a nicer experience.
+Okay. Pulled it in.
+Run that. All right. Okay. So, hopefully now if you hover other data, do you have anything?
+Oh! Look at that. Now it knows.
+Yes.
+Now I have Spotify, search, tracks. That's what I wanted. And I can map these. And if I get a track... oh! Jeez. Okay. We get our track ID. We get our track.name. We get our track dot artists, dot, oh, we're gonna map again. Artist and in here we're gonna return artist.name and then we can just join -- like, that is huge. I mean, obviously this isn't gonna do a whole lot for us. Let me -- let me maybe do a little bit of these. Just get both of these at once.
+And then I'll get rid of this one. Okay. So, now if we run that, which we should be able to do right now, so, I'll run Netlify Dev Graph. I guess we probably don't need the graph to be running, but this is helpful.
+Exactly.
+And go API, what did we call it? Search?
+Yep.
+Nope. That's not what we called it. We called it song. Not really --
+Yep. Okay. So, in this case, we made a call into the API. But we didn't actually provide any access token. So, there's no access token. And what we could do. So, if you go back into the code, there's a second argument that the fetch Spotify search takes. Which is some options and one of them -- so, again, this is a object. And it'll autocomplete for you. One of those options is gonna be access token. So, now we have to ask ourselves, how do we get an access token in here? We could go into the web UI and enable that and restart our server. But I think it's maybe more fun if we, again, try to do this from the client side.
+Yeah.
+So, what you have done here is, you know, you've kind of worked from the ground up. You've said, okay. I'm gonna import my Netlify Graph. I'm gonna build my own custom handler. I'm gonna invoke that, I'm gonna pull apart all the pieces. We know you're using Next.js and the query you're gonna run. Maybe we could try generating a handler for that and see what the result is.
+Yeah.
+You can do this from the web CLI, but if you want to do it from the web UI. Under actions, generate handler. And if our CLI is running, then it will get that event. And now inside of your code under pages API, you should have a new route. Spotify search. And so, this says, hey, look, I know that where Netlify Graph is, I know you probably want an access token. If you want to use the client's access token, you can uncomment this line. If you want to use your access token, you can uncomment this line. And if you hover over the, you know, the data on line 17, it's just as tight as whenever you did it. You get all that autocomplete in there. Look, if -- if you have errors of data, here is what you need. It will do some form verification. This is kind of the bare minimum. What do you need for this to work? Now you can take this thing that works and tweak it. We are using exports here. One thing to improve, it would be nice to comment if you could use ECMAScript modules. If you open up Netlify.TOML. Most of the things that Netlify Graph does --
+Haven't got one of those yet.
+You can get pretty far about it. This is under the graph section. So, yes. Graph and this is called module type. Equals a string of ESM. And it's module type, camel case. Okay.
+Okay.
+And if we restart the CLI, it should pick that up.
+Just like this. We don't need to do a pull or anything like that?
+No, no. And if you regenerate the handler. Hopefully --
+Let me undo whatever changes I made there so it doesn't get a conflict whether I regenerate that handler. So, generate.
+Okay. So, now you got your --
+Badaboom!
+In the meantime, while we add on -- make this more magical, where it can auto-detect these things. You can always override it. I want you to generate TypeScript, even though you don't recognize I'm using TypeScript, I want you to generate TypeScript. Under the module language, add module TypeScript and this will generate a TypeScript file for you instead and you will have full types in there as well.
+That is nice.
+So, we generated this file for you. But on your pages, there's also a new one called Spotify search form.jsx.
+Oh, okay. All right.
+This is a new route. You can just go that route now.
+Okay. So, the site's live. I'm gonna come out here and this is called Spotify search form. Search form.
+Oh. And this is one thing is that it's going to handle auth on the client side for you. So, let's actually install the Netlify Graph auth package.
+Okay. Try that again.
+Okay. So, now we have a form that handles, you know, your form state and what not. And again, this is just bare minimum. This is just get me started. Get me something that works. And if you submit that, it's going to run it and say, hey, you're not actually logged in. Let's go back to -- be of you log in -- let's go back to the code. The API code.
+API code.
+Yep. And we want to uncomment line 8 where we're saying, actually, I want to use the users. The user's gonna pass me an authentication header and I want to use that.
+And this is important for a couple reasons. The first is, like, by doing it this way, we're letting the user act as themselves. If we did it with our system token, they would be acting as whoever queried that token. Or whoever established that token, right?
+Exactly. Whenever you deploy this later on today, anyone will be able to go there. Click login and it will query from there. If you were to query from my play list, it would be their play list, not yours when you logged in.
+Ah, that's cool. Very cool.
+Now let's go ahead and go to the page. And you can see that whenever you ran it, we automatically detected, hey, you're not logged into a Spotify. You need to log into the specific service. That's already built in.
+That doesn't show up until you try.
+Exactly.
+Okay. So, I try this. All right. There's my button log in. I'm gonna click login. I'm already off, it drops the no auth and drops it back in. And there we go. We've got the songs.
+You're now querying on your Next.js app, you have a full form that will run this query with authentication and give you the data back.
+And we wrote zero code. More or less. Like we -- all we did was mess around over here and play with these objects. But this is generated. We uncommented this.
+You can tell your boss you wrote it. For free.
+And for all intents and purposes, that's what's happening, right? This is the promise of GitHub Copilot too. The idea isn't that all the code is being written for us and we no longer matter and we can be replaced. It's removing this huge amount of what I would call toil.
+Yes.
+You've got to go through the docs of Spotify's API and figure out how to request that token, figure out where to sort it. Then come back out here and figure out this code to write, okay, I got to send this request with this authorization header and all that stuff. And really that does is gets you to exactly where we are now, which is I'm able to send a query and get some data, right?
+Exactly.
+Now I can come in here and instead of dumping my result, I can just use it to put together a good like list of artists and songs.
+Exactly. And one thing that, you know, I hope to be able to add is it would be really nice it you could teach, you know, Netlify Graph how you as a team write your forms. How you write your API backends. So, that one person on your team says, actually, we don't use the standard button. We use our design components. We use accessibility this way. And now that goes out and fills out the GraphQL query, I don't have to know that. I generate the handler, and boom, this is how the team wants all this done. All the stuff I normally have to translate could be embedded into this entire process.
+That doesn't exist now.
+It does not exist yet. But that's one of the things -- a lot of Netlify's UI  is now built with Netlify Graph. So, all of the graph UI  is built. There's a dogfooding component there. And there's a lot of translation that goes, you know, between -- as me someone new to maybe the Netlify UI best practices. I don't know how to do that. So, it's a lot of kind of, again, fiddley work. Like learning how to translate this. And, you know, as soon as we can push that down, my productivity will probably be two or three times higher. Look, if someone has updated the best practices, I don't have to learn this manually. This is built into the tooling.
+This was honestly, when I was at IBM, one of the biggest challenges we had was that we had full teams dedicated to going and embedding with other teams to help them update to the latest version of the design system. Or update to the latest version of the authentication management or whatever thing it was. And so, you had these like easily dozens of engineers whose entire job was cleaning up boilerplate on a rotating basis. It felt like a very losing battle where as soon as you walk away from a team, they're not trained in how to build the design system or auth or security. They're trained in building UIs. If we didn't have automated ways to bring that together, they were on a carousel of deep sadness.
+That's exactly what I was thinking. That's a lot of sadness. That's challenging.
+Yeah. And so, you know, that is definitely -- this to me feels like the reason I got excited about Netlify in general when I first joined the company is that it feels like the Netlify promise has always been, we're not gonna take away developers' ability to be developers. We're just gonna remove the junk that prevents developers from building cool things. We're gonna unlock the boilerplate and the foundation and the, you know, the crap that you have to set up to get started. So, that you can just build the thing this you're excited about. And this -- why I'm so excited about this is that this feels like it delivers on that promise at a new layer of app development. Where Netlify was focused on frontend source code, Netlify Graph is giving us a step further back. You know? Where we added serverless functions, huge productivity boost for me as a developer. I feel like I have super powers. Adding this is adding super powers to the super powers of how I don't have to go arguments with GitHub's which settings pane do I need to be in. And I want to show why this is so freaking cool. Hold on, before I go down this rabbit hole, I know you had more to show. Do we have enough time for me to go down a quick rabbit hole and show the token process?
+It might be fun to if you want to hook up a mutation to actually play one of these songs and see if we can combine it together to the show album and the name of the song. Whether you click on it, it plays on the player. If you want to do that.
+Absolutely. Let's do it. So, to do that --
+Iteration mode.
+Absolutely.
+Let's start first by pulling in the mutation. So, let's go create a mutation to actually play a song first.
+Okay. All right. Let's see. Am I still running? Still running.
+Merge things together.
+Here we go.
+All right. Create a new up there. Create a new mutation. And give this a name. Just maybe play. And yeah. Under Spotify, we should have a list -- we can just kind of see, what are the actions available? Mutations are actions that we want to take. And we want to play a track.
+Okay.
+And again, just that dollar symbol. This is gonna say, hey, this is the track ID. And having -- this is going to modify the player that you have. And it's going to update the same. It's gonna return you the new player state. So, you can say, are you playing?
+Okay.
+And see where it says equals, quote, quote? Up at the top. That's saying this is a optional variable. Let's make it required. So, add a bang there. And we'll see how that actually affects our setup. So, let's go ahead and save that. So, we can save the changes. And then -- oh, yeah. Good idea.
+Okay. So, I'm gonna save. And then go ahead and generate the handler as well.
+Okay.
+And if we go back to the -- looks good. If we go back to the first page you had with the search, maybe we can grab one of those track IDs.
+Okay. So, out to my search... here's the track ID.
+Okay. New let's open a new tab and go to the play song form.
+Play song. Form.
+Form. Yep. Okay. And it needs that. If you submit, you'll probably get an error back saying, hey, you're not logged in. But also, oh, we need to tell it on the API part which authentication token to use. If it falls, it doesn't use any authentication token.
+Okay. We need this one. Okay.
+Okay. And it's working. It's just saying that, hey, you don't have any Spotify player open.
+Oh, I don't have -- will it work on the web player?
+I think it should.
+Yeah. I haven't installed Spotify on this yet. Okay. Open the web player. I'm already logged in. Good, good, good. All right. So, theoretically speaking, if I go to like -- let's go to Liked Songs. I'm just gonna play one quick second of this. Right. Just to make sure that it's active. And then I'm gonna come back here.
+�
+Boom! All right.
+Wait, where is it showing? Here it is. It's playing. That is freaking incredible. Right? And yeah. Like I'm only gonna play a couple seconds of songs so we don't get muted on YouTube and Twitch. But like unbelievable how fast that was. I didn't write any code. I just uncommented one line of code.
+So, let's -- let's go into the query explorer and go back to the original query of search. And what I would like to do is on the results for track, let's go into albums. So, on the left there --
+Tracks --
+Tracks. So, not that one.
+Not this one.
+This one is the search results.
+Oh, track --
+Yes. Let's get the image. Images, URL, height and URL is if you want to have it proper. But you can just put it as-is. Let's go ahead and save the changes. So, what about it flows through.
+Okay.
+And we should be good to go now. You could --
+Do I need to re-generate my handler or anything?
+No. It might be a good idea just for the sake of it let's go into Netlify.TOML and change the language to TypeScript so we can see what that is. We want module type to stay ESM.
+Oh.
+There's a new query called language, that's equal to TypeScript.
+Like so?
+Yes. Save that. And now you can go ahead and generate your handler for you. And with any luck, it will generate... let's see... generate handler, Netlify function. You may have to restart the --
+Oh, pick up on the thing --
+Yeah. But with any luck, it should hopefully generate a .tsx file. Okay. It doesn't look like it.
+Maybe it's because it's already finding this one?
+Could be. Well, we could just try to wing it and see what happens.
+My favorite one to be.
+Yes. So, the reason I was wanting to do that is the -- this is the client side page. So, it doesn't know what data it's getting back at all. But we know. And that type actually exists. So, if we wanted to name this to -- change the name to .tsx, we could actually potentially import a -- the type in here.
+Okay. Like that right?
+Yeah, exactly.
+Right from lib, Netlify Graph, is that right?
+Exactly. Yeah. And there should be a type in there if we autocomplete called search -- modify search.
+Okay.
+So, that's the result. And then whenever we get the results.data down here. So, we submit the form. Oh, result. So, online 11, I believe.
+Line 11.
+Yeah. So, we can say that use state is actually of type. Spotify search or null.
+And we do that like --
+That's a open curly, yeah, Spotify... search. And then instead of a comma, it's a single pipe.
+Got it. Doesn't like that because I'm doing what?
+Oh, at the bottom was there something there? It says affected zero type arguments, got one. Hm... I don't know. I'm not super-prolific -- or great with TypeScript. Let's see.
+I'm also like mediocre at best with TypeScript. Maybe what we can do is one of these? Like as Spotify search? Is that completely unacceptable? Why doesn't it want --
+It seems like it's not picking up that it's TypeScript. I wonder if you need to restart? But all right. We can back out. We can abort. Back out. Just change it to JSX and we'll continue with our own hacks.
+Okay. We'll do it --
+For someone that knows TypeScript, they should be able to if I can that out.
+There will be TypeScript in the future for you TypeScript users. You don't want them written by me.
+[ Laughter ]
+All right. So, now where we just do that kind of pre- and -- pre-tag and we put out all the data. Maybe instead there have, we can pull out -- it's gonna be something like result dot, you know, data. And it might be easy to do this query inside of the search -- or Spotify search, yeah, over there. Because it knows the types.
+Yeah. We've got the data. We can get the data.spotify.search.tracks. And then that's gonna be one of these. so, then we want the track. And inside of this track, we want to get the track.name. Track.artists. Dot map and we'll get the artist. And for each of these, we want the artist.name. And then we'll be able to join those. And then we want the track.album images URL. Or dot -- just get the first one. And we'll just get the URL. Okay.
+Okay. Looks good.
+So, those are what we need. So, I can go and take this back out. Come out here to the search form. We'll put that in here. And I can change this to be some JSX instead of whatever this is. And so, we can set up like an LI. And that LI will have a key of track. ID because we know we have that. And we can do -- hm. Let's do a -- a href. We need to figure out what that is. But we can in the meantime say track.name by track -- and then just copy this part over.
+And then we can have like album and take this part over. Or no. We want the image. So, let's forget about that part. And instead we can do an image source equals one of these. And then as an alt we should probably get the album name which I'm not gonna do right now. And theoretically speaking, this is gonna work. Use next image instead -- we won't worry about that right now. Here's our --
+Optimize. You need to optimize.
+Result.data.data -- I screwed something up. Result.data dot --
+And then data will be probably empty the first time we load it because we haven't actually gotten any data back yet. So, maybe result, end, end, or something like those lines.
+Does that explode? Naw. That's good. All right. So, then we can go... nope. Search, tracks. What does this say? Cannot read properties of null? How dare you!
+I'm sorry, I think Spotify is null there.
+Spotify is null.
+Yeah. Exactly. You can just add question marks everywhere.
+Okay. So, we need to do something like a little bit of error handling here.
+The errors will be shown already.
+They will.
+Yeah. I suspect that we're not -- the state across page refreshes. So, I think if you -- oh, yeah. Result.errors. Okay.
+I forgot to actually include this. So, we got these -- oh, right. We're missing our auth. Great. Fine.
+oh. Did we regenerate the handler? Maybe we need to uncomment.
+Yes. We certainly did. Get this out. Try this one more time.
+Resubmit.
+There's our details. And down here at the bottom, we should get albums. All right. I'm gonna take these results out again. And let's just -- we'll just comment these out in case we need them again.
+Okay. And now what we want to try to do is see if we can have a button that when we click it, we'll call that mutation. Or call that backend to run the play song mutation.
+Okay. So, we've got -- we've got the ability to kind of click these. We need to add the right URL. And so, the URL would be --
+Well, what we want to do -- we don't want the URL to take us there. When you click it, it starts playing in your player. Exactly, yeah.
+Okay. Got it. Okay. I'm going it wrong. So, we're gonna do a button instead. And our button will need to do a thing.
+Yeah. If we look at the play song form page, it should have some code that we can just kind of steal.
+Perfect.
+So, there should be a submit form there. And we just want to copy that over. And Jay. Perfect. That looks good.
+We'll be able to -- and we need to get the body, form variables, track. So, we need to submit the form with probably the track maybe?
+I think it's a -- yeah. It's a object that says track ID. So, track IDs. Yep.
+track IDs. Just like that.
+Track IDs. Sorry, this is actually --
+Let's go back into the search form. I'll walk you through. This is where the TypeScript would come in handy. There's a TypeScript type for the input. It will tell you, you need to be passing this thing in. Let's delete form variables online 84 and we'll just make it an object with track IDs. And then an array with just track that ID.
+Okay. Then we can do it like this because we're declaring the function like this. Perfect.
+I was gonna do it the other way and I thought that was brilliant. Yeah.
+OnClick equals submit form. And if we wanted to, we could even play on Spotify. So, now it's clearer what it's doing. Okay. And then --
+Okay.
+And nothing up my sleeve here, this theoretically works. Oh. No. I did it wrong. It -- it submitted -- also, what happened? Nothing happened. So, I need to come back here and figure out what I did. It submitted to the play song form. It's not -- that's not the thing we were looking at. We were looking at this here. Okay? So, there we go. And then when this submits, I want to catch the event. And we'll event, prevent default so that it doesn't send us anywhere. And then -- then what?
+Do you want to console.log the results -- the form result there, maybe?
+All right. Oh, we don't have a set result either, do we?
+We do. Because they both reuse the same structure.
+Oh, good. Okay. So, if I log this result too, that should also --
+Yeah. Except this is going to overwrite the results. So, let's copy out the set result.
+Take this one out.
+Right now the result is the result of the search.
+Right. That would break everything.
+Yeah.
+Okay. So, then we're gonna come out here. We're gonna search. Get our tracks. Click it. And let's look at our object here. We got an error. Unknown error. Spotify play track.
+Assume that it's like your -- yeah.
+Yeah! �
+Okay. Let's try this one more time here...
+�
+�
+And then this should work for anyone, right if because this is just using the client-side authentication. Someone logs in and, boom, they're controlling their Spotify play we are that search form.
+That is outstanding. This is just so cool that we're able to build an app this quickly. And, you know, I mean, we'll be able to spend our time on the functionality of this thing. Of, you know, making this look nice and making sure that, you know, we've got the right accessibility measures in place. And all those things instead of arguing with APIs and figuring out how to put the right auth in the right place and all that stuff. This is unbelievable. Like -- I feel like this -- it just makes it so much more fun to build for the web when you get to build like this. You know?
+Exactly. And I think as we add more, you know, APIs to the other side of this, you know, any GraphQL API should be able to participate in this. And you will get all of that same experience as a developer. Right? You get all those autocompletes and autogeneration and everything.
+Okay. What I actually want to do here is I want to deploy this because I want people actually to be able to go and try. Okay. Get commit then. And then say, search in play is working. And let's just see -- let's just see how easily this goes live. Because I know I had some issues with the way I hooked this up. I suspect it's gonna work?
+Yeah. We'll see.
+[Laughing]
+It's a risky move. But why not?
+Now while we're waiting for that to build, we can come back here and look at Graph. Today, when we look at what's available, we have box, so, file storage and sharing. Contentful if you want to get at your CMS data. GitHub, npm, Salesforce, Spotify and Stripe. And so, this is a pretty -- a pretty good starting point. But we're able to add a lot more pretty quickly here, right?
+Exactly.
+So, where should somebody go if they're like wanting to see an API hooked into a Graph? Or if they're a company that wants to get in on this?
+Yeah. So, I think the gentleman we're working with is named Dan. He heads up kind of the expansion plans around APIs. Tweet at home. Den is codes.
+That's den if you want to climb too his Tweets and give the what for on what APIs you want to see.
+I see Shopify in the chat. That would be an excellent one. Being able to get that same experience with Shopify.
+Yes, please.
+And then there were a couple of questions earlier about mocking the data locally and we don't do this currently. But I will just say that there are some really, really interesting plans where you should be able to develop against a service that requires authentication. Not even have an account, and as soon as you sign up it should all work.
+Ooo...
+The production -- the fidelity of the mocked data down the road should be very high. We're working on that. No ETA as of yet. But plans are being lain.
+Yeah. There's some really, really exciting things coming just -- I mean, this -- this is huge. And then when we start looking at the, you know, what we can do with these. Like if I click into let's say the npm one. I'll enable it. Start querying. And go into my active session here. And I can then go into let's create a new -- create a new query. Or actually, a new subscription, right? This is the one that you showed me that kind of blew my mind. And so, if we just want to watch like all publish activity, we can get the name. And this will just show any published package. Is that right?
+Yep.
+Here it goes.
+There it goes. Package is being published.
+Is there anything that's being published on npm right now. We've got a subscription. Just -- just incredible. I'm not making it so that you can control my Spotify. But yeah. So, BloomingBean is asking how do we do Cypress testing on this, you would be able to do Cypress test on query data but not mutation data right now. Is that right?
+Yeah. That's an interesting question. I guess you do it the same way you do any other kind of form that is making an API call. Whether you want to mock that API call out or not is up to you. But otherwise just, you know, as far as Cypress is concerned, it's just another web page making another API call.
+Yeah. You don't necessarily need to mock out like our API. We do the testing for you on that. So, you can -- you can kind of trust that the way that you would trust querying GitHub. You don't necessarily mock out GitHub's whole API either because that would be just an incredible amount of work.
+But I do think that to that point whenever we add the ability to automatically mock high fidelity data, then that plays nicely with the Cypress tests. I don't have time to sit around for GitHub to actually, I can wait for the mocked data.
+Can we use this with serverless functions? Yes, there's going to be a whole thing how this is actually built. But this is a project we started working on for -- yeah. It's still private now. We'll open source it when we write the code. OSS.love is a way for you to go and send a Valentine to didn't people in the community and also gives you the ability to like -- to sponsor them or something. So, if I go to here. And I want to log in with GitHub, this is using Netlify Graph. Or, no, that's actually using Okta kit. We're getting an OAuth token using Okta kit. And then I want to go in here, and Sean. So, this is using Netlify Graph. Right? And then I'm going to ship it.
+And this all runs through serverless functions. And you can go in here. Make that work. So, under the hood what's happening is we've got our Netlify functions set up. And so, we're using Netlify Graph and then we have the -- the suite of OAuth functions that we used to call against Okta kit OAuth methods. Because honestly, I didn't know that Graph would do that for me or I probably wouldn't have written it myself.
+I was gonna say, that all goes away now.
+But under here, this is a generated function that I renamed. We renamed a handler to user.ts. Used the OAuth cookie and pass it into Netlify Graph with the login and use an OAuth token instead of an authorization header and it all gives us back the data. So, we're able to do all of this stuff. And so, wait that you've built Netlify Graph, if I understand correctly, is you're framework-aware. Because we were in Next, it knew to build pages in API routes. If I had been in Eleventy, that would have built out like a Netlify functions folder, is that correct?
+Exactly.
+unreal. So, good.
+That's the first step. That's us teaching it how to work in a friendly manner with these different frameworks. But the next step is to work in a friendly manner with your specific codebase and your specific style as we kind of talked about earlier.
+Yeah. And so, Kurt, to answer that question about generating the handlers, if your project is next, it will generate the route. If you are in Eleventy or Gatsby or whatever, you can just hit generate handler and it's gonna generate the serverless function. Or if it's in Remix, I think it has Remix-specific loader code.
+Exactly.
+Really specific stuff. I love it. I'm so happy with this.
+It's exactly that idea of I don't know this codebase. And I want to like -- I'm feeling good, I'm getting my data, querying, I'm mutating. And I want to figure out how to get it sent to the codebase, I've never used Remix or your specific codebase. Show me how to do this. And then I can learn more quickly. I have something that works that I can just of just tweak. It's meant to be an automation that increases competency.
+It's so good. It's putting on -- like putting on a mech suit. You're a developer. You're capable of what you're capable of. And you can strap on this extra suit that allows you to do more things without learning more things. That's the idea of programming and this idea of low code. It's not to make you less of a coder. It's to give you more power without having to gain additional fields of study worth of experience. So, just really, really incredible how effective this is.
+So, this is the live thing. I'm gonna log in. I'm logged in. Okay.
+�
+live website, y'all. So, you can all go and play with this right now and mess with your own -- your own Spotify play lists. So, good. It's so -- so good. I'm just mad at you for how good this is. Like -- chat, what are y'all gonna build with this? Let's hear some ideas. And also, what are you excited to see come in? We saw Shopify get listed. What else do you want to see in Netlify Graph? And while we're doing that, Sean, where should people go if they want next steps. If somebody wants to built their first app, where is the next place to go?
+Update your Netlify CLI and go into any Netlify CLI project you have and run Netlify aggressive dash, dash graph. We recognize you're using this framework, why don't you connect services. We thought it would be unwise to stay up until 2:00 the night before to implement this. But we should have it out soon. Actually, inside of the -- if you go back to the codebase we were working on and then you run Netlify Graph operations inside of the terminal. Yep. So, graph, colon, operations. This will actually give you a list of --
+Ooo!
+And it could also do graph handler and it will ask you -- yeah. NTL graph hander. This will stay, hey, which of these do you want to generate handler first? This will be in the web UI, but do locally. We're going add two more there. One of which is NTL graph operations share. And what that's gonna do is say which of these would you like to share? It's going to look through your operations and it will then check -- it will pull that operation out and check for any hard-coded values and say, hey, you're about to submit with these values. Just in case you have an API token, just a once over. And if you're okay, it will actually submit that to a centralized repository. And anyone else can say NTL graph operations import. Or search. And so, you should be able to say, well, I've just added Spotify. What are the available functions that people have submitted already? Oh, I want that. And you'll pull it in. You'll automatically add that to your library. You can actually share functions now across languages which is a thing that wasn't possible before.
+So cool.
+I think that's gonna be a really exciting way to help people get started with -- any time anyone asks any type of support question on Twitter or on a support forum, how should I do X with Graph? It should almost always be graph, operations import this ID. Comes in, and generate the handler and it's all there for you.
+I hadn't thought about the support implications. Like, import this and it will run.
+Exactly.
+That's huge, that's huge.
+Once it's there, it's available for everyone else as well. In the future, we'll build this into the web UI, show me everything available for Spotify. The form, try there, if you want to, click a but then and add it to your library.
+Dang. That is so freakin 'cool. A lot of legitimate things, Sanity, swipe, orbit, Google Calendar, notion. Really good requests out here. Things that I would also love to see. And all things that are possible. Just a matter of what order we do what things, right? You want to see your things come up first, make a lot of noise. Go well at Den. Den's gonna be so confused why he has so many Twitter DMs. This is who you want to talk to. Whoops. Copy. Oh, man, Kurt, thank you so much for all the gifted subs. Thank you. That is -- I love that. Y'all, now have access to a whole lot of boops and other nonsense. Make sure you take advantage of that.
+Sean, I think this is a wonderful -- a wonderful overview of just -- what a clever idea. And, you know, I have been following your work since the OneGraph days and I always saw big things for OneGraph. And it feels like this is -- this is where it really starts to feel real. So, I'm just super, super thrilled about it.
+Do you have any parting words or anything you want people to keep in mind as we start wrapping this up?
+It is still in beta form. Rough edges. It's in general availability so everyone can try it out. But the more feedback we get, the better. What frameworks would you like to see more support for? Where do you fall over? We want to make the getting started, with graph and with any new API behind it really smooth. Any complaints, issues, ideas, please send them over. We typically can incorporate them in a very, very short time. You have seen our turn around times before. You can vouch for our ability to do some quick turn arounds on any suggestions that people have.
+Yes. And I linked to the docs. The docs will be linked in the blog post as well. But if you look at these docs here, there is a feedback link. So, you can go give feedback on this survey. That actually goes into our system. That is really, really helpful to us as a team for identifying what you like, what you don't like, where you hit rough edges, where things broke. This helps us keep organized so we can keep track of things happening. Y'all are putting in work with these boops. You can't actually see the link that I'm showing. It's here under this feedback headline.
+[ Laughter ]
+All right. So, with that, I'm going to do one quick jump back to the blog post here. Make sure you go and give this a read. It is really, really exciting stuff. I am -- I am like truly pumped to be a web developer at this particular moment because it just feels like we can do so much more than we could even 5 years ago. So, I'm really excited to see what everybody does with this. Please let us know. Tweet at Sean, Tweet at me, tweet at Den. Let us know what you're building and show out of what you're building. We really want to see it. And please let us know whatever you want to see, whatever works a certain way and surprised you. Any feedback you've got. That's super-valuable to us. Sean, I'm gonna put you on blast on Twitter one more time.
+I'm gonna do one more quick shoutout to our sponsors. We've got White Coat Captioning, Amanda is here doing the live captioning for us. Figure out what went wrong with the link. But that lives on Streamtext, made possible through Netlify, Nx and Backlight. Keeping little lights on for all of us and making this more accessible so we can do more shenanigans like these. Sean, any last words before we wrap up?
+Thank you for this. And I'm excited to get feedback. Let me know the feedback on this.
+Yeah. Can't wait to see what you do. I'm thrilled to have been part of the Netlify Graph launch. I think this has been just so much fun. Please go out and make sure you send some of those open source Valentines, please. Just spread the love a little bit. We support organizations now too. You can also thank Babel or others that make your life easier. Go make them a Valentine. Send them out on Twitter. It really does mean a lot, even if it's just a little card.
+Those are also world class developer puns.
+Okay. Lynn Fisher is a freakin' hero. How did she come up with so many of these so quickly? It's amazing. She's like got to be the best in the game. So, please, go enjoy these puns. Share them out and spread a little love. And keep in mind, you can definitely sponsor people. Please, you can do it one-time sponsorship, 5 bucks, 10 bucks. It makes a big difference and helps keep open source more sustainable. Sean. I feel like we did it.
+Yeah. That was fun.
+We'll call this one done. We're going find somebody to raid, so stay tuned. Sean, thank you so much. We will see you all next time.
+
+In [ ]:
+
+
+
+
+
+​
+
+

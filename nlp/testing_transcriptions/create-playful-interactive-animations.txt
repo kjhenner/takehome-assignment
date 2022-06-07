@@ -1,0 +1,479 @@
+Hello everyone. Welcome to another episode of Learn With Jason. Today on the show, we have Cassie Evans returning, with a special guest. Do you want to introduce us? 
+This is Brody. Brody, do you want to say hi? 
+(Dog howling) 
+Well, we had a plan, but now this is all we're doing for the full episode. 
+I think he's okay with that. 
+So Brody will sing on command? 
+Yeah, he sings on command. 
+That's amazing. 
+It was really good during lockdown because we just went out into the wilderness and screamed into the winds together. That really helped. (Laughter) 
+Oh, I love it so much. Okay. Well, I feel like I've already gotten more than I could have hoped for out of this episode. So I know that you are struggling a little bit with Wi-Fi right now. So fair warning to the chat. We may run into a Wi-Fi wall and have to reschedule. 
+But we're hoping that it pulls through for us. Now, let's see. Where should we start? We should start by introducing you. For anybody who hasn't seen you, you've been on the show before. But let's do a little bit of a background. Also, things have changed since the last time you were on. You're now working at GreenSock, which is incredible. But give us a bit of a background and status update, maybe. 
+Yeah, so working at GreenSock. It's great. My partner constantly is just, like, staring at what I'm doing on my screen and just shaking his head and walking away in dismay. Because he's like, how is this your job? So I just make lots of fun demos and get to help people learn, which is basically what I was doing as a side gig before. 
+I was just doing it, yeah, in my spare time. Now I get to do it for my job. So pretty good. 
+I'm so happy for you. I think that's -- it's such a good experience when you get that opportunity. I very much feel the same way about my job. It's like, how do I get to screw around on the internet with people I like and somehow that's the thing I make a living doing? (Laughter) 
+But yeah, so I am thrilled to have you back on the show because the work that you do is always super engaging, super interesting to see, just really, really incredible stuff. And it's also something that I think a lot of people find to be just out of reach. Like, I think a lot of us when we work in front end, we look at animation and go, oh, that's what an animator does. 
+I know that I have felt that kind of, like, oh, I wish I had enough time to learn how to be an animator. I wish I had the whatever, whatever quality I want to assign to myself. I'm not creative. I'm not an animator. I'm not capable. I don't have time. I just always put this wall up. 
+But what I love about your work is that you always manage to remind me and everybody else in your vicinity that this animation stuff is not limited. It's not as much of a specialized skill in terms of, like, you don't have to know tons and tons of deep programming things. You really just have to be willing to play and experiment and learn what I continually find is a pretty friendly API from GreenSock. 
+Yeah, like, I found that when I was starting to learn how to code, because I was coming at it from like a graphic design and motion graphics background, and a lot of the examples and tutorials that I found, especially when I started learning JavaScript, they were just very much like, you know, do this and then some data gets logged out in the console. 
+And I got really stuck transitioning over from CSS to JavaScript because it just wasn't visual enough for me. And then I discovered SVG and GreenSock. I was like, oh, I can move things around with JavaScript. 
+It suddenly unlocked this whole world, just because I was kind of doing something more visual and creative. So I really -- that's like my main goal, to help other people have that a-ha moment. 
+And it is something you've done so well. I think I have specifically screamed a-ha at the top of my lungs multiple times while in conversation with you, which is always wonderful. You've also got a good quality of making this stuff and approachable. 
+Like, Adrian is in the chat asking right now, you did a sticker that said "get wrecked," which is incredible. He's actually asking if there's a link to buy those. 
+Oh, I've got a ton of them left. I'll, uh, yeah, I'll make sure I can send some of them out. I basically just made that because I thought the pun in my head one evening, and I thought it was really funny. Then I was like, I've got to have a sticker. 
+I mean, that is just a top-tier pun. So let's talk a little bit about, you know, I think animation is one of those things that I've never met somebody who didn't want to be able to do it. Like, we all look at it and go, oh, it would be so cool. But a lot of times I'll talk myself out of it. 
+What I'm curious about is, you know, how have you seen animation impact things in a -- I mean, obviously it's fun. But how does it impact things in a business sense or like a user experience sense? You know, we can maybe tie it to our jobs as a way of learning it. 
+I think I froze for a little bit there. Am I back again? 
+Oh, you just caught up. Did you hear the question? 
+Yeah, I did. And then you went a little robotic just at the very end. But yeah, so I've been really lucky to work on a lot of event sites and a lot of sites where, like, the visual impact is the most important thing. 
+I think there's always this question of, like, should you -- should animation -- like, should you animate everything? When is too much animation? I think there's a huge difference between kind of corporate business sites and obviously, like, your kind of award sites or event sites. 
+I think that animation can really help with wayfinding. Like, small animations can help explain an interface. There's a really, really great book. I can't remember the name of the book off my head. But yeah, she's written a great book about all of that, and she's also written loads of blog posts. If you're doing a portfolio site, you can go a little more crazy, I think. 
+Mm-hmm. And the other interesting thing I've seen is a lot of animation, you know, we notice the ones, the ones that people talk about are the big ones. You'll see, like, the footer of your site, where the eyes of the animation follow the mouse around. It's like this really cool, interactive experience. I don't know if they still do this, but the log-in screen had a bear that would watch you type your username. Then when you went to type your password, it would cover its eyes. 
+It's these really big, animated moments, but there's also so many tiny animations that when you look at a really polished, even super corporate API. Like, Stripe is a great example. 
+Stripe does it really well, yeah. 
+And so those little animations, like maybe we don't get a chance in a super corporate site to do a big one, like a big, fun total illustration, but there's lots of opportunities for these micro-illustrations. I don't know. It just feels good to use that, right, instead of popping or whatever. 
+Yeah, and I mean, I feel like good animation goes unnoticed. That sort of animation, when you're talking about UI animation on like software as a service, business sites, people will be like, oh, no, I don't like animation. But if you actually strip all the animation out of an interface, you'll notice it will feel clunkier. And there's all sorts of ways that animation can help give context about an action you've taken. 
+So there's been loads of times in my life where I've like, you know, clicked a download button or I've clicked a send form button or something, and then nothing happens. You have to sit there and process, like, what's going on? Do I need to click it again? If you've gotten a animation that's like, oh, sending, just a simple animation like that, it can take the -- reduce the cognitive load off the user. So it's really useful. 
+Yeah, yeah. So what we're going to be doing today, I think, is probably going to be more on the silly and fun side. But I'm going to make an assumption here that a lot of the techniques we're going to learn will be valuable in these smaller animations as well. 
+Yeah, definitely. So we're going to play with, like, a super-secret new GSAP thing today. So we actually planned to have the launch out by now. It's coming in the next couple of week, and I've managed to twist Jack's arm to let me. 
+Does this mean we're getting a Learn With Jason exclusive here? 
+Yes, you are. Learn With Jason exclusive. 
+Oh! All right, chat. You're going to see it here first. So don't go anywhere. Okay. So that's really exciting. I mean, I'm really pumped about this. I feel like it's going to be great. 
+I saw a question in the chat from gj1118 about whether we're going to see examples. Absolutely. We're going to switch over and do desktop stuff here in just a minute. I have a couple more questions before we go and do that. 
+(Explosion) 
+(Laughter) Haven't seen that one in a while. But yeah, so we are, I think, in really good shape here to kind of -- I want to talk a little bit about, like, I saw a question. How do I convince my client who runs a software as a service app to spend the money on animation? Likewise, if I work at a company, how do I convince management this is the right kind of thing to prioritize? Have you found any good techniques or metrics or things that can help make that business case for people who haven't seen the value yet? 
+I think it's one of those things like accessibility. It is really difficult to get sign-off unless you've got that engrained in your culture from the beginning. So I would say animation is -- oh, wait. I think I've frozen again. Have I frozen? 
+You're still here. 
+Oh, I'm still here. Okay, cool. So, yeah, it's hard -- sorry, I'm hearing an echo. Really awkward. 
+I'm not -- you shouldn't be. I'm not hearing it. So I'm not sure what's happening. 
+Okay. I'll carry on talking. I think it's fine. Okay. Yeah, so I was saying about accessibility. Yeah, technology sucks sometimes. 
+If you've got people like higher up or earlier on in the process that are thinking about it, it's a lot easier. So I try to get designers where I worked to think about animation early on, and we'd have conversations early on, which that definitely helped. 
+Then I think you just get feedback from your users. I'm not really good with metrics and stuff, but Sarah Drasner wrote a really good article. It's called "In Defense of a Fussy Website." It talks about engagement metrics that are the most important. Like people enjoying spending time on your site and staying on your site. 
+So, I don't really do tracking stuff, and I don't know much about it. So I wouldn't be the one to ask about, yeah, like how to get the data to show people, but I think you can tell when people are enjoying something. 
+Yeah, I think that's definitely one of the things that I've noticed too. I'm always looking for, like, what I would call the intangible quality factor. You hear people talk about it, even if they can't articulate it. So a lot of what I've seen is that when people talk about certain brands, they will mention, like, it just feels solid, or I love using it. This is my favorite site to look at, or I always show this to my clients as an example. 
+Any one of those statements is an appreciation of some underlying goodness of that site. Typically when you start poking at them, a few things become really clear. Like, you know, they spent the time on the UX. That usually means they've got little micro interactions. Something that makes you want to do the next step. Like the arrow moves a little and draws your eye and you can see what's going on. Or the forms kind of subtly shift. Like if you put in your credit card number, it animates from a blank card to a VISA or whatever card you put in. 
+Just that little stuff, when you use it, you go, dang, this is thoughtful. This was carefully made. And it makes you trust that site more, and I'm more likely to go back. I'm more likely to default to that payment method over the one that made me go through 18 hoops and a bunch of extra. You end up on, like -- what is it, you go to the site, click on a thing, put in your credit card information, then it opens a pop-up like we're going to verified by VISA. Then you go to close and it says do not close this. I feel like I'm going to break it and double purchase and all these bad things. 
+Stripe, something like that, click, click, quick animation, and oh, you want to track that with your phone? Like, it just feels solid, right? 
+Yeah, I think there's some things that make animation a little easier to get sign-off than accessibility stuff, sadly. Animation is shiny. You can show examples and take, like, the Stripe website. There are good, corporate animated websites out there. You can show people, and they'll usually get wowed by them. 
+Also, everyone is aware of engagement nowadays. Animation really helps with engagement. Like, I recently did a site, and it was for the -- it was a site to raise money and awareness of how bad a state the New Orleans sewers were in. No, the water system. So people just had to read this huge, long page full of information about water pipes, which is super boring. 
+But we did loads of animation. We did these little animated pipes that ran down the page and water drops and stuff. It made people read through all of the information, scroll down the page, and then give their details at the end. So stuff like that can help. 
+Yeah, absolutely. And the chat is chiming in with good points. It creates a mood on a site. Like a corporate site can feel very static and inflexible. Just a little bit of animation can make it feel fun. I think an example of a company going really far with that is, like, Tunnel Bear. If you go through any of the flows, you find these utterly ridiculous animations. 
+I think after you purchase, there's a screen where they just throw fish at a bear, and it never stops throwing fish. So it'll like fill the screen up. Just all these fun little things, right. 
+Or you can do it really subtle. If you go to Betterment, which is an investment app, when you go through the pay, there's subtle parallax animations our a loading screen. It makes it feel more approachable. Oh, no, we have a frozen Cassie. 
+I'm back. I think I'm back. 
+You're back! Okay, all right. 
+So stressful. 
+This is going to be super fun because we're also going to learn how much I've retained from previous calls when we actually get to the coding, which speaking of which, it could be time. Let's go ahead and jump over. 
+Yeah, let's do it. 
+All right. I'm going to go camera two. Here we are. 
+Apparently it was a good smiling freeze. 
+Yes. (Laughter) all right. Before we get started with coding, a quick shout out to the sponsors. We've got White Coat captioning. Rachel is here doing the live captioning. That's made possible through our sponsors, Netlify, Nx, and Backlight. Thank you for kicking in. That helps cover the cost of creating the show. Means a lot to me. 
+Also, chat, thanks for the subs. I saw Aidan got a gift sub. Ben D. Myers is gifting subs. Thank you very much. That also goes toward covering the cost of the show and making things great. Thank you all so much for being here. Means a lot. 
+Also, we're talking to Cassie today. Make sure you go give Cassie a follow on the old tweeter. If you want to follow along with those live captions, those are on the homepage. Learnwithjason.dev. 
+So, also, I don't know if you are all following, but I recently did an experiment with I was trying to remember all the things that I've learned from Cassie and Sarah Drasner about animation. I tried to make this little exploding nav thing. I'm thinking about redesigning my site. So I'm looking at, like, can I make this work, right? 
+Turns out, I could not. But Cassie could. I got some excellent tips on how to make it function and work cross-browser. This particular pen will only work on Edge and Chrome, I think. It broke on Firefox and had some issues on mobile Safari and things like that. But yeah, so this is kind of like one way that we can animate. 
+This is kind of interactive. It's built on ScrollTrigger, which we're going to be talking about today. As you scroll the page, the elements move. I did a really lightweight version of this. I just kind of copy/pasted some stuff. And it did what I wanted. So I was like, great, I don't need to change this anymore. (Laughter) 
+But what we're going to be doing today -- 
+That's what I do a lot of the time. (Laughter) The best way. 
+So today, you sent me this. I'm already just thrilled by this. Like, this is incredible. You know, I will say every time you have come on the show, you've created a piece of lore for the show. I can't even tell you how much curly boy, square boy mileage we get on this show. Like, it led to -- somebody even created a shirt design out of it. 
+Something tells me the Corgi is going to continue here. 
+I love how everyone was like, oh, Cassie is so funny with the curly boys and the square boys, like I was being funny and just didn't know. I just didn't know what they were actually called. I still don't. 
+I mean, I think we made it cannon that they are called square boys and curly boys. 
+Yes! 
+So with all of the setup here, I think everybody's really excited to see this in action. So why don't we jump right in? Maybe you can set the stage for us. I don't know, maybe first and foremost, what do you want to create today? 
+So I originally just wanted to play with ScrollTrigger Observe, which is a new thing we've got coming up in the next release. Then I kind of woke up this morning at like 5:00 a.m., and I was like, we can do hit tests! We could make it a game! 
+So I think we're going to make it a game now. Like a little game. 
+I'm so excited. And there was a poll. You put a poll up, which I think foreshadows what we're in for today. So let's dive in here. Okay. What do rainbow Corgis eat? The options were hot dog, bone, lollipops, and other. Looks like lollipops won despite me clearly voting for hot dogs, by which I mean sandwiches. 
+Beef Skittles. 
+The whole UK crew really let me down today with that whole discourse. Where did this go? Look. Please, everybody go dog file on Phil and tell him that this was a terrible idea. 
+Excellent. 
+Okay. So we've got, just to kind of assess here, this really fun SVG. If I collapse this SVG, that's the whole thing. So this whole thing is an SVG. Then I'm assuming that the background is these blue sparkles. Is that correct? 
+Yeah, that's the one. So yeah, we've got a little Corgi and a Pop-Tart. Then there's some basic styling. And we're going to have a little play and make him interactive. 
+I love it. So, what's the first thing I should do? 
+Right. First thing, what should we do first? Let's get like a little animation. Let's just kind of -- yeah, we'll do like some -- what do you call it? Before you do an exercise, what do you do? Warm-ups. That's the word. You can tell how much I do exercise. We'll do some animation warm-ups. 
+Okay. All right. 
+Have I frozen again? 
+No, you're here. 
+Stop freezing. Come on. I'm here. I was begging that my phone gets us through this. So yeah, let's do some background animation first. We're just going to move the background along so that it looks like our little Corgi is, like, bouncing along in the sky. 
+So we're going to do a GSAP tween. We're going to say GSAP to. It's saying, hey, GreenSock, animate to these values. There's also from and from to, which is saying from those values or from values, to these values. 
+So let's just move it along the X axis a bit. We're going to move the background. You can just pass in a target with the background ID. I think it just had a class of bg. 
+Bg. Then it's an object, right? 
+Yeah, it's an object. Then we're going to say, like, let's move it along the X axis by half of its width. Now that would usually involve a calculation. Look at you doing a calculation. So you can use functional values in GSAP, which Jason has remembered. 
+But we can also use X percent. So we can just say X percent minus 50. And it will move it. 
+So when you say X percent, like -- 
+That's the property. So instead of X, we're saying X percent. 
+Oh, like I do it like this. 
+Yeah, yeah, yeah. 
+Minus 50. 
+Minus 50. And then if we play that -- oh, you might need to press run. Wee! So it's just moving along by 50%. And then we can just loop that. 
+So if we say repeat minus one, it will loop it infinitely. I also really hope that you've got one of the nice new Macs because we're going to do a lot of animation. 
+I do. 
+Good. So yeah, repeat minus one. 
+I got to run it. 
+I have no ease on this. So ease none because the default ease is going to do like a little bit of easing, and we want it to just look fluid. So we're going to say ease none. 
+Then duration, let's give it a long duration. He's zooming along right now. 
+Unsafe speed for a little Corgi. 
+Yeah, very unsafe. 
+This is a school zone. 
+So let's, yeah, knock it down to like, let's say, 10 seconds or something. 
+Is it seconds or milliseconds here? 
+It's seconds in the GSAP world, yeah. Also, I can barely see your screen because of my Wi-Fi connection. So if you do typos, you're on your own. The chat is going to have to help you. 
+All right, chat. 
+Help Jason out with typos because I literally can't. 
+I did forget to tell you, if you hover over the screen share, there's a kebob menu that will let you embed. If you open that in a new tab, it'll make it full screen, which is maybe a little easier to see as well. 
+Oh, wait. You're talking to me. 
+I was, yes. 
+I ignored that whole thing. I thought you were talking to the chat. 
+(Laughter) 
+Sorry. 
+There's a kebob menu on the shared screen in the call we're in right now. You can open that in a new tab. It's going to let you copy embed link. That'll let you open just the shared screen in a full-screen window so you can see. 
+Oh. Let's try that. 
+Yeah, I'm off menu ordering kebobs. (Laughter) 
+Oh, you're massive! This is great. 
+Good. Good, good. 
+Brilliant. 
+So now we're drifting through space. 
+Drifting very casually through space. So we need to be running. We want to do the little Corgi running thing. So let's do some legs animation. So, I reckon, because we've got one element, we're going to target the group, like the legs group. We want those legs to go around in a little running motion. 
+So that's going to go through a series of different steps for one object. Usually if you're animating something through a series of step, you'd reach for a timeline with GSAP. But we also have key frames. They're really underutilized, and we've added some cool new additions in the last release. So let's do this with key frames. We're going to do it with new key frames. 
+ID legs. 
+Consistency. I take it back. Excellent. So, we kind of want the legs to go, like -- let's think about the Y axis first. So we want them to go, like, up a little bit and pause in the middle. And then down. 
+So up, right. We want the motion. 
+You want that to go. So let's do some key frames. We're going to say -- oh, we're going to do it in a key frame. 
+Oh, right. So key frame starts here. Then is this an array? 
+It's an object. Then we're going to do value-based, like array-based key frames. So we can use Y percent again. So let's do Y percent. Then we're going to pass in an array. So that array is going to go -- like, we want the legs to go up, middle, down, and then middle, and then back to the beginning again. So let's do the first value will be like, say, minus ten. Then back to the middle, so we'll say zero. Then ten. So that's down. Then back to zero. Then back to the beginning again, so minus ten. 
+Okay. 
+Awesome. So let's run that. 
+Oh, got to loop it. Is that after the key frames? 
+After the key frames block. I sometimes put all of my key frames on one line. That's a little easier to read with the GSAP tween. 
+Oh, like in here? 
+Yeah. 
+Yeah, I think you're right. That'll be easier to read. 
+I can just about make out it's a long, blurry blob. 
+Yeah, (laughter). 
+So, let's see. 
+Oh, I forgot to add a comma. Here we go. 
+Yeah! Look at him go, up and down. Awesome. We want to do the same for the X axis. So let's copy those key frames, and we're going to do X percent instead of Y percent. And that's just still in the same key frames block. 
+Same values? 
+Oh, froze. 
+So, I'm going to try these. So straight up and let's see. Woo! (Laughter) Not quite right. I have to get our values adjusted here. I mean, this is kind of doing it, though. Here we go. 
+Okay, I dropped out for a while, but that looks good. That looks really good. Awesome. So it's a little bit juttery, and that's because we can do easing in key frames and also in the whole key frame block. So inside the key frames, let's define ease each, so after X percent. So it's ease each. Then say none. That's going to say no easing in between each of the values that we've put into each of the key frames. 
+Then we can also say ease, like ease none on the key frame, on the tween itself. So this is really cool because you can get really granular with your easing. 
+Mm-hmm. That's great. 
+So, awesome. Cool. We've got little legs going. That's great. 
+There he goes. 
+Let's do the same thing for the face. 
+Yeah. Okay. 
+So we can basically just copy. Let's just copy that block. We'll do the same thing for the face. I think we probably want the face to move a little less than the legs, though. Otherwise, it's going to look like he's going to get a headache. It's going to be a bit intense. I'm guessing it's going to be a bit intense. 
+"Night at the Roxbury." 
+I kind of like it. Should we leave it like that? 
+It's extremely funny to me. 
+That looks fine to me. So rather than having a whole other tween, where the target is, you can also pass in an array or pass in a CSS selector. 
+Oh, you can pass in an array? 
+Yeah, you can pass in an array of targets as well. 
+I did not realize that. Okay. 
+Yeah. But like, I often just use CSS selectors. But you can pass in an array of targets too. Awesome. Yeah, he looks like he's moshing. A little moshing Corgi. Awesome. This is fun, but this is just animation. Let's get some interactivity in here. 
+He's running too slow to be going that hard. There, now you're cruising, buddy. 
+So I gave you a link to a little demo earlier, like a little swipy boy. Not that one. 
+Which one do you want to look at first? 
+This one. So there's a lot of kind of full-page swipe galleries out there. I see a lot of them on awards sites. People are always coming into the GreenSock forums going like, how do I build this with ScrollTrigger? But the problem is they're not actually using the scroll of the page. What they're looking for is the direction, like the intent that the user has. 
+So they're looking for swiping or, you know, mouse events instead of scrolling down the page. So we notice a lot of people were looking for this. So we've added something to ScrollTrigger in the next release called ScrollTrigger Observe. It's basically like an intent observer. 
+It will give you feedback on what direction someone is trying to scroll in. So if you look at this, if you try and scroll down with your mouse -- 
+Oh. 
+Whoa. 
+That's cool. Because I'm doing, like -- let me show you. This is cool. So here's my little track pad. I'm just going up a little bit, right. Down. There's not a lot going on here. Also, I think I just got my mouse into a loop. I did. I was touching the side, and that was causing problems. 
+But yeah, so one little touch up or down and it moves around and tweaks out because I'm touching it. But this is really, really cool stuff. 
+So yeah, if you take a look in the code there, am I frozen again? I'm probably frozen. 
+Nope. 
+I'm just going to carry on talking as if I'm not frozen. If you look in the code -- I can't actually see what's going on, but there should be like on change Y or on up. Like ScrollTrigger Observe somewhere. This looks like a whole timeline. There we go. 
+On up, on down. Go to section. 
+Yeah, so on up, we're kind of running through a GSAP timeline. On down, we're doing the same thing. So it's just really handy that you can -- with ScrollTrigger now, we can track those events really nicely. And obviously, like across different devices because it's not just mouse movement. It would also be like swiping on mobile and that kind of thing. 
+So we're going to have a little play with this today. Also, the cool thing is that you can tap into, like, velocity as well. So we're going to tap into some velocity inside this. 
+All right, all right. I'm ready. 
+Let's do it. Awesome. So we've got our little Corgi. We should set up an observe. We're going to say ScrollTrigger.observe. It's built on top of ScrollTrigger. 
+Okay. 
+Then we're going to pass in an object. First of all, we're going to say type. This is a comma delimited list of what to listen for. So we're going to say listen to wheel and touch and scroll and pointer. 
+Okay. 
+Then that's covering all the bases. Let's say on change Y, so this is whenever there's a change, like a scroll or a swipe on the Y axis. And let's do an arrow function. Then in there, we can log out. Let's console log and do self.deltaY. And self.velocityY. 
+Is it the first argument, or like a destructured -- 
+Yeah, that's perfect. So, if we run that -- 
+Okay. So it's running. 
+Then if you do a little scroll up and down, we've got some values. 
+Okay. So I'm going kind of soft. Then if I go harder, you can see the velocity goes way up. Softer, velocity is way down. And the delta is, like, I've moved four pixels up or something. Or is that the value? 
+Yeah, that's the amount you've scrolled and the intensity is how hard you're scrolling up or down. 
+That's cool. I like that it also rolls off. So if I do like a two-finger swipe and give it some oomph, my hands are up, but it's still -- right, like it still kind of rolls off a little bit. So that's also a huge pain to do normally. This is just done for you. I'm already excited. 
+Yeah. It's great. I have to say, the velocity value is a lot because it's just reporting what's actually happening. So if you've got like a touch pad or a magic mouse or you're on a mobile, it's going to do that nice easing thing. 
+My colleague's got a really old mouse with a mouse wheel. That, obviously, you don't get much velocity because you're just clicking. It's just going click, click. So yeah, it's just reporting what is happening. 
+Also, I was just thinking. I clicked down, and then I drag up and down, and I'm also getting velocity values here. So that's pointer, I assume. 
+Yeah. And if you were to open it on mobile, you'd also get swiping values. 
+Cool. 
+Yeah, this is really great because it just normalizes all of those values and just automatically looks for all of the different types of inputs for you. And this is a thing that with my little Cassie on my website, my little face, I think a lot of people get confused about, like, okay, so I know that I can get input from a mouse or I know I can get input from like where my cursor is on the screen, for instance, but how do I then change those values into something that I can use in an animation? 
+So you can see -- 
+How does it make you dizzy? 
+You move it really fast. Faster, faster, faster. (Laughter) 
+That's super fun. Okay. So we've got the ability to track this movement. We know direction up or down. We know the velocity. And so now we can start getting pretty -- like change Y, change X. We can start doing some pretty fun stuff here. 
+Yeah, so the main thing that we need to do is we need to transform these values into something that we can actually use. This is a thing that a lot of people don't know about GSAP. It's not just like animation stuff. We've got loads of kind of plumbing under the hood to help you work with values and help you do all the stuff around animation that can be a little tricky. So scroll down, like, super hard and let's see what one of the biggest numbers is. Tell me what one of the biggest numbers is. 
+22, 24, 25. Looks like I got -- oh, I got up to 33, 3500, 3840. 
+Those are kind of outliers, right. Should we go with like 2200? 
+When I scrolled really hard, it looks like I got up to about 15,000. 
+Oh, okay. 
+But we can probably go with, yeah, like 2200 feels reasonable. 
+Let's go with that. Then we can change it if we have to. So there are utilities. One of them is a clump utility. So we're not going to do this inside ScrollTrigger Observe. We're just going to set up a number transformer now. 
+We'll put this at the beginning of our code file. And we're going to say -- so, you can say, let's do a clamp. Let clamp or const clamp. Nobody "at" me. I always use let because it's shorter, and I like how it sounds. 
+So we've got clamp equals GSAP.utils.clamp. 
+Okay. 
+Then we're going to put the lowest value. Because we can scroll up and down, we've got negative values and positive ones. So let's do minus 2200 as the lowest. Then the highest is -- 
+2200, right? 
+Or was it 22,000? 
+I think I got up to 16,000. But if we clamp to 2200 and 22,000, that just means if I control really hard, it won't go any higher than 2200, right? 
+Yeah, so we can pop in some higher ones if it's not right. So, yeah, let's have a little look. Where we're logging out the value, rather than logging out -- yeah, so self.deltaY, we're going to clamp that. So say clamp, and we're going to put little brackets around it. Then we're going to say self.deltaY. 
+That's velocity, right? 
+Oh, yeah, yeah, yeah. Velocity, sorry. 
+So let's run it. Now I'm going. Everything is fine. I'm going to really let it rip. It sticks at 2200. 
+Awesome. 
+No matter how hard I scroll. 
+So we're kind of clamping them into, like, a reasonable range. That's just because we don't really know what the highest number could be or the lowest number could be. Now we do. We know what the highest and lowest number could be. So we can kind of work with that a bit more. 
+But we want to map this to something that we can use in animation. That's still quite a big number, right. So what we want to do is we want to map those numbers to the numbers we want to use. Say if we're doing rotation. Let's do a rotation. 
+A whole rotation is 360, right. So let's map these numbers to a rotation. A really handy thing that we can do, if we go back up to our clamp, is we can do -- we can pipe different utility functions together and then just use the output. So let's do, like, const transformer. Then we're going to say GSAP.utils.pipe. 
+Okay. 
+Then -- yeah. Then make a new line. I think that would be easier. 
+And we're piping in like we drop the clamp in first and we have another function we can run. 
+Yeah, so then we can say GSAP.utils.maprange. It's camel case. I don't know if you did that. I can't see. We're going to map that range to like minus 360 and then positive 360. Oh, sorry. We have to do both. 
+Two arrays. 
+We do minus -- no, no. It's just round boys. 
+Round boys! Okay. 
+Just round boys. So we're going to say like minus -- yeah, that's the one. Then we're going to map that. Awesome. 
+So four arguments total? 
+Four arguments, yeah. That's the one. Awesome. Then we can use that in the same way we've used clamp. So in there, we can say transformer. Then the velocity. 
+Okay. Let's run it and see what we got. If I crank it, we get 360. Negative 360 if I go down. So now we can, like, have our Corgi flip or something? 
+Yeah, so we can tie this into our rotation. Oh, we can do -- we can do another -- this is a new thing that's going to be in the next release. So I don't know if people have used quick setter before. We've got GSAP tweens, but there's also ways to create more performant animations. If you're updating a target lots of times, so like something on mouse move, you can use something that we've got called Quick Setter. Quick Setter just sets the value like immediately. 
+It does a lot of performance optimizations underneath the hood. But the tricky thing with that is it doesn't ease. It just automatically sets. So we've got a new thing called quick to. It does the same thing, but it also eases to the values. So we can set up like a rotation to before the observe. It's outside. And let's say const rotation to. Then it's GSAP.quickto. Then we're going to pass in the target. 
+So the target is going to be -- I think it's Corgi. Let me have a look. 
+So we have the SVG. 
+Awesome. Then we're going to say -- oh, no. Sorry. This is just in round boys. So there's two arguments. The first one is the target. Then the second one is the property that we're going to be targeting. So that helps do optimizations underneath the hood because we don't have to constantly be looking at what we're doing. 
+So we're going to do rotation. It's basically like a little back door, like directly to the Corgi's rotation. 
+So if I'm inferring correctly, I can run rotation to and put transformer self velocityY. So we'll rapidly set the Corgi to whatever the value of our rotation is with easing so that we get a nice smooth flip that doesn't bog down the computer. 
+Yes, that's exactly it. 
+I love it. Here we go. We're going to flip this Corgi. 
+Yeah! He's flipping from his bum. (Laughter) 
+I mean, I love this. This is going to be a nonstop fountain of joy. Oh, and it sticks too. That's fun. Great. Now I can -- oh, and then back to center. This is great. I love it. 
+I feel really sorry for him. I think we need to set the transform origin. 
+I think you're probably right. 
+It looks really painful spinning around your bum like that. Let's do it with GSAP. 
+Okay. 
+Yeah, with GSAP. So you can use GSAP set. So right at the beginning of the file. I kind of tend to do sets just right at the beginning. So GSAP set Corgi, and then transform origin. 
+Is this second and third argument? Object, okay. Transform origin. I'm assuming camel case. 
+Yeah, then we're going to say center center. The reason we're doing this in GSAP is SVG has a lot of weird bugs that GSAP works around. If you set the origin in your CSS, you have to kind of mess around with fill box and other things like that, and it won't always work. So it's always good to set with GSAP. Awesome. Look at him go. 
+And if I really crank it, we get two flips because all the way down is minus 360. All the way up is plus 360, which is actually two rotations. Yeah, okay. That makes sense. 
+Awesome. So, yeah, that's great. So what else can we do? Let's move him up and down as well. So we're going to do the same as our rotation to, but we're going to do a Y value. So where the rotation to is, let's do Y to. 
+Just Y? 
+Yeah. And the same for X as the well. Oh, no, wait. We're just doing Y. We'll do Y. 
+Down here I've got a Y to. This isn't going to match up with the 360s, right? Or I guess we can just move it up and down 360 pixels. 
+We can do self.deltaY, and let's have a little look at what that does. Then if we need to clamp that at all, then we can. Let's just have a little go. 
+I didn't do something right. Y to, quick to, Corgi Y. We set is to self.deltaY. But it's not moving. Oh, there it goes. I just need a bigger deltaY, I think. 
+Oh, awesome. So you just needed to, like -- 
+Yeah, I got to crank it a little bit more. 
+Awesome. So you've got it working. 
+Very good. 
+I think I froze again. Brody wants attention. Say hi. I don't know whether you can see him. He's just on my lap. Cool. 
+So what should we do next? We've got the up and down movement working. We've got, like, a little rotation. 
+Wakkos in chat is requesting the rainbow tail gets added. 
+Pooping rainbows, yes. We have actually got some rainbows in there. So let's do rainbow butt explosion. So const rainbow butt explosion. I think I've killed Jason. 
+All right. 
+Cool. So let's do -- I think at the moment, they're hidden. So let's do a little timeline. Yeah, so let's do GSAP.timeline. 
+And that's the -- are we targeting the rainbow here? 
+No. So a timeline, we're not going to pass anything into that. We're just going to use that to sequence some animations. 
+Oh, gotcha, okay. 
+So on the next line, we're going to say rainbow butt explosion, dot, to. 
+Okay. 
+Then we're going to target the rainbow rectangles. So I think -- 
+Rainbow rect. 
+Yeah. Then we're going to say opacity, 1. I'm making this as a timeline because I want to use this later. Like, I want to be able to control when this timeline plays. 
+Oh, okay. 
+So we're setting it so we can have a bit more control over it. Then let's animate the rainbow as well. So I set it up so there's four or five, like, little blocks. Then we want to move them up and down. So let's do a from to. Not GSAP, sorry. 
+This is going to be rainbow rect. 
+Yeah, but if you get rid of the semicolon at the end of the previous to, then we're just going to chain those. So they're going to be on the same timeline. 
+Gotcha. Okay. I understand. Then we're going a from to here. 
+We're going to pass in two different objects. This is our first object. So this is our from values. You don't need to put from. Sorry. We're going to put Y percent. Then we're going to do an arrow function. 
+Okay. 
+And because there's multiple of these, we're going to get the index value. Then we're going to use that to shuffle them up or down. 
+Is the index the first first argument? 
+Yeah. So put index. Then in our arrow function, we can probably do -- we kind of want to check if it's odd. Then we want to animate from the position up at the top. If it's even, we want to animate from the bottom. 
+Okay. 
+So I guess we could do a ternary. 
+Two is what I was trying to do. Okay. Now I've got a ternary. 
+Awesome. So let's say like minus five. If it's not, then we'll do plus five. 
+Okay. So I need to return this. 
+Yeah, awesome. Good job. I was like completely blanking on how to do if something is odd or even. So yeah, two, we're going to do the opposite of that. 
+Okay. Y percent, and I'll just copy this, actually, so we can go faster. And we'll say plus five or minus five. Right? 
+Yeah, that's awesome. So let's play that. Let's see what happens. Oh, no, it'll play automatically. We haven't paused it. So we just press run. 
+Okay. It's not looping, but it did the thing. 
+Awesome. It's not looping. So with from tos, you can use them just like normal GSAP tweens. Oh, he's disconnected from his butt rainbow. That's no good. 
+So the Y value, we want to make sure we're moving the whole SVG. So let's go down to our observer. 
+Y to should be SVG instead? 
+SVG, yeah. Then he'll stay connected to his bum rainbow. Yeah! Cool. So if we go up to our from to tween and put more arguments in the second block, so in the second one, the to block. We can say, like, duration and repeat. 
+Okay. 
+I think the duration was fine, actually. That looked good to me. So let's do repeat, and let's just repeat it a few times. I want it to have an end. So let's do like ten. A few. Ten works, yeah. 
+Off it goes. 
+Yeah! Awesome. 
+It's a little chunky. Like, it doesn't look like it's -- here, let me run this again. It looks like it's kind of looping -- 
+Jerking, yeah. Because it's playing to the end and getting to the beginning and playing to the end again. So we need to yo-yo it. 
+Is that just like yo-yo true? 
+Yeah, yeah, it is. 
+See, that is such an intuitive name for what this is. I guess if you've ever seen a yo-yo before. I guess I can use none. Here we go. This is going to be perfect. Look at that rainbow go. 
+Smooth. Super smooth. 
+I love it. 
+What I want to do is, like, after the rainbow is finished, we're going to add another tween on to that timeline, just to fade the rainbow out. Then just opacity. We're going to fade it out. 
+That will just kind of do it on its own, right? If I set it to opacity zero. 
+Yeah. 
+Okay. 
+So if we run that. 
+And ten. And it's gone. 
+Sweet. So, I kind of want that as like a power up. 
+Oh, I got you. Yeah, yeah, yeah. 
+Yeah. So yeah, we basically have all of our Corgi movement in. But then I woke up at like 5:00 a.m. and was like, we could make it a game! Because originally, I was just like, yeah, we can move the little Corgi up and down. That will be fun. 
+But yeah, let's like add some food. Let's add some food for him and do some hit testing. 
+Yes. Okay. I'm ready. 
+Awesome. So first of all, let's make a function that just adds some food into the dom. So we'll create a function that's just add food. Oh, look, he's stuck just dancing vertically. 
+Let's get him doing a wheelie. So rainbow food and then poops the rainbow. Yeah, that sounds about right. (Laughter) 
+Yeah, that is about right. Awesome. So how do we add an element to the dom? We have to create an element first, don't we. So Twitter said that we have to feed him lollipops. So I guess lollipop or food. Food is shorter. 
+Okay. And this is going to be -- like, what are we throwing here? 
+Like a div or a span, I reckon. Doesn't have any semantic meaning. It's just a lollipop. 
+And am I just putting in the emoji here? 
+Yeah, yeah, yeah. So just adding in the emoji. Awesome. We want to style it as well. So let's add a class. 
+And what should we call the class? 
+People want lollipop. So we can just swap that out. 
+Oh, quit jumping. Lollipop. Okay. And then add it? 
+Yeah. 
+Should I add this to the container? 
+Container, I think. 
+Okay. 
+Yeah, so container. 
+Do we have the container up here already? No, okay. So we'll get the container. Document query selector, and we'll get the container. Then down here, we can container, append child, and we'll put in food. Okay. So let's save that. 
+Yeah, awesome. 
+And we should get a lollipop. Where's my lollipop? 
+Where is it? Inspect the dom. 
+Here we go. All right. Let me close this down. I'm going to get over in here. And what we should see is inside the container. It definitely did not add -- okay. Oh, we didn't call the function is why. 
+(Laughter) Genius. 
+That's one way to make sure your code doesn't run. Okay. So let me add food. 
+Why don't we do an event listener, like a window event listener and a mouse up or click and add food. 
+Okay. So window. -- 
+Hey, there it is! 
+That works. So we're adding an add event listener. The event listener is -- you wanted mouse up? 
+Yeah, let's do mouse up. 
+Okay. So now if I run this, it shouldn't show our food at first, but when I click, there it is. 
+Yeah, awesome. Cool. So the thing here is that if we add food, they're always going to be just right in the middle. So we want to position this in a different place each time. 
+Again, we were looking at some of the GSAP utilities a little bit earlier, but there's one that I use the most, random. It just gives you a random number. There's all sorts of different ways that you can like tell GSAP I want a random number between these two numbers or a random number between these two numbers snapped to a certain increment. 
+So let's do -- in our add food function, underneath, we're going to say GSAP.set. 
+After it's appended? 
+Yeah. So we're going to say GSAP.set, and then bone or lollipop. No, it's not a bone anymore, is it? It's a lollipop. Awesome. Oh, wait. We won't do the class, though, because otherwise that's going to look for all of them. So we want to pass in the variable. Is it just food? 
+I've got it as food, yeah. So GSAP.set food. Then we want to probably set the vertical placement. 
+Yeah, so you want to do the left position and the right position because it's absolutely positioned at the moment. Come up, bud, it's okay. Good boy. 
+So yeah, let's do left. Then we're going to say -- oh, actually, let's make the left position always on the right-hand side because then we can move them towards us. So let's say left position is always, like, window.innerwidth. 
+Okay. That's easier than what I was doing. Okay. Then top, we a random, right? 
+Yeah. 
+GSAP.utils.random. 
+Yeah, and then we're going to say -- we don't want it to be all the way off the top of the screen, so let's just do a magic number. Let's say like 50. Like 40, 50 pixels down from the top of the screen. 
+Then window inner height. That's minus 50 off that as well. So that's like not all the way down at the bottom. Almost down at the bottom. Then we can snap to a particular point as well, so we could say every five. So if you do comma -- 
+Oh, wait, hold on. Inner width means that it's going to be actually pushed off because the left-hand side is like here. 
+That's true. What did you have before? Was it just 100%? 
+I was doing like 90%. Let's do 50 maybe. Let's see what that does. 
+We could do 90%. That also makes sense. Yeah, awesome. 
+Here's a question. Are we planning on animating these? 
+Yes. 
+Because then we do want them to be all the way from the left, right, so they kind of start off screen and fly in. 
+Let's just keep them here for now so we can check that our function is working. If you click again, does it pop one in a different place? Yes! Yes, it did. 
+I love it. 
+We've got loads of lollipops. This is brilliant. Okay. Cool. So we know that it works. So let's put them all the way off again. Like let's do window inner width at 100%. 
+Done. Now if I click, they're happening, but they're off screen. 
+So underneath this GSAP set, we're going to do a little animation. We're going to say GSAP to, and we're going to animate the bone again, or the food. I keep thinking it says bone. 
+I'll say like left -- 
+We don't want to animate left. So we're using left for positioning, which is what we wanted, but we don't want to animate left because that's going to be not very performant. We want to be animating the X position. 
+X, okay. 
+Yeah, transform is always for animation. And then we want to animate, I guess, window inner width again. So we want that to be minus. So times minus one. Then that should animate all the way across. 
+Wouldn't that pull it like double the length off the screen? 
+No. Oh, because we're not using X percent here. We're using X. So we're just working in pixels now. Not percentages. 
+Okay. So do you want me to do X percent? 
+No, no, no. No, we want to do X. X percent won't work in this case. It works the whole width of the screen for the background because the background is the whole width of the screen. So it's X percent is relative to the thing itself. 
+So if we did X percent on the food, it would only be relative to how wide the actual lollipop is. So it would move it like one lollipop's width instead of a window. 
+Oh, gotcha. Then we need to add like an extra minus 100 or something. To make sure it goes all the way off screen. So let's do that. And now -- pew, pew, pew. Okay, this is way too fast, but it's cool. This is super fun. 
+I'm going to make this slower. So, we'll give it like -- 
+All I can hear is like chaotic robot noises and flying lollipops. That was like pure chaos. 
+Oh, wait. I broke it. Why isn't this working? 
+Oh, because you've used -- 
+Oh, 3,000 seconds. Here they come. 
+That's the slowest in the whole world ever. 
+Okay. Maybe not the most challenging game here. All right. Try again. 
+It would be challenging, but you'd get tired, wouldn't you? Awesome. 
+Okay. So here we go. I think we probably want the ease to none again. They are in space, unaffected by friction. We don't believe in physics out here. 
+Also, for the random positioning of them on the Y axis, we're getting a lot that are almost exactly similar. So let's pass in a third value there. Let's say, like, five or ten. Then that's going to say between those two values, just give us values back like every five or every ten. So we should get, like, less positions, but it should be a little more spaced out. That's good. Awesome. 
+This is fun. 
+Got loads of flying lollipops. 
+Now we can have our Corgi kind of fly around. 
+That's great. Yeah, so what I realized we could do is we can do hit tests. So I've included draggable, which is also GSAP plug-in. One thing that draggable has is when you're dragging elements around, you can detect to see if it's over something. Usually people want to drag something, say, into a menu, and when it hits the menu, they want to be able to drop it. 
+So there was this hit test detection that we had in draggable, but you can actually use it statically as well, so you don't have to be dragging something. 
+Okay. 
+So might just have to double check in some syntax because I don't use draggable that much. So yeah, we're going to write a function to check whether there's been a hit. So we'll call it, I don't know, what should we call it? We're checking if there's -- check hits. 
+Check for snacks. 
+Yeah, (laughter). Awesome. So let's just log out, like console log, and we're going to do draggable with a capital D and then hit test. The first parameter we're passing in is the SVG. So I think we've got that already in a variable. Then we're going to check for an element. 
+Like a lollipop? 
+Yeah, let's do that first. We'll check for any lollipop. Then we'll call that function. Then let's just open the console and see what happens. 
+Now, is this going to continue to fire, or do we need to call this in a loop to get it to -- 
+That is very true. It needs to be called on, like, an update. So what we need to do -- oh, oh. Okay. Rather than passing in -- rather than looking for any lollipop, let's look for a specific one. 
+Okay. So like put it in here? 
+Yeah. Then in the tween, where we're moving the bone -- I keep saying bone. We're moving the lollipop. So where's our tween for the food? Yeah, that's the one. So the GSAP to food one, at the bottom we're going to put an on update. So this is just a callback. Camel case again. We can do an arrow function. Then this just calls while that's animating. 
+Okay. So then I can just call check for snacks food in here. 
+Yeah. Yeah, yeah. 
+And we've already got food because it's in the parent scope. So that should just work, right? 
+That should just work. Let's see. 
+Famous last words, but let's find out. Okay. So I think we hit it. Did we ever get there? 
+Get it, get it, get it. 
+I saw a true. Is this letting us know? Yeah, here we go. So we got some hits. 
+I think we're still logging something else out. 
+Yeah, we're still logging the velocity, I think. 
+Awesome. And then this is good because when we know that we've got the hit, we can actually remove that from the dom. 
+Got it. Okay. Then we can say food. -- is it detach? 
+I think you can use remove nowadays. 
+Food.remove. 
+We're not in Internet Explorer. 
+Let's try it. Where is it? Did I break something? 
+Oh, it's because we're trying to do the on update. We need to do that after it's got the snack. So that needs to be in there. Let's fade it out. 
+So -- 
+Yeah, that's the one. 
+Okay. So that'll actually work, maybe. 
+That will work. Yeah, we were just removing. It started animating, and we were just getting rid of it. 
+Got it. 
+Yes! Oh, this is so good. This is so gloriously chaotic. Look at him. 
+So the last thing we need to do is play this. We've got three minutes. So the last thing we need to do is play this rainbow, right? 
+Uh-huh, yes. Yes, that is the last thing. 
+So I need to pause it? 
+So let's do -- if you go up to the rainbow -- where is the rainbow? 
+Here's our rainbow butt explosion. 
+We want to do GSAP timeline. In the timeline itself, in the round boys, GSAP timeline. We're going to do an object and say paused true. 
+Okay. So then we're going to get our rainbow butt explosion. Go down to here, which is where something has happened. Then can I just do a dot play? 
+I usually do a dot restart. That will always go to the beginning and play. 
+Okay. 
+So let's have a little look. Have we really got three minutes? Yeah! It worked! Amazing. 
+Oh, my god. Okay. 
+We made a game! (Laughter) 
+(Laughter) I mean, this is incredible. We did so much in such a short time. Yeah, so there's our Corgi butt explosion. This is just so good. Like, it's -- everything about this is fun. 
+We were able to make a Corgi flying through space. It's animated, looks like it's running. We've got these lollipops being added. We've got the effect whenever you eat one of the lollipops. Like, this is so much fun. But I know I want to be mindful. We're out of time. 
+So for somebody who wants to learn more, we'll be sharing this CodePen for you to reverse engineer, play with, whatever you want. Where else should people go for more information? 
+If you are getting started with GSAP and you have questions, we hang out in the forums all the time, like on the GSAP forums. So yeah, we'll be in there to help you. I've also got a little SVG animation Slack, which I can give to Jason to share. 
+Is that going to be -- am I going to be able to find this? 
+It's a little bit sneaky and secret. But you can come and hang out. And then, yeah, I don't know. There's all sorts of places. I think the best way to learn it is by tinkering. So I would say get on CodePen. There's been some past CodePen challenges with GSAP. So there's like loads of examples and stuff. Follow Jay. Jay makes loads of really good things that are for beginners. And he's done an episode on your stream before, hasn't he, Jason? 
+Yes. Nope, that's not the right one. Where is Jay? Oh, two Ys. Yes, we have this. Then if you head over to Learn With Jason and you hit command-K and search animation, you're going to find Jhey. You're going to find Sarah. You're going to find Cassie. You're going to find Eli. A lot of good content around animation. Yeah, this is a really fun one with splitting. Here's today's episode. We've got Scott talking about animation. 
+So basically, just head over and look for animation. And I think we might even have -- do I have, like, a tag? Maybe not. Nope. Okay. Anyway, go to the site and search for it. You'll find it. 
+Also, like, literally just hit me up. If you are wanting to learn and you want links or you want help or someone to go over your Pen, it's my job. I love that it's my job. But it's my job. So I will happily help you. 
+Wonderful. All right. So with that, we are officially over time. So chat, stay tuned. We're going to go find somebody to raid. Cassie, any parting words for everybody? 
+Not from me, no. Just have fun. And I'll see you all soon. 
+All right. Thank you so much for spending some time with us today, Cassie. This was an absolute blast, as always. We had a lot of fun. Chat, thank you for hanging out with us today. Stay tuned, we're going to go find somebody to raid. We will see you all next time.
+
+In [ ]:
+
+
+
+
+
+​
+
+

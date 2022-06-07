@@ -1,0 +1,475 @@
+Is it live? It's live. Ha, ha! All right.
+If it makes you feel any better, that is how everything goes.
+Welcome to another episode of Learn with Jason. Today on the show we have Dan Gorelick. And we are also trying out a new setup to make everything work better and I'm working the kinks out. Let me know in the chat if you have any problem hearing things, if it's too loud or too quiet. Dan, how are you today?
+Good. Excited to be here.
+I'm excited to have you here. You're not getting doubling, echo, anything like that. Let me know if you are hearing anything weird today is an exciting day because as those of you who know will be fair with, I'm a failed machine. I was a touring musician for a long time. Turns out I'm not good at music. But I learned all the things I needed to do to become a developer as part of my musicians journey. I like to bring music into things, I'm a big fan of getting into music and doing as much as I can with music. I just haven't had any opportunities to like make music. And so, Dan, you make music -- now, is this professional? Is this like your full-time gig?
+Or maybe I should just start by asking the question. For folk who is aren't familiar, can you give a background on you and what you do.
+Hello. I love the messages coming in slowly on Twitch chat. Thanks for having me, Jason. We talked a little bit about both of our journeys into music. And I would love to hear more of that as we go on throughout the day. But yeah. I don't know. I have been playing music since a very young age and I almost went to music school. But then last minute I took the exit ramp and went to computer engineering school.
+So, four years of that really... had me feel what it was like to not be doing music as much as I was beforehand. It was after I was graduating, so much of me wanted to return to making art and exploring music. And I had this question which was I spent four years exploring how software with coding. And is it possible to make music with code? So, I started exploring that intersection.
+And, yeah. So, now I do many different things. I still make software, I do design things, interaction design, I like little musical instruments on websites and I also do performances making music with code. And I will say, I wasn't as much of a performing musician until I started making music with code. And then that was just a way to -- and for context, I used to play -- I still play the cello. But playing classical cello, it's harder to finds venues to do that versus making electronic dance music.
+Sure.
+Not necessarily EDM, but electronic upbeat music with code. Making music with code is something that's brought me back and helped me grow my relationship as a musician, as an artist. Yeah. And that's why we're talking today. Because I did a performance and you a saw it. And, yeah.
+Yeah. Absolutely. I see Char just came into the chat. I'm excited because this is actually kind of a two-parter episode, sort of. Because today we're gonna make some music. And then on Thursday, Char is going to help us make visualizations for audio. And we're going to do all that with code which I'm so excited about. What I've always struggled with is when I was a kid, I had the ability to go all-in on music. And I didn't have any responsibilities, bills, anything.
+So, I basically just lived in a van. I had no real possessions outside of a guitar and whatever gear was in the trailer. I lived off of like 60 bucks a month to pay my cell phone bill, get a job at a Wendy's for a week, pay the bill, quit the job and get back on the road and tour. That was incredible, and it was not sustainable. When we realized we were not going to become a famous band. Okay, I don't want to continue living in a van. I have been doing this for two years. This isn't gonna scale. Then when I started getting into how do I become an adult and financial security and these things that became more important as I became older, it became less possible to do the musical things I wanted to do.
+And it just kind of became a hobby. I have all this musical gear around me that rarely gets touched. That's a huge bummer for me. I'm really excited to hear that's something that has -- you found a way to do it. And even more importantly, what's interesting to me about the way that you've approached music is you're not doing what I've seen some folks do. You live a kind of double life. You have a day job as a programmer and a night job as a musician. You're bridging the two skill-sets into something that is unique. It's -- it takes advantage of all of your different skill-sets. And produces something that's, you know, yours and like all of yours. Not necessarily like the half of you that isn't a programmer.
+And I think that's really interesting. And it's exciting to me as well because, you know, like I said, I bring -- I bring that whole musical part of myself as just stuffed in a closet and I have this fantasy that someday I'll have spare time and be able to make music again. Someday I'll have all the, you know, the bandwidth to figure out how this little drum pad that I bought worked. You know? Like all those little things.
+So, how did you land there? Like when -- you said that that was when you started to do live performances. But as you started getting into the music, how did you learn this was something you could even do?
+Yeah. And you say "Do," there's two parts to that. Thanks for sharing your journey and where you're at right now. That's helpful context. And I can definitely relate. So, I don't have a full-time job. I work with many different clients on projects. Some are music, some are web development, rapid prototyping, things like that.
+And when I did have a full-time job and it was 40 hours a week or more, I did finds it harder. And part of me, similar to the Dan that was in engineering school, a part of me was kind of -- I'll use the word, this is gonna be a little bit much. But part of me was like starved from not having the outlets to make music.
+Yeah.
+So -- so, I guess, today we're gonna learn practically how to do it. So, yay. Exciting for that. But I guess time-wise how I do it is very much just -- yeah. I wouldn't say that making music is my job. I don't know what my job is. But I think it's just about trying to create the circumstances. How can we find the hours in the day? How can I make the activation as low as possible to just creating. How to make it so the drum machine in my desk, it's plugged in all the time. And when I wake up, hit two of the buttons and maybe get little bit of musical juices flowing. For me, I had this ah-ha moment, I have all these electronic synths and drum machines. And I leave them on the desk, not always turned on to save electricity, but as easy to turn on as possible.
+Right.
+One thing to explore today is making music with code. Just having a laptop. What that felt like, at a cafe, I could open my laptop and start making music on the go. It seems like we have some doubling of my voice happening.
+Yeah. I have something going on with my setup where I have like -- I don't know why it's happening.
+I could keep talking.
+Yeah, why don't you keep on talking and I'm gonna look at my settings one more time and see if I figure out what was going on. But yeah, I'm sorry for everybody who is hearing the doubling. I'm not 100% sure where it came from. I mentioned this earlier, I just switched over my setup to be friendlier to recording so that we can do things with like turning this into podcasts and better highlight reels and that sort of stuff. However, it also means that I touched all the buttons and I only have a passing familiarity with how most of these buttons work. I apologize for the extra noise going on here.
+And I will do my best to fix it.
+Yeah. And during the pandemic also, that's when -- so, live code asking like a Digitally-first medium. It really works well for livestreams and whatnot. And if you're still hearing my voice doubling, it's not a phaser track. But I learned so many things on every single livestream I did. One little thing didn't go right. I had all the audio from my synth going in the left ear only. Or things like that. So, every time was learning one or two more things.
+So, anyways, what we're going to be doing today, Jason is going to be piping audio from TidalCycles which is what we're using to make music on to the stream. That's added another layer of complexity for the stream as well.
+Yes. And I think what is happening -- so, for folks who aren't familiar with how I run the stream. I'm on a Zoom call with Dan right now. I have OBS on the same computer. And then I'm also running a Mac that is piped into this computer that I'm piping the sound from. And I'm trying to get all of that into separate tracks as well as the overlay tracks. And the challenge that I have is that it's really hard on this computer, at least with my understanding of Windows, to figure out where sound is coming from. So, I actually don't know If the problem is coming from Zoom or from OBS or somewhere in between. I'm gonna have to debug this. It was not happening where we tested this yesterday. I feel like I different touch any buttons. But that seems to be the way it goes. So, I will keep -- I'll keep digging into this and figuring out what's going on. But this is where we are.
+And it seems like some people are saying it's fine. I don't know.
+I think it's like phasing. The nice thing is that there's no delay, right? It just sounds like you've got a doubler on your voice. Which is legible at least. We can all understand you. It's a little bit odd. It definitely sounds like an audio effect. However, we're gonna have to push through because I don't know how to fix it and I don't want to restart my computer in the middle of a stream.
+Here we are.
+Pretty sure we won't hear it in the music. That's the important part. Let's talk a little bit more about how -- I'm actually curious too because one of the things that I find most fascinating about this space is as people get into coding, you think of coding as being a very practical pursuit. It's the way that you build software that powers business. It's the way that you make a living. It's the way that you build a website to advertise your services or communicate information about yourself or otherwise do something that's like transactional in nature.
+However, as I've gotten deeper and deeper into code, I've found people like you, Char that we're going to talk to on Thursday, who are using code as a creative outlet. And we're seeing more of this creative coding. Or people who call themselves creative technologists or whatever label you want to put ton. And I'm -- I'm just kind of fascinated by this in general. Because it feels like some doors are opening. At least in my mind. This is probably true for a long time, I'm starting to realize it, there are all of these outlets for being a creative using something that may have traditionally felt like in my mind a practical media.
+So, when did that door kind of get opened for you? When did you start to think of code as a creative outlet?
+Yeah. Hm, great question. And also, I don't hear the phaser effect from my end. But I'll be mindful that I will have this cool effect. I don't know if that adds an air of mystery or something. But I'll try to be as relatable as possible given the voice. Yeah. I think for -- my -- I guess maybe let's like zoom out a little bit and I think it's just how can we use technology to -- as like a creative outlet? And if we think about software, all software is built with code. And if we think about coding to -- as a creative outlet, it's kind of like going behind the facade a little bit of software. My introduction to making any heart with technology was Microsoft Paint. Making little like I don't even know what the pixel density was. But working with that.
+And I think then it was just realizing that I could be creative and explore and have some -- I don't know what my creative expression was with MS Payment, Microsoft Paint. But, yeah, I think it started there. But as time went on, as I started to understand web Dev and as I started to appreciate the web being natively an interactive medium -- Mario Paint. I'm just reading -- I shouldn't read Twitch chat while trying -- very distracting. In a good way, though. But no, I think once I started making websites and understanding what the web is intuitively app interactive medium, it just happened as I started making more websites. Oh, this thing that I'm making is asking for people to interact with it.
+And once I was able to start making music things on the web, that's when I think a lot of kind of doors opened for me. Because this whole history of being a musician somehow I was able to kind of bridge that to technology. So, when we get to creative coding, I think there's many different ways to do. And I think similar to the buckets that we can cast on many things in the world, creative coding, if we zoom out a little bit, how can I be more of an artist? And how to explore being an artist in a digital medium? And I think being a creative coder is not all that different from using something like Procreate on the iPad. And someone who uses a painting app on the iPad, you're not gonna be really amazing from the get go. You have to practice and grow your craft.
+Right.
+Just as you do -- and I think one of the great things about creative coding is people are spending the hours, doing the 10,000 hours learning how to code, navigate a text editor, using how to use Google to find problems and tech overflow. And so much of this bridges over into making art with code. Because where one might run into a lot of barriers who hasn't had this experience, hasn't had the reps learning how town block things when something isn't working as the documentation says and learning this is all built my humans. Nothing is perfect. All software is inevitably flawed.
+Yeah. So, I think that's something where the barrier is very low to get started. But I think that for people who have coding experience, and I think with TidalCycles for making music with code, the barrier is not that high for non-coders as well. So, it's something where, yeah, anyways. Maybe I'm getting a little bit too philosophical here. But I think it's about the relationship of being an artist and put on our artist hats and start using code as a medium.
+Yeah. And you bring up a really good point. Which is the most frustrating part about a lot of creative pursuits. I think Ira Glass put it as, your taste outstrips your talent. When you first start any pursuit, you know what you like. You have a sense what have good is for music. But you don't have the raw ability, you don't have the mechanical ability to make music that you think is good. So, it's really discouraging where you hear a song and grow, oh, I had this idea in my head of what a good song would be. And then you go to the actual keyboard and you can't make your brain make those sounds. Right? You don't have the ability. You have to do all this practice and all of that ramping up to get to the point that you get to just play. You know? And I struggle with this on piano. I can make noise on piano. And if I take a lot of time, I can figure out the notes that I wanted and I can put them together. But it's a labor.
+But when I code, because I have done so much coding in my life, I can just play. I can sit down at the keyboard and think of what I want and I can just start throwing it together. And I am from idea to some form of prototype very quickly.
+Yeah.
+That has not traditionally been true with creative endeavors. But what I love is you've kind of pounds -- I'm not gonna call it a hack because I think that diminishing the impact of it. But you have found a way that you can just play with something that maybe isn't something that you've put the 10,000 hours into it. I don't need to learn piano. I can use the coding that I already know to make some music. And now I don't have to struggle to get the idea out of my head, I can just sit down and play.
+Totally. And I think that's the beauty of the intersectionality of it. Where taking this thing that we've put a lot of time into and realizing, oh we can kind of mobilize this in a very different way. And I like to -- again, I always like to zoom out and think about what is our body of work that we're adding to? Am I a software developer? Am I a project manager? Sure, those are two tracks you can move on. Or what is it? An IC or a management track as the software world. Oh, these are very traditional tracks and one might think all of my skills day in and day out are going to one of the two tracks. But there are many different things we can do in this life and ways to spend our time. And everything we're doing is adding to our body of work. And use that in ways that aren't expected. Some ways to make money, sure, but other ways to make artistic pursuits that can eventually make money as well. Things like that.
+So, yeah. I feel like maybe it's a hack. But it's also maybe a we're reaching back into all of our experiences and able to kind of explore. Like, oh, how can I be an artist? There's so many of my friends who say they are not artists and then I show them some creative coding tooling and then I'm amazed. It's like, oh. One of my friends he was sharing his optical illusions as a kid. And realized the impact after playing with a visual live coding language for so long.
+Realizing, I didn't know where all of my tastes came from and the things I'm trying to create. I don't know. It's one of these success stories where he's a software engineer full-time. And I introduced him to tool, Hydra, and making visuals with JavaScript. And a week later, he was showing me feedback loop things and things I never thought were possible.
+It's something where, how do you do this? Read the docs, read the source code. Saw things I could do and things I couldn't. Yeah. And this is maybe a little -- someone's saying "Preach." But this is going to be a little preachy too, and I really do believe, and maybe pandemic has -- this is one of my takeaways from the pandemic, I don't know if I mentioned that on the show. But I really think everyone is an artist at heart. We want to see our impact and share that with others. And I'm an artist and making art in many ways. And today we're talking about making music with code.
+And something about choosing the different medium, in this case, codes. We can see that now art is relatable, art is approachable for a lot of folks who maybe didn't see art as approachable. And I can relate being one of those people who was in software -- computer engineering school.
+Right.
+For so long. Not seeing what I was learning. Not seeing how binary trees or sorting algorithms would ever be a helpful steppingstone to me understanding how to make code on the fly. Make music on the fly with code.
+I love it. I think it's so interesting too because, you know, it goes in many ways. I think that what you said about when you talk to people and they say things like, I'm not an artist, right? The interesting part of this is that it's -- it's not as cut and dry as like well, I'm not an artist because I don't own a paint brush. It is not -- that's not a statement that makes sense. It's the same way that, you know, when we argue about whether or not you're a programmer. Did you build something that runs on a computer? You're a programmer. Sure, maybe it's HTML. Maybe it's C#. You know, maybe you're down in the byte code. I don't know. But in any of those situations, you're giving a computer instruction and making it do something. Same with art. People who are doing CSS art, that's art.
+It's programming and it's art. And people who are making music with code. That's programming and it's art. And you are an artist. Any time that you get creative. But I think the other thing that's interesting is how that works back into your ability to do your job. Because you're talking about advancement in these IC tracks or management tracks and are you becoming a project manager? Are you becoming a better coder? Any of those things. Well, my time as the frontman for a band made me a much better communicator and a much better presenter for helping convince a whole team to go along with an idea. Or, you know, my time learning how to like structure songs helped me think about the arc of a presentation that I'm giving or a story of like the life cycle of somebody getting into a new piece of software for onboarding. Just because it's creative, doesn't mean it's not a direct translation into your day job. Thinking more laterally and thinking about getting as many different categories of knowledge under your belt as possible, all of them cross-pollinate. That's where the best ideas come from is when, you know, if you look at these really interesting ideas, it's because somebody had a lot of overlapping interests and they found a unique intersection is that hadn't been explored before. Oh, I can build that. And we all go, oh, my god, that's such a good idea. I don't believe I didn't think about that. It's because someone was weird and did all the weird things and found out all of their weird overlapped in a unique and useful way.
+Totally. I think there's something about the "Weirdness." Like making it relatable and less weird for people. The role of being a translator almost. hey, here's really arcane byte code and open up an NES, we can mess from it and make art from Super Mario levels. There's an artist --
+So cool.
+You have the clouds from Mario flying by. I should find this artist's name. But, yeah. I think that's something that's really beautiful. I see some people in the chat talking about the analytical versus the creative. And I think it's really important and powerful to be putting energy towards both. In my mind the analytical is the technical abilities of learning a piano, or learning how to look things up on StackOverflow. Things like that. And I feel like -- yeah. I feel like both are important. And the -- yeah. It's this journey that I have been on. And that Char has also been on and many other people. You hosting this show, doing something that's intersectional in a way. I think everyone here, the role that we have as being the translator. Oh, I've explored these places and these are the exciting things they found. Let me bring them back and is share them with everyone.
+I love that.
+I think there's something important there.
+I have a million more questions. But I want to make sure we leave enough time to actually see this in action. So, I'm going switch us over to desktop view here.
+Cool.
+And as we do that, let's take a quick second and thank our sponsors. We have Amanda from White Coat Captioning with us today, thank you for being here. Made possible through the sponsors, Netlify, Fauna and Auth0, and that's making the show more accessible. Find that on the home page, Learn with Jason.dev. We are talking to Dan, get over on Twitter and give him a follow.
+And now I have some stuff. I started pull up some additional resources, then I realized I don't know enough to ask the right questions or where to pull them up. I'm going to say, where should I start if I want to get into making music on the web.
+Yes. So, for making music on the web, there's many ways to do that. We're looking at TidalCycles today. There are many ways -- for the web, TidalCycles.org. You can see in the browser. If you want to follow along, you can also install it and maybe by the end we can see if you can also make some noises. But yeah. There's videos here of what different look like. Let's do the one in the middle.
+Okay. Now we find out if I really broke this. Can everyone hear? Why can't I full screen this?
+If you click on the YouTube logo. That will bring you -- yeah. Maybe click a little bit. Cool. I cannot hear this. But I'm okay with the viewers can hear this. So, what this is, is in the blue code there, and this is -- this is TidalCycles. This is Alex McLean typing and this is hello cat food Antonio making the visuals. I think and this is also them talking over them creating this. I can't hear.
+I had this working, and now it's stopped working. It is coming through and it's getting out to Twitch. The concerning part is that I don't think you'll be able to hear TidalCycles once it starts. Which we had working a minute ago. So, what have I done? Let me make sure -- I think I figured out how this worked before. So, let me just turn these back on.
+I can hear it. I can hear myself too.
+That's the part I can't figure out.
+
+
+The musicians looking at their screen are not --
+
+
+So, this is really cool. And, you know, there's a lot of interesting stuff going into here. And question see words that I've seen before. Like legato. I know that that's a music word. And I can see that we're looking at notes like C7, D8. Those are all notes that I've seen in like if I look at a piano. Or if I see notation on things like that. So, this is really interesting.
+So, let me stop this. And... I think I just made more noise? We're just gonna pretend that didn't happen. So, if anybody wants to watch more of this, you can. And yeah. So, this, then, should give us --
+Yeah.
+There's some context at least, right? Like high level, we're gonna write some code, it's gonna make some noise.
+You have already installed this. But let's walk through what the steps look like. You can go to documentation, see install on the left. You are on Mac. I've done the installation on Mac and Windows both. What it looks like is opening up your terminal and running the script. You can see the source code. It's not installing anything bad on your computer. But what it is installing is a couple of things. And if you scroll down slowly, you can see what is the script doing do my computer? these are the different tools, some may be familiar, some might not be familiar at all. The main one is TidalCycles. It's a library working in Haskell. How many have worked in Haskell before? We can see in the chat. DSP -- domain-specific language? Domain -- D SL -- domain-specific language.
+Someone who knows more about computers than me jump in.
+But it's built on top of Haskell. It's Haskell with a few mods to make it musical. And the text is atom. You may have used that before. There's a package built in to do this. And then we also have Alex McLean in here who is video we just saw. Hi, Alex. And DSL, thanks. So, Adam is gonna be here and we'll be running commands on Atom. That will be sending them via socket to supercollider. Go back to the website.
+Here is supercollider.
+This is a thing that is separate from TidalCycles. But we're going to bring it back. But SuperCollider is an amazing open source cloud library, created by many people, hosted on GitHub, it's a way to write code in a terse way. For me, we have Alex here, so much energy has gone into how can I create music -- how can I actualize ideas as quickly as possible? That's what's resonated with me and kept me going and learning and exploring. So, yeah. So, we have these all installed this is what the installation script will do for you. Some of the things we are going to be doing today are only relevant for Mac users. I'll kind of flag those as we're going. Windows, I will say, blessings to you all for dealing with Windows audio drivers. It's a little bit easier on Mac. But there's a similar install script for Windows as well.
+Got it. And whether I did this -- we did it aheadof time because we were worried about audio drivers. When I installed SuperCollider, I had to change the output rate of my -- I had to get into the MIDI here.
+Audio.
+And change this to 441 here because it was at 48. That was incompatible with Supercollider. It was really straight forward. This is a lot of software. I know it might feel intimidating. But I just followed the instructions here and was able to get up and running and all set and actually got things kind of running.
+So, once you go through the setup, then I ran one command which like made a sound to make sure that it worked and I've stopped looking at it. Everything after the setup Dan is gonna teach us right now. So, I have SuperCollider and Atom. We have an empty project.
+Close the welcome guide.
+And I'm now ready, I think.
+Yeah, so, going through the steps in the start title. I want to click on that for folks following along. It's right below the install. Yeah, start title. So, we're going through these steps. And the first step is to open up Supercollider which you have done. And we're going to run superderp.start. Do you have the file that I sent to you saved anywhere?
+How do I get back to my recent files?
+Go to file, open recent, I believe.
+Open recent. Here's the, yeah. Yeah, I have a handful of utilities here. Let's see, they're all commented well. We can start and stop the server.
+Yes. and I will link this in chat as well. But I have this on a GitHub gist. And what this does is for 90% of you, you'll just be doing superderp.start. But we need to go to the right audio output. I can't see different line numbers. You have a different window in the way on my screen.
+Whoops. Let's see if I can -- can I fix that? Not really. Super-annoying. Let me -- how about this? I'll make this slightly smaller so that you can see what's going on.
+Nice. Work smarter, not harder. Yeah. So, let's -- so, for live coding, why it's called live coding is unlike a Python script that you run, you save like hello world.py, save that, and then in your terminal, run Python script, that runs the whole file. With live coding, this isn't true for all languages, but with most I've worked with, you actually run different blocks of test at a time. Have you worked with Jupyter Notebooks or Google Collab before?
+I have a passing knowledge, we did an episode where we played with something like this. Which I will just search for real quick. If you want to see how like a sort of Jupyter Notebook works, observable is like this. Where it executes code in blocks. Not as a whole file.
+Yeah. Observables is awesome. Yeah. Let's see what that looks like. Here we're not going to hear any sounds. Just the setup. Get to the fun part too. Run line 12 by hitting shift enter.
+Okay.
+And this will list the different out devices. Which one do you want to send the audio to?
+We want to send it to this one here, which is zero.
+Cool.
+So, this one?
+Line 15, let's just change the number there in from 1 to zero. And confirm that's printing the right one.
+Yep.
+Cool and run line 18 and 19.
+Ran 18. Ran 19.
+Cool. And then so now we are saying, hey, server, go to these outputs. And now you can do super.start. If up installed or watching the bob, this is where you can run the start.
+Okay.
+We soot listing, and the cycles, everything is green. We're running. Good job.
+All right. Theoretically speaking, this is kinds of the end of supercollider for now. Until we want to change more settings, we don't need to look at it anymore.
+Exactly.
+Okay.
+And then what we can do now is go to Atom.
+There we go.
+I see that you've already created a file called test.title. So, if you're following along, you can create another file. Make sure it has a dot title at the end. Atom does not natively support dot title files. But there is an extension for TidalCycles that makes it do this. That was installed if you go to preferences, or installed packages, effort. And you can see TidalCycles package was installed here. I should note, this is open source, maintained bit community, Alex and many other folks. So, people made the -- yeah. This is one of the packages. Awesome.
+I'm just grabbing it to make sure it goes into the show notes.
+Cool. And then so this will make sure if you have a dot title file saved. Mind pushing it.
+Yeah, sorry, so that you can see line numbers.
+Thanks. Now let's do the test command. So, let's write D1, space dollar sign. Space and a sound. And then in a string, or in quotation marks, BD, the letters.
+Okay.
+To run this, you can do the same command as in supercollider.
+Hit command enter.
+Yep. Cool. Cool.
+Okay. And we can -- everybody can hear that? Let me turn this up.
+[Thump, thump, thump]
+So, BD, using deductive reasoning, is short for bass drum?
+Exactly. We hear a thump sound. thump, thump.
+We're going to get close to dropping the base. Step-by-step. We can zoom in and make the text bigger. Cool. It's called TidalCycles because everything runs in cycles. So, everything will be starting at the same beat. So, that's one of the constraints of TidalCycles. You can break that constraint. But it helps everything line up. So, in the second line, let's do D2, dollar sign sound. And then let's do HH space HH.
+Like that?
+Yep. And let's run that.
+[Thump, chick]
+Cool. And let's put two more HHs in there. So, let's put four HHs and let's run that.
+All right.
+Cool. And then now on -- on D1, let's maybe make two of those happen. So, let's make that go twice as fast. Cool. And then we're gonna run one more -- yes, the HH is for hi-hat. So, if you do electric music things, worked with an 808 drum machine. What is it? I see Jason is bopping.
+I'm ready!
+Cool. I want to change the global clock. So, let's make the whole thing a little bit faster.
+Okay.
+On a new line, set CPS, all one word. And in parentheses, calling a function --
+Oh, a function. Got it.
+Let's do 1. And then just run that. Cool. So... so, one --
+All right.
+120 BPM. Or what's happening is everything in the string, it's gonna play both of those. And there's a musical term called quantizing that's going to evenly space them out over the course of one second. Make sense?
+Yeah. So, if I wanted to, let's say we have an offbeat snare. Boom, boom, right? How would you add the space to get it to not hit on the one?
+Great question. So, let's do D3. So, each of these are like audio channels, essentially. So, D3, dollar sign, Let's do sound. And a string. The rest is a tilde. So, you can do rest.
+Rest and then snare?
+Yes, SD, snare drum.
+SD snare drum.
+Nice. How is this sounding for everyone? Is the audio coming through okay?
+How are levels, everyone?
+[Boom, chick, snare]
+Yeah!
+All right. Yeah, let's keep on going. So, another thing actually before we make new lines, let's take the bass drum on D1 and let's actually make it -- instead of doing two of them, let's actually just do bass drum times two.
+Like that?
+Let's see if that works. Let's run it and see.
+No.
+Let's get rid of --
+Sorry, one more -- no spaces?
+Oh, so, it's actually working now. It's just doing the same thing it was doing before. Let's do bass drum times four. Cool.
+Okay.
+Bass drum one or two, either way. And then also -- so, I'm just gonna teach you the different building blocks. So, let's do -- let's surround the two with carat brackets.
+We have very scientific nomenclature, square boys, round boys, curly boys and pointy boys.
+We're using the pointy boys.
+All right. We're looking for pointy boys.
+Let's put the pointy boys around it. Within there, let's do two space four.
+Two, four. Oh, no! Oh! Oh, I'm having so -- this is like... I'm so happy right now.
+Cool. So, what we can also do now -- or, yeah, any other questions? I'll let you guide it. Any other questions as a -- things that you want to explore. Musical ideas.
+This is really fun. What I like about this is that it's -- you mentioned the word "Terse," right, as a way of describing things. And I think that's fascinating here is we just -- we did exactly what I would have expected to do on a sequencer. But I didn't need a sequencer. And that's really exciting. I could just say, oh, yeah, I want a hi-hat. And I just -- just get the hi-hat going. So, what if we want to add a fill? You know, like we want just at the last bar, right? That kind of thing.
+Yeah, let's try that. Let's do hi-hat times 8. Let's see what that sounds like.
+Oops. Eight.
+That's pretty fun. So, yeah, in this case, there's a couple ways to do this. If it's a drum machine, write it out. And the most important command for TidalCycles. This is how you make everything quiet. On the bottom, maybe, write the word "hush" and run that. That will silence it.
+Party stops.
+Right. DJ, record scratch. But, yeah. Let's -- and then we can bring back maybe -- let's just bring back the D1 element first and then we'll start there. Cool. So, this is how much can you subdivide? You can make it play like 200 every second. You can do lots of crazy things. We're starting very constrained. Cool. On D2, let's type out the four hi-hats again.
+Okay.
+Rather than times eight. And then put the square boys was the square brackets. Yeah, let's put that around the HH. And then let's do HH times 2 in there. Let's run that. [Boom, chick, chick]
+Oh, I love it. Okay. And if we wanted to make it like clever, could I do one like this? Where I want only every other?
+That was my next step, yeah. Nice.
+This is so great. I love this.
+Cool. So, let's do something with a snare drum now. Let's do it so... let's do it so the snare drum -- yeah. What do you want to do? What kind of fill could you do with the snare drum?
+[Boom, boom, chick]
+Let's go with we'll do one of these and then... what happens when you do a triplet? Oh, god. Chaos.
+So, let's put -- no, leave it as-is.
+Okay.
+After D3, do dollar sign slow 2. So, yeah, dollar sign. And then slow and then 2. Cool. Let's see what we've got there.
+Okay.
+How is that feeling for you?
+Yeah, it's...
+now we'll do it...
+Every fourth.
+Exactly. Perfect. I'm going teach you one more thing. This is a building block that we'll be using. Online one --
+I'm gonna go full trap on this.
+I love it. Maybe on the second HH let's do it -- let's put that one -- we don't actually need the brackets around it. Let's just do times -- we'll do the same thing. Let's do something with that one too.
+Okay.
+do a, yeah, what do you call the pointy boys?
+Yeah, pointy boys.
+Cool. Let's do that. Cool. All right. Cool. And then for D1 now, so, let's erase everything after BD. So, like the times before. We're gonna do a different pattern now.
+Okay.
+Let's do parentheses, or what do you call that? Round boys?
+Round boys!
+And then do 3 comma 8 in the --
+Like that?
+Yeah.
+Ah, we can pick the down beat. I love it.
+Yeah. This is not in TidalCycles, but there's academic papers on this. This is call called Euclidian patterns. Let's do an experiment, you can do command shift D to duplicate the line. There you develop and then let's just do bass drum times 3 in there instead of these parentheses. And let's run that line. Oh, and you want to have a line break between them or you can hit shift enter. Yeah. Let's run that. Yeah.
+So, now we're on triplets. It's cool. It's got a feel.
+It's got a feel.
+It doesn't resolve. It's very tense.
+Yeah. Then we can resolve by running the first line again.
+Okay. Jacob asked a minute ago about how to do different verses. Because this is live coding, as the DJ, you're building a set and you're gonna move. We're here, all right, let's create some tension. Right? Now everybody is like, what's going on? This feels really tense. And when you're ready to drop the bass, you go back up here. I love this. Oh, this is fun.
+Cool. And I love that we have been doing this, we're listening -- it's a relationship with the computer. Telling the computer what to do. And listening for sonic feedback to see if it's doing that thing. I think for me as a musician, that's something that -- that feedback is something that keeps me going. And I love that stuff.
+Yeah.
+You're not doing that on Twitch as well, and we have a live captioner here, not much of that is coming through. But it's something that I think is really cool about this.
+It's very cool. So, to isolate this because Nicky was asking what the difference is. So, let's go with just this.
+[Thump, thump] -- this is every third beat. One, two, three -- it's very like... every third beat. And then this one...
+[Thump-thump]
+It turns it into an actual repetition that feels more like 4/4 time. You get a cool feel in there. So, when we add everything back in, it's got a little bit more bounce. This is more fun than just straight four on the floor.
+Yeah. And what you can do also is we have those little carat brackets, or the pointy -- I'll try to say without laughing as we continue. Online number 1, let's do the pointy boys around the 3 and let's try different numbers in there.
+Let's do... let's see... we'll... this is gonna be chaos.
+Not all that much chaos.
+Oh, I'm into it, I like it.
+What else do you want to try?
+[Drum beats layin' down]
+And we can just get weird on this, just keep...
+Exactly. [Drum beats]
+This is interesting. This round can be different from a different round. Things get interesting and overlapping and you remove some of the robotic feeling by having these separate loops that are all layered together and then I can kind of turn things off and on. And get in here and get tense. Like this is really fun.
+It's getting nested. We have loops within loops. I was talking about how we have binary trees -- how is this gonna help me? This is creating a logic decision tree for how each loop is played. And you can create a very complex loop that it will repeat once every, I don't know, every hundred times by having enough variations.
+Right.
+So, yeah.
+So, a couple people have asked about instruments, right? So, we've got a drum kit.
+Yes.
+Can we add a lead? Can we do bass?
+Totally.
+How do we take this even further?
+Let's hush it and let's simplify and bring one of these in as a clock. What's to keep in mind, this is with the advent of music, you no longer need a band, with five musicians together, it's better than one person typing it out. You can breathe together and change the tempo. I think with the advent of electronic music, it means that one person can do many things. But you want to be mindful, when you start the processes, the sub-processes, they can get stale. You have the power to start, you also want to use the power to stop and use negative space as well. Sonic space.
+Right.
+That's not a TidalCycles thing. That's just like a Dan after a while thing. But, yeah. So, let's maybe fly the first one. D1, line 1. Let's play that, and that will be our heart beat as we explore some instruments. Nice. Cool. So, let's start on some new lines. We can organize the code however -- cool. So, let's explore. So, there are different ways to get tonal and melodic things. You can use -- and re-pitch them or you can actually synthesize sounds. So, do you know what synthesis is?
+In the broadest strokes, yes. But I think for -- for me to not sound like I'm making stuff as I go, and for anybody who hasn't heard it, I would love a 101.
+Cool. Synthesis 101 -- I discovered hardware synthesizers that make like music synthesis, like audio synthesis I guess a year before TidalCycles. And I was off to the races before discovering that. But synthesis is creating using -- then again, I'm not -- this isn't the definition. But it's how do we create -- how do we synthesize something? This can be audio, this can be video. This can be many things. What is the synthesis definition? I'm curious. The definition -- this is not the technical definition, but it's okay.
+Doesn't Ableton have like a synth thing too where they -- learning synths. So, if you want to do like a real 101 and learn how all this works, you can get in here.
+Yeah.
+JASON:
+But essentially what we're going to be doing is using supercollider as the synthesizer. We're using it as an audio synthesizer today. Supercollider has two processes.
+Oh, I'm opening the wrong one.
+We have the server running in the bottom right. This is showing what's happening with the audio. In supercollider, you can go to server on the top and hit show scope. You should see what's happen, what it's creating.
+Cool.
+This isn't it synthesizing, it's playing samples. We're going to say, hey, supercollider, we created synthesizers in code. And TidalCycles is going to be calling these. So, yes. So, that's like broadly -- in the world of creating lots of different digital art, you either go sample-based on synthesis. For video art as well. It's like, oh, what's our base that we're working off of? A existing video or photo? And creating shapes with math. And Char will talk about what creating shapes with math looks like on Thursday. Let's go back to Atom and explore using some of the synthesizers.
+Let's do it.
+Let's do D4, dollar sign. And let's say, note. And then in a string let's say C. Lower case C. And then let's say -- let's actually say C3.
+Okay.
+And I'll explain what this is -- or, we're using the music capital note C. So, A, B, C, D, E, F, G, and it wraps around. An 88-key piano has 88 different keys, and every 12 notes it repeats an octave. You're going to the third C. It's towards the lore end of the piano. And now a new symbol. After C3, outside of the string, let's do hashtag or pound. And let's say sound is going to be super -- sound, space, super -- and then in a string -- sorry. We're gonna say supersquare.
+Like that?
+Yes. And let's run that.
+[Boom, boom, boom]
+That's kind of loud. Do hashtag, yeah. And space gain, space 0.8. Let's run that. Cool. It was loud on my end, but if it's not loud on your guy's end. Maybe make it --
+It was pretty loud.
+Okay. So, now we hear a note here. So, this is asking supercollider, so if we go back to SuperCollider and look at scope. Here it is. Yeah. That's generating a square wave in addition to the drum beat. This is not -- there's much better ways to visualize this. The Ableton one is a great way to see what the different waveforms look like. Cool. So, now how do we change the notes? Let's after -- at the end of line 9, let's enter a new line.
+And then let's have it all connected. This is junior organization. Haskell does care about the white space.
+Gotcha.
+Let's do plus note.
+Plus note? Like that?
+Yep. And then in a string, let's do 2. And let's run that. And you want to do command enter and run that. Cool. So what about did that do?
+It took it up two steps, right?
+So, if you look at a keyboard, it's just going up two little -- two keys. We're counting black keys and white keys. So, this is going on two semitones.
+Got it. And then if we did something -- would it be minus note and then we could go...
+Yeah. Let's try it. Oh, so, it takes the I guess the sum of all of those. So --
+Oh, it does the whole thing. I got it. Okay.
+What are you trying to do? What do you want to have it do?
+I thought it was the same that these were if you fired one and then the other, it would change it. I was gonna have it oscillate between two pieces.
+Cool. Let's -- how can you integrate the pointy boys to do that? Where would you put them?
+Let's do... let's see. So, I can just set any note, right? So, if I wanted to cycle between two notes, I could do like a C and then we'll go what's third -- so, E, F, G, right?
+Yeah. The third would be -- yeah with the G would be the fifth. Let's try that, though.
+Right. Because I'm not counting... okay.
+Let's just comment out the note -- the plus note two at the end.
+[Oscillating notes] 
+On line 10, you could do command forward slash and run the command again.
+Right. If we want to make that for --
+Cool. Now we're hearing the notes. That it's the right notes.
+Right, right.
+We're playing the first and the fifth. What else do you want to do? I have ways where we can run with this. But I want you to drive.
+At this point, I think I don't have quite enough knowledge about what's possible to get creative. I didn't realize -- the animated emoji are so good. I love it. So, like maybe show... maybe show me how to do a little bit of like alternation. Like if we want to get into something a little more audibly interesting than like a straight cycle.
+Yeah. So, this is where I use the plus notation. I like to because it's very terse. And you don't actually have to write out the note names. But it does need you have to go into semitone land. So, let's take the G3 away for now.
+Okay.
+And then let's -- instead of having plus 2, let's type zero, space, zero.
+Like that.
+And then let's remove slow 4. Let's run that.
+Okay.
+Yeah. So, plus note, that pattern will be cast on to note C3. If Alex is here, he can explain it with the correct terminology. But when I use this pattern -- and these are different patterns because there's ways to represent music with like language notation. what this pattern is doing is it's bringing this tempo on to C3. Let's type out about four zeros and see what that does. And you can see where this is going. Cool. And let's also do after gain 0.8, let's do hashtag legato 0.5. And let's run that. Run that.
+Okay.
+Is, what does that -- yeah, what does that do?
+So, what we -- legato is like -- actually, I don't know what legato is. I thought what we just did would be staccato.
+Oh, oh.
+But I don't actually know enough about the differences to be able to speak to them.
+So, what legato is doing -- maybe length is a different way to describe it. Because the length --
+We just turned it down. Legato 1 is like sustain infinitely.
+Exactly.
+Got it.
+Legato 1 is take up the whole extent of that beat.
+Got it.
+Below line 10, let's put a new line. This will all be part of the same thing.
+Oh, like this.
+Yes, exactly. And do plus note. And let's put in a string, let's put 3. So, we're gonna go up a minor third. So, it's three half steps. Let's run that.
+Okay.
+And let's go -- so, this is where my music theory knowledge, I know what these half steps, what these semitones are. But this might be going over the head of some people. So, please like draw it just back at any point.
+So, and I think like -- hold on. I'm gonna get my -- without knocking things over. So, I have a keyboard here. Request I show it without --
+We can also pull up a Google image. Either way.
+We're doing this. Okay. So, here, right? We've got our -- our piano. And so, when we hit a key, if this is our zero and if we go up three, it would be -- wait. Can I do this? It would be one, two, three, right?
+Yep.
+Yeah.
+And that's a minor third.
+So, this -- if like you played these together, they would be in key, it would be a chord, right? But we're telling it, if we started here, plus three, one, two, three. And now we've hit this key. So, that's the visual.
+Yeah. What we're gonna do, we can play chords, but let's alternate between them first.
+Okay.
+How do you alternate between the first note and the minor third for every cycle?
+I'm making a guess. Like this.
+Maybe!
+This is gonna be chaos. Hold on.
+That's cool. The nice thing about live coding --
+That's not quite it.
+What if you use the pointy boys?
+Pointy boys. All right. So, we're gonna go like this.
+Let's see.
+[Groovin ']
+There we go.
+We're getting there. This is our bass line, if we want to alternate -- we can say after the last pointy -- let's do that. Yeah. So, five, up five steps is actually the fourth. So, it's confusing. But it's actually the fourth of the bass tone.
+Do we want to go up six to the fifth?
+If you want to go to the fifth, it would be seven half steps, actually. Nice. We can also do at the -- after the pointy bracket, the closing bracket, let's do divided by... three. Let's do divided by two.
+There we go.
+So, now it will alternate half as slowly. Or half as quickly. Okay. So, real quick let's now on a new -- let's add some higher notes and then we can make these ones do some more exciting things.
+Okay.
+This is pretty exciting as we're going. And then so, now on D5. Let's say note -- let's do like a C5.
+Okay.
+And let's do sound -- let's do all the same things. Except for like supersquare. And then let's do -- let's --
+Legato, 0.5.
+That's fine. And let's do plus --
+Okay.
+And now let's do plus note, let's do zero, zero, zero again just to see what this sounds like.
+[Added a higher note on top of the bass line]
+Cool. So, what we can also do is a use a low pass filter. This is some synthesis knowledge. We're going to cut away the highs.
+Okay.
+A hashtag after zero, zero online 14. Let's do lpf. Let's do like 2000. So, we're gonna cut away all the highs, just not as harsh.
+Okay.
+And we can bring the gain back up to .08 as well. Cool. So, now for these notes, let's -- within the note, zero, zero, zero, zero, let's change some of those around. Let's do -- I like using like a triad is a zero, three, the first, the third and the fifth.
+Sorry... do it where, no?
+So, let's do, in line 14, let's change the first -- let's change the zeros. Let's add different notes in there.
+Okay.
+Let's sprinkle in threes and sevens and fives. Maybe even some ten.
+[Driving beat adding higher notes that are moving within the scale]
+I love it. This is exactly where I was gonna take it. All right. So, now let's bring in some of the other drums because we're getting there now.
+[Drums added]
+Cool. Let's see -- we have the hi-hats as well. Make it a little trappy.
+[Hi-hat adds in]
+Cool. Now we're getting there. How is this feel something
+This is fun.
+Yeah. So, let's just try doing some different notes and see what happens.
+And then I want to show -- oh, yeah. Keep it going -- string note -- 12 is the octave.
+We can really...
+Let's go for it.
+[Driving beat]
+I like it.
+You can kind of get like chaos. This is fun!
+Yeah.
+[Drum beat with notes moving over top]
+This is using a synthesizer. We have 15 minutes left, that's how we're going on time?
+Yep, yep.
+Let's explore a little bit more how we can introduce algorithms into this.
+Yeah, let's do it.
+So, what I want to do, we'll keep the code a little organized. Oh, thanks. Let's run line 13 and 14. Let's run that pattern. So, command enter. And after lpf 2000, let's put hashtag room 0.6. Add some echo. Make it sound a little bit nicer. Okay. So, after D5, let's hit enter and put the note D5 on a new line.
+Sorry --
+So, after D5 online 13, let's bring that down --
+Oh, I got it. You want to bring this down.
+Let's say... let's say fast space 2. And then we need another dollar sign. Yeah, it's not happy because we need one more dollar sign after that. Cool. And what we can also do is fast 2, we can add the pointy boys, the carat brackets in there too. Let's make that a string. Yes. We have to make all that a string.
+Like that?
+Yep. Let's see what happens.
+[Notes moving slower and faster] 
+Cool. Okay. Now let's add another -- let's hit enter after that and add another function now.
+Okay.
+So, that we can do sometimes. And then --
+Sometimes?
+Yes.
+oh, I just got -- everyone as excited as I am very this?
+Sometimes, half the time, we want it to do something. Let's use parentheses.
+Okay.
+And then let's say plus --
+Plus what now?
+Let's do plus note, sorry. Plus note. And then let's do 12.
+Like that?
+Yep. And then let's do another dollar sign after that.
+Oh, right.
+Yeah.
+[Notes moving in the octave]
+Let's run line number 1 again just because, you know, we're doing this. And let's run line 5 as well.
+[Adding in notes]
+Or line 5.
+Oh, line 5, right.
+Yeah. Cool. Yeah. So, what's happening here? What did we just do? Can you walk us through that?
+Okay. So, we just told it to alternatingly play a bar fast and a bar at -- a bar at 2x speed, a bar at 1x speed. And then we have a random generator that takes it up an octave. So, every -- sometimes, roughly 50% of the time, it will bounce up an octave.
+Yeah.
+Then we take our note that runs at C5, run it through a synth, make it adjust level. Make it a little more staccato, then we do nonsense in here, cut out the lows and add a little bit of reverb.
+Exactly. This is the pattern magic of TidalCycles, the beauty of it. You can take it and this is what's the idea and add algorithmically some randomness and magic to that.
+I'm just blown away with just how much this made the whole thing more interesting. Little stuff like to. Are there other -- this one feel like a super power? Are there others that you lean on heavily when you're doing your own performances to get this kind of interest?
+Yep. Before we do that, do we want to -- do we want to do the MIDI thing and explore it and visualize it? We only have 10 minutes. Or just leave it here.
+What was that called? Dot piano?
+Yeah, dot piano.com. We can bring it in here and actually visualize what's happening.
+All right. So, I'm gonna hush.
+So, dot piano, you can play it with your keyboard. We might not be hearing it right now.
+I turned everything down because it was getting a little aggressive.
+Oh, smart, smart. So, dot piano is a website created by folks at the Google creative lab. Created unassociated with them, but for the Cooper Hewitt Museum in New York. It also plays MIDI. You can plug in a MIDI controller and play keyboard. We can take the patterns we just created and send it to this.
+Just to show everyone what I'm doing here, I'm like making... [Piano music] -- right? So, anything I play shows up on this screen which is very, very cool.
+Exactly. And it's using piano samples, really nicely sampled pianos, rather than synthesizing them. I'm going to bring us there this. Go to supercollider and initialize a MIDI. Online 31, this is how you can bring it outside of supercollider and synthesize other instruments. Scroll down a little bit.
+Here we go.
+And run this right here. Hit command enter anywhere inside there.
+Oh, wait.
+Without highlighting it.
+Oh, gotcha. MIDI --
+Yep. What this is doing. It's telling TidalCycles, we have this new instrument called MIDI. This is now actually going to send this to wherever. That website is looking to all MIDIs. Let's change to supersquare. Let's make that into MIDI. Let's just -- sorry, in Atom.
+Oh, in here.
+We're doing lots of context switches. Let's change that to MIDI and try running that and see if that works. Let's just try running one of them.
+[Drum beat]
+It should be. Yep. Cool. I click on the page too to activate the sound. Click on the edge.
+[Drum beat with piano over it]
+Cool. Let's also increase the gain back to 1. Because the gain does listen to that. That's one of the... cool.
+[Piano over drums]
+So, what's happening? Does this sound familiar?
+Yeah, I mean, this is so cool. So, now I have my own setup here. But if I change this to be -- let's do one of these. And maybe we'll set this one to be like 3 or 10. And...
+Yeah. Let's simplify this also. So, let's go back to TidalCycles, back to Atom, and erase the one, do a fast 1 for now. And let's run that. Cool. So, another pattern I use -- let's also go back on TidalCycles and I'll show another pattern that I use. Let's change sometimes. Let's say... let's change sometimes to often. Use the word auth.
+Replace the word sometimes with the word off. If I can spell.
+And after that, let's do 0.25. And let's --
+Like to?
+Yep. So, what that's doing is actually playing the pattern twice. The second time it's up an octave. And it's offsetting the cycle. So, let's comment out that line, actually, and just see what it sounds like without this.
+So, this is one pattern going.
+Right.
+Now let's uncomment and we can add it back.
+[Piano over drums -- it is dance-able]
+This part, that's what's taking it up an octave.
+Exactly. We can do plus note 24. Let's see what that does.
+Whoops.
+[Added another octave on top!]
+Cool. We can do auth 0. Let's do auth 0 instead of 0.25.
+Yeah. It's exactly in lockstep now.
+Go ahead.
+Does the .25 somewhat randomize the notes? They start moving in different directions?
+Yeah. Let's do auth .1. Let's see what that does. See what's happening?
+I'm not sure what's happening. But I am sure it's jazz.
+So, it's taking the note and it's offsetting it just by a tiny bit. So, .25 offsets by a quarter of a cycle.
+Oh, so, instead of starting on -- so, our main cycle is tarting on the 1, but the octave cycle is starting on the 2.
+Exactly.
+I gotcha.
+It's a very simple concept. You can see with code. And maybe we can hush it real quick as we start to wind down. Cool.
+We can see, like musically, it creates very complex patterns harmonically. But with code, it's one more line that is added.
+we're gonna take that harmonic string and shift it a little bit, add a phase. Kind of like my voice this whole time.
+Right. Yep.
+Yeah. But yeah. So, those are a lot of different concepts thrown at you. How is this feeling so far?
+How are you feeling, chat? I'm feeling great. I feel like this is the sort of thing that gets me excited because it's the -- the sort of thing that I request see unlocking some doors that would have been challenging otherwise.
+Where, you know, through a little bit of experimentation, learning what the patterns are, you can make music that I wouldn't be able to play on a piano. I wouldn't be able to sit down at a drum kit and make that beat. But I can mess with some patterns and kind something that sounds cool. And similarly with the synth, I can kind of pick a note and I can kind of pick some basic patterns and randomize it and just do some stuff that I'm not gonna be able to improvise on an instrument. So what about it has me feeling really optimistic. And the other thing that I'm interested in, because of what we're doing here with the live, there's a lot of instrumental input.
+I'm turning gears on what would happen if we let the chat activate or deactivate certain parts of the loops. Somebody could mess with the parameters so someone just doesn't put 256 down beats. We could set some basic guidelines and suddenly we could do music that's collaborative and people could go on it. I think that's really, really fun.
+Chat, what are you gonna make with this? I want to see people go and make some music. This is so fun. Can we get a W in the chat if you are gonna go and mess with some coding music? And while we're waiting for the chat -- there's Char. All right. See some folks coming in. I'm so excited.
+And while I see some first time chatters, a lot of first time chatters. Thank you for hanging out. A lot of Ws in the chat. Let's call this a good stopping point because otherwise I'm gonna go all day. We have had Amanda from White Coat Captioning here with us all day doing the live captioning thing. Thank you very much for that. And that is made possible through the sponsors, Netlify, Fauna, Auth0, making this show more accessible to more people. Make sure you head over and follow Dan on Twitter. And check the show notes for links to installing supercollider and TidalCycles and all the things you need to gets up and running here. Dan, any other links to make sure people get to before we wrap this?
+Yeah. A good way to follow what's happening. So, live code NYC is what Char are part of, go to live code -- or Sligo NYC. And hit enter. This is an artist's collective in New York. This is what got me started. We have a Discord here. This is one of the ways that the community grows. There's also a community in SF called SV Club SF that I'm helping run. There's an Instagram link for that. I'll share that in the Discord. Yeah, I don't think we have any -- anyways --
+This one.
+Yeah. There's a Twitter. All right. Nice.
+There's a bit. Somewhere to lead in if you want to get into this in the San Francisco area.
+In New York, live Code NYC. And the Discord is global for these, and we have Discords for both. And there's also for TidalCycles, there's club.TidalCycles.org. This is Alex's, Alex McLean, his course to teach TidalCycles. It's free. All the videos are online. Let me pull put that here. You put it. Thanks, Char, for putting AV Club SF.
+What gets me going, how am I making money from this thing? Technology companies, people interested in the code because of all the implicit ways this helps in what we do day in and day out. But also what keeps me going is finding the circumstances to perform, circumstances to share work. And I think that all comes from community. I think what you're doing here is amazing. You're fostering a Twitch community twice a week, every week coming together. And it takes a lot of work. And honestly, having an outlet for people to share work and have a discourse is important.
+Absolutely. Thanks so much for hanging out. Chat, if you want to do more of that, make sure you go and follow Dan on Twitter. And come back later this week because we're gonna have Char and we're gonna do visualizations. So, we're gonna get some music and make that happen. And then a whole lot more. Check the schedule, mark your calendar, you can get it on Google Calendar, follow on Twitch. By Thursday, I'm going to fix the problem with audio phasing. Thank you all for putting up with some audio glitches as we go. Dan, especially you, I know you had to listen to your own audio all day. Thank you for trooping along. Chat, thank you for hanging out as always, thank you, Dan. We're going to raid. Thank you very much and we will see you all next time.
+Take care, everyone.
+
+In [ ]:
+
+
+
+
+
+​
+
+
