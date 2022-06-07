@@ -28,4 +28,5 @@ Send a link to your forked repo to lilly@contenda.co. Please answer the followin
 2. What are the tradeoffs between training a model on transcripts as a corpus versus written articles?
 3. What is something you'd like to try if you had another 8 hours? 3 days? 1 week?
 4. What are the tradeoffs between using LDA for topic modeling vs other methods? 
+5. Machine transcriptions have more mistakes than human transcriptions. If we only had access to a large amount of machine transcriptions, what are some strategies we could try to still have decent topic modeling?
 
